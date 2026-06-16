@@ -1,0 +1,11 @@
+[
+  { "id": "p1", "category": "protein",  "query": "마이프로틴 임팩트 웨이 프로틴 1kg" },
+  { "id": "p2", "category": "protein",  "query": "옵티멈뉴트리션 골드스탠다드 웨이 2.27kg" },
+  { "id": "c1", "category": "creatine", "query": "마이프로틴 크레아틴 모노하이드레이트 500g" },
+  { "id": "c2", "category": "creatine", "query": "옵티멈뉴트리션 마이크로나이즈드 크레아틴 600g" },
+  { "id": "b1", "category": "booster",  "query": "C4 오리지널 프리워크아웃 부스터" },
+  { "id": "g1", "category": "guard",    "query": "손목 보호대 리스트랩" },
+  { "id": "g2", "category": "guard",    "query": "SBD 무릎 보호대 니슬리브 7mm" },
+  { "id": "e1", "category": "etc",      "query": "마이프로틴 BCAA 아미노산" },
+  { "id": "e3", "category": "etc",      "query": "블렌더보틀 클래식 쉐이커 760ml" }
+]
