@@ -1,0 +1,41 @@
+# GitHub Actions: 매일 가격 수집 (무료 cron)
+# 저장 위치: 레포의 .github/workflows/daily-collect.yml
+name: daily price collect
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # 매일 UTC 00:00 = 한국시간 09:00
+  workflow_dispatch:        # 수동 실행 버튼도 제공
+
+permissions:
+  contents: write           # prices.csv 커밋용
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect prices
+        env:
+          NAVER_CLIENT_ID:     ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          COUPANG_ACCESS_KEY:  ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY:  ${{ secrets.COUPANG_SECRET_KEY }}
+        run: python collect_prices.py
+
+      - name: Commit updated prices.csv
+        run: |
+          git config user.name  "price-bot"
+          git config user.email "bot@users.noreply.github.com"
+          if [ -f prices.csv ]; then
+            git add prices.csv
+            git diff --staged --quiet || git commit -m "prices: $(date +%F)"
+            git push
+          else
+            echo "prices.csv 없음 — 수집 0건입니다. Secrets에 네이버 키가 등록됐는지 확인하세요."
+          fi
