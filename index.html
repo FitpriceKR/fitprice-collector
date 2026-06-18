@@ -15,7 +15,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="app_data.js" onerror="window.__noData=true"></script>
 <style>
-  :root{--bg:#0d0f12;--surface:#16191f;--surface2:#1e222b;--line:#2a2f3a;--text:#f2f4f7;--muted:#8b93a3;--accent:#c6ff2e;--red:#ff5b6e;--gold:#ffce5b;}
+  :root{--bg:#0d0f12;--surface:#16191f;--surface2:#1e222b;--line:#2a2f3a;--text:#f2f4f7;--muted:#8b93a3;--accent:#c6ff2e;--red:#ff5b6e;--blue:#5b9bff;--gold:#ffce5b;}
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
   body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;color:var(--text);display:flex;justify-content:center;min-height:100vh;}
   #phone{position:relative;width:100%;max-width:430px;min-height:100vh;background:var(--bg);display:flex;flex-direction:column;overflow:hidden;}
@@ -59,7 +59,7 @@
   .stat-grid{display:flex;gap:9px;margin-top:16px;}
   .stat{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center;}
   .stat .lbl{font-size:10.5px;color:var(--muted);font-weight:600;} .stat .val{font-size:15px;font-weight:800;margin-top:5px;}
-  .stat .val.lo{color:var(--accent);} .stat .val.hi{color:var(--red);}
+  .stat .val.lo{color:var(--blue);} .stat .val.hi{color:var(--red);}
   .chart-card{margin:16px 18px 0;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 14px 10px;}
   .chart-card h3{font-size:13px;font-weight:800;margin-bottom:4px;} .chart-card .sub{font-size:11px;color:var(--muted);margin-bottom:10px;}
   .chart-wrap{position:relative;height:170px;}
@@ -91,6 +91,7 @@
 <script>
 const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"},booster:{n:"부스터",e:"⚡"},guard:{n:"보호대",e:"🛡️"},etc:{n:"기타",e:"🏋️"}};
 const won=n=>Number(n).toLocaleString('ko-KR')+'원';
+function axisWon(v){ if(v>=10000){const m=v/10000; return (Number.isInteger(m)?m:Math.round(m*10)/10)+'만원';} return Math.round(v/1000)+'천원'; }
 const DATA=(window.FITPRICE_DATA||[]).slice();
 let activeCat=null, search="";
 
@@ -140,7 +141,7 @@ function openDetail(id){
   const p=DATA.find(x=>x.id===id); if(!p)return;
   document.getElementById('listView').classList.remove('active');
   const v=document.getElementById('detailView'); v.classList.add('active');
-  const trend = p.days>1 ? '주간 가격 · 초록 점이 역대 최저가 시점' : '데이터가 더 쌓이면 추이가 선으로 그려집니다 (현재 '+p.days+'일치)';
+  const trend = p.days>1 ? '주간 가격 변화 · 파란 점이 역대 최저가 시점' : '데이터가 더 쌓이면 변화가 선으로 그려집니다 (현재 '+p.days+'일치)';
   v.innerHTML=`
     <div class="detail-top">
       <button class="back" onclick="closeDetail()">‹ 뒤로</button>
@@ -158,7 +159,7 @@ function openDetail(id){
         <div class="stat"><div class="lbl">역대 최고</div><div class="val hi">${won(p.max)}</div></div>
       </div>
     </div>
-    <div class="chart-card"><h3>📉 가격 추이</h3><div class="sub">${trend}</div>
+    <div class="chart-card"><h3>📉 가격 변화</h3><div class="sub">${trend}</div>
       <div class="chart-wrap"><canvas id="chart"></canvas></div></div>
     <div class="cta-wrap">
       <a class="cta" href="${p.url||'#'}" target="_blank" rel="noopener">🛒 ${p.mall||'판매처'}에서 최저가 보기</a>
@@ -177,9 +178,9 @@ function drawChart(p){
   grad.addColorStop(0,'rgba(198,255,46,.35)');grad.addColorStop(1,'rgba(198,255,46,0)');
   chart=new Chart(ctx,{type:'line',data:{labels,datasets:[{data:vals,borderColor:'#c6ff2e',borderWidth:2,tension:.35,fill:true,backgroundColor:grad,
     pointRadius:vals.map((_,i)=>i===minIdx||i===vals.length-1?5:(vals.length<=8?3:0)),
-    pointBackgroundColor:vals.map((_,i)=>i===minIdx?'#c6ff2e':(i===vals.length-1?'#fff':'#c6ff2e')),pointBorderColor:'#0d0f12',pointBorderWidth:2}]},
+    pointBackgroundColor:vals.map((_,i)=>i===minIdx?'#5b9bff':(i===vals.length-1?'#fff':'#c6ff2e')),pointBorderColor:'#0d0f12',pointBorderWidth:2}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>won(c.parsed.y)}}},
-      scales:{y:{grid:{color:'#222831'},ticks:{color:'#8b93a3',font:{size:10},callback:v=>Math.round(v/1000)+'천'}},
+      scales:{y:{grid:{color:'#222831'},ticks:{color:'#8b93a3',font:{size:10},callback:axisWon}},
               x:{grid:{display:false},ticks:{color:'#8b93a3',font:{size:9},maxTicksLimit:6,autoSkip:true}}}}});
 }
 

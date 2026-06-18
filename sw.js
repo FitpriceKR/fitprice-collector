@@ -1,5 +1,5 @@
 // 핏프라이스 서비스워커 — 앱 셸 캐시 + 가격데이터는 항상 최신
-const CACHE = "fitprice-v2";
+const CACHE = "fitprice-v3";
 const SHELL = [
   "./", "./index.html",
   "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"
