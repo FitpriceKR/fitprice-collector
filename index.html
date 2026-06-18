@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>핏프라이스 — 운동용품 최저가</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d0f12">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="핏프라이스">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="app_data.js" onerror="window.__noData=true"></script>
+<style>
+  :root{--bg:#0d0f12;--surface:#16191f;--surface2:#1e222b;--line:#2a2f3a;--text:#f2f4f7;--muted:#8b93a3;--accent:#c6ff2e;--red:#ff5b6e;--gold:#ffce5b;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;color:var(--text);display:flex;justify-content:center;min-height:100vh;}
+  #phone{position:relative;width:100%;max-width:430px;min-height:100vh;background:var(--bg);display:flex;flex-direction:column;overflow:hidden;}
+  @media(min-width:480px){body{background:#0a0a0a;align-items:center;padding:24px 0;}#phone{min-height:880px;height:880px;border-radius:42px;border:10px solid #1c1c1c;}}
+  header{padding:14px 18px 10px;}
+  .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px;letter-spacing:-.5px;}
+  .brand b{color:var(--accent);} .brand .upd{font-size:10px;color:var(--muted);font-weight:600;margin-left:auto;}
+  .searchbar{margin-top:12px;display:flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:11px 14px;}
+  .searchbar input{flex:1;background:none;border:none;color:var(--text);font-size:14px;outline:none;}
+  .disclosure{font-size:10.5px;color:var(--muted);background:var(--surface);border-bottom:1px solid var(--line);padding:7px 18px;line-height:1.4;}
+  main{flex:1;overflow-y:auto;padding-bottom:30px;}
+  main::-webkit-scrollbar{display:none;}
+  .view{display:none;} .view.active{display:block;}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:12px 18px 6px;scrollbar-width:none;}
+  .chips::-webkit-scrollbar{display:none;}
+  .chip{flex:0 0 auto;padding:9px 15px;border-radius:24px;background:var(--surface2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;}
+  .chip.active{background:var(--accent);color:#0d0f12;border-color:var(--accent);}
+  .plist{padding:0 18px;}
+  .prow{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer;}
+  .pthumb{flex:0 0 64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;}
+  .pinfo{flex:1;min-width:0;}
+  .pbrand{font-size:11px;color:var(--muted);font-weight:600;}
+  .pname{font-size:13px;font-weight:600;margin-top:2px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .pmeta{display:flex;align-items:center;gap:7px;margin-top:6px;flex-wrap:wrap;}
+  .price{font-size:15px;font-weight:800;}
+  .badge{font-size:10px;font-weight:800;padding:3px 7px;border-radius:6px;}
+  .badge.low{background:rgba(198,255,46,.15);color:var(--accent);}
+  .badge.dropb{background:rgba(255,91,110,.15);color:var(--red);}
+  .mall{font-size:11px;color:var(--muted);}
+  .secnote{padding:14px 18px 4px;font-size:12px;color:var(--muted);}
+  /* detail */
+  .detail-top{padding:14px 18px 0;}
+  .back{display:inline-flex;align-items:center;gap:5px;font-size:14px;color:var(--muted);background:none;border:none;cursor:pointer;padding:6px 0;}
+  .hero-thumb{height:150px;margin:6px 0 0;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:70px;}
+  .d-brand{font-size:12px;color:var(--muted);font-weight:700;margin-top:14px;}
+  .d-name{font-size:18px;font-weight:800;line-height:1.35;margin-top:4px;}
+  .price-block{display:flex;align-items:flex-end;gap:10px;margin-top:14px;}
+  .cur-price{font-size:28px;font-weight:900;letter-spacing:-1px;}
+  .alltime{display:inline-flex;align-items:center;gap:5px;background:rgba(198,255,46,.15);color:var(--accent);font-size:12px;font-weight:800;padding:6px 10px;border-radius:9px;}
+  .price-sub{font-size:12px;color:var(--muted);margin-top:7px;} .price-sub b{color:var(--red);} .price-sub del{color:var(--muted);}
+  .stat-grid{display:flex;gap:9px;margin-top:16px;}
+  .stat{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center;}
+  .stat .lbl{font-size:10.5px;color:var(--muted);font-weight:600;} .stat .val{font-size:15px;font-weight:800;margin-top:5px;}
+  .stat .val.lo{color:var(--accent);} .stat .val.hi{color:var(--red);}
+  .chart-card{margin:16px 18px 0;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 14px 10px;}
+  .chart-card h3{font-size:13px;font-weight:800;margin-bottom:4px;} .chart-card .sub{font-size:11px;color:var(--muted);margin-bottom:10px;}
+  .chart-wrap{position:relative;height:170px;}
+  .cta-wrap{padding:18px;}
+  .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--accent);color:#0d0f12;font-size:15px;font-weight:800;border:none;border-radius:16px;padding:15px;cursor:pointer;text-decoration:none;}
+  .cta-note{text-align:center;font-size:10.5px;color:var(--muted);margin-top:9px;line-height:1.4;}
+  .empty{text-align:center;color:var(--muted);padding:70px 30px;font-size:14px;line-height:1.7;}
+  .empty .big{font-size:48px;margin-bottom:14px;}
+  .empty code{background:var(--surface2);padding:2px 7px;border-radius:6px;color:var(--accent);font-size:12px;}
+</style>
+</head>
+<body>
+<div id="phone">
+  <header>
+    <div class="brand">⚡ 핏<b>프라이스</b><span class="upd" id="upd"></span></div>
+    <div class="searchbar">🔎 <input id="searchInput" placeholder="상품 검색 (예: 크레아틴)"></div>
+  </header>
+  <div class="disclosure">ℹ️ 일부 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</div>
+  <main>
+    <div id="listView" class="view active">
+      <div class="chips" id="chips"></div>
+      <div class="secnote" id="secnote"></div>
+      <div class="plist" id="list"></div>
+    </div>
+    <div id="detailView" class="view"></div>
+  </main>
+</div>
+
+<script>
+const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"},booster:{n:"부스터",e:"⚡"},guard:{n:"보호대",e:"🛡️"},etc:{n:"기타",e:"🏋️"}};
+const won=n=>Number(n).toLocaleString('ko-KR')+'원';
+const DATA=(window.FITPRICE_DATA||[]).slice();
+let activeCat=null, search="";
+
+function catsPresent(){const s=[];for(const k in CATS){if(DATA.some(p=>p.category===k))s.push(k);}return s;}
+function emoji(p){return (CATS[p.category]||{}).e||'🏷️';}
+function thumbStyle(p){const g={protein:'#3a2d6b',creatine:'#0f4d4d',booster:'#6b2d2d',guard:'#2d3f6b',etc:'#5b4d1b'};return `background:linear-gradient(135deg,${g[p.category]||'#333'},#0d0f12)`;}
+
+function renderEmpty(){
+  document.getElementById('chips').innerHTML='';
+  document.getElementById('secnote').innerHTML='';
+  document.getElementById('list').innerHTML=`<div class="empty"><div class="big">📦</div>
+    아직 표시할 데이터가 없어요.<br>수집을 돌린 뒤 <code>build_app_data.py</code>를 실행해<br><code>app_data.js</code>를 이 폴더에 두면 상품이 나타납니다.</div>`;
+}
+function renderChips(){
+  const cs=catsPresent();
+  if(!activeCat) activeCat=cs[0];
+  document.getElementById('chips').innerHTML=cs.map(c=>`<div class="chip ${c===activeCat?'active':''}" onclick="setCat('${c}')">${CATS[c].e} ${CATS[c].n}</div>`).join('');
+}
+function setCat(c){activeCat=c;renderChips();renderList();}
+function rowsFor(){
+  let arr=DATA.filter(p=>p.category===activeCat);
+  if(search) arr=DATA.filter(p=>(p.name+p.brand).toLowerCase().includes(search.toLowerCase()));
+  return arr;
+}
+function prow(p){
+  return `<div class="prow" onclick="openDetail('${p.id}')">
+    <div class="pthumb" style="${thumbStyle(p)}">${emoji(p)}</div>
+    <div class="pinfo">
+      <div class="pbrand">${p.brand||''} · ${p.mall||''}</div>
+      <div class="pname">${p.name}</div>
+      <div class="pmeta"><span class="price">${won(p.price)}</span>
+        ${p.isAllTimeLow?'<span class="badge low">역대최저</span>':''}
+        ${p.dropPct>0?`<span class="badge dropb">▼${p.dropPct}%</span>`:''}</div>
+    </div></div>`;
+}
+function renderList(){
+  const arr=rowsFor();
+  document.getElementById('secnote').textContent = search ? `'${search}' 검색 ${arr.length}건` : `${(CATS[activeCat]||{}).n||''} ${arr.length}개`;
+  document.getElementById('list').innerHTML = arr.length ? arr.map(prow).join('') : `<div class="empty"><div class="big">🔍</div>해당 상품이 없어요.</div>`;
+}
+
+let chart=null;
+function openDetail(id){
+  const p=DATA.find(x=>x.id===id); if(!p)return;
+  document.getElementById('listView').classList.remove('active');
+  const v=document.getElementById('detailView'); v.classList.add('active');
+  const trend = p.days>1 ? '주간 가격 · 초록 점이 역대 최저가 시점' : '데이터가 더 쌓이면 추이가 선으로 그려집니다 (현재 '+p.days+'일치)';
+  v.innerHTML=`
+    <div class="detail-top">
+      <button class="back" onclick="closeDetail()">‹ 뒤로</button>
+      <div class="hero-thumb" style="${thumbStyle(p)}">${emoji(p)}</div>
+      <div class="d-brand">${p.brand||''} · ${(CATS[p.category]||{}).n||''}</div>
+      <div class="d-name">${p.name}</div>
+      <div class="price-block"><div class="cur-price">${won(p.price)}</div>
+        ${p.isAllTimeLow?'<div class="alltime">🏆 역대 최저가</div>':''}</div>
+      <div class="price-sub">
+        ${p.dropPct>0?`전일 <del>${won(p.hist.length>1?p.hist[p.hist.length-2].price:p.price)}</del> 대비 <b>${p.dropPct}% 하락</b> · `:''}최저가 판매처: ${p.mall||'-'}
+      </div>
+      <div class="stat-grid">
+        <div class="stat"><div class="lbl">역대 최저</div><div class="val lo">${won(p.min)}</div></div>
+        <div class="stat"><div class="lbl">평균</div><div class="val">${won(p.avg)}</div></div>
+        <div class="stat"><div class="lbl">역대 최고</div><div class="val hi">${won(p.max)}</div></div>
+      </div>
+    </div>
+    <div class="chart-card"><h3>📉 가격 추이</h3><div class="sub">${trend}</div>
+      <div class="chart-wrap"><canvas id="chart"></canvas></div></div>
+    <div class="cta-wrap">
+      <a class="cta" href="${p.url||'#'}" target="_blank" rel="noopener">🛒 ${p.mall||'판매처'}에서 최저가 보기</a>
+      <div class="cta-note">최저가 판매처로 연결됩니다. 쿠팡 파트너스 링크인 경우 구매 시 수수료가 발생할 수 있으며 구매 가격은 동일합니다.</div>
+    </div>`;
+  document.querySelector('main').scrollTop=0;
+  drawChart(p);
+}
+function closeDetail(){document.getElementById('detailView').classList.remove('active');document.getElementById('listView').classList.add('active');}
+function drawChart(p){
+  const ctx=document.getElementById('chart'); if(!ctx)return;
+  if(chart)chart.destroy();
+  const labels=p.hist.map(h=>h.d.slice(5)); const vals=p.hist.map(h=>h.price);
+  const minIdx=vals.indexOf(Math.min(...vals));
+  const grad=ctx.getContext('2d').createLinearGradient(0,0,0,170);
+  grad.addColorStop(0,'rgba(198,255,46,.35)');grad.addColorStop(1,'rgba(198,255,46,0)');
+  chart=new Chart(ctx,{type:'line',data:{labels,datasets:[{data:vals,borderColor:'#c6ff2e',borderWidth:2,tension:.35,fill:true,backgroundColor:grad,
+    pointRadius:vals.map((_,i)=>i===minIdx||i===vals.length-1?5:(vals.length<=8?3:0)),
+    pointBackgroundColor:vals.map((_,i)=>i===minIdx?'#c6ff2e':(i===vals.length-1?'#fff':'#c6ff2e')),pointBorderColor:'#0d0f12',pointBorderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>won(c.parsed.y)}}},
+      scales:{y:{grid:{color:'#222831'},ticks:{color:'#8b93a3',font:{size:10},callback:v=>Math.round(v/1000)+'천'}},
+              x:{grid:{display:false},ticks:{color:'#8b93a3',font:{size:9},maxTicksLimit:6,autoSkip:true}}}}});
+}
+
+document.getElementById('searchInput').addEventListener('input',e=>{search=e.target.value.trim();renderList();});
+function init(){
+  if(!DATA.length){renderEmpty();return;}
+  document.getElementById('upd').textContent = window.FITPRICE_UPDATED ? ('업데이트 '+window.FITPRICE_UPDATED) : '';
+  renderChips();renderList();
+}
+init();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "핏프라이스 — 운동용품 최저가",
+  "short_name": "핏프라이스",
+  "description": "운동용품 최저가와 6개월 가격 추이를 알려주는 앱",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0f12",
+  "theme_color": "#0d0f12",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
