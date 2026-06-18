@@ -1,4 +1,4 @@
-# GitHub Actions: 매일 가격 수집 (무료 cron)
+# GitHub Actions: 매일 가격 수집 + 앱 데이터 가공 (무료 cron)
 # 저장 위치: 레포의 .github/workflows/daily-collect.yml
 name: daily price collect
 
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:        # 수동 실행 버튼도 제공
 
 permissions:
-  contents: write           # prices.csv 커밋용
+  contents: write           # prices.csv / app_data.* 커밋용
 
 jobs:
   collect:
@@ -28,14 +28,24 @@ jobs:
           COUPANG_SECRET_KEY:  ${{ secrets.COUPANG_SECRET_KEY }}
         run: python collect_prices.py
 
-      - name: Commit updated prices.csv
+      - name: Build app data
+        run: |
+          if [ -f prices.csv ]; then
+            python build_app_data.py
+          else
+            echo "prices.csv 없음 — 가공 단계 건너뜀 (네이버 키 등록 확인)"
+          fi
+
+      - name: Commit results
         run: |
           git config user.name  "price-bot"
           git config user.email "bot@users.noreply.github.com"
-          if [ -f prices.csv ]; then
-            git add prices.csv
-            git diff --staged --quiet || git commit -m "prices: $(date +%F)"
-            git push
+          for f in prices.csv app_data.js app_data.json; do
+            [ -f "$f" ] && git add "$f"
+          done
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 생략"
           else
-            echo "prices.csv 없음 — 수집 0건입니다. Secrets에 네이버 키가 등록됐는지 확인하세요."
+            git commit -m "update: $(date +%F)"
+            git push
           fi
