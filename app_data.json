@@ -396,14 +396,14 @@
    "category": "protein",
    "brand": "[아마존",
    "name": "[아마존 공식]BSN 신타6 오리지널 프로틴 파우더 658g 바닐라",
-   "image": "",
+   "image": "https://shopping-phinf.pstatic.net/main_5544891/55448915321.4.jpg",
    "mall": "11번가",
    "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=8399955918&tid=1000000061",
-   "price": 40760,
-   "min": 40710,
+   "price": 40650,
+   "min": 40650,
    "max": 40760,
-   "avg": 40743,
-   "isAllTimeLow": false,
+   "avg": 40707,
+   "isAllTimeLow": true,
    "dropPct": 0,
    "days": 3,
    "hist": [
@@ -417,7 +417,7 @@
     },
     {
      "d": "2026-06-18",
-     "price": 40760
+     "price": 40650
     }
    ]
   },
