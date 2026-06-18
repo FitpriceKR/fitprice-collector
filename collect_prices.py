@@ -50,6 +50,7 @@ def naver_lowest(query: str):
         "mall": it.get("mallName", ""),
         "url": it.get("link", ""),
         "product_id": it.get("productId", ""),
+        "image": it.get("image", ""),
     }
 
 # ---------------------------------------------------------------------------
@@ -93,19 +94,33 @@ def coupang_search(query: str):
         "url": it.get("productUrl", ""),       # 이 URL 자체가 파트너스 추적 링크(수익용)
         "product_id": it.get("productId", ""),
         "is_rocket": it.get("isRocket", False),
+        "image": it.get("productImage", ""),
     }
 
 # ---------------------------------------------------------------------------
 # 메인 루프
 # ---------------------------------------------------------------------------
-HEADER = ["date", "tracking_id", "category", "source", "price", "name", "mall", "url", "product_id"]
+HEADER = ["date", "tracking_id", "category", "source", "price", "name", "mall", "url", "product_id", "image"]
 
 def append_rows(rows):
-    new_file = not os.path.exists(OUTPUT_CSV)
-    with open(OUTPUT_CSV, "a", newline="", encoding="utf-8-sig") as f:
+    # 기존 파일이 구버전(이미지 컬럼 없음)이면 새 헤더로 자동 변환 후 이어쓰기
+    existing = []
+    if os.path.exists(OUTPUT_CSV):
+        with open(OUTPUT_CSV, newline="", encoding="utf-8-sig") as f:
+            data = list(csv.reader(f))
+        if data:
+            old = data[0]
+            if old == HEADER:
+                with open(OUTPUT_CSV, "a", newline="", encoding="utf-8-sig") as f:
+                    csv.writer(f).writerows(rows)
+                return
+            for r in data[1:]:                      # 옛 행을 새 컬럼 순서로 재배치(없는 값은 빈칸)
+                d = dict(zip(old, r))
+                existing.append([d.get(k, "") for k in HEADER])
+    with open(OUTPUT_CSV, "w", newline="", encoding="utf-8-sig") as f:
         w = csv.writer(f)
-        if new_file:
-            w.writerow(HEADER)
+        w.writerow(HEADER)
+        w.writerows(existing)
         w.writerows(rows)
 
 def main():
@@ -119,13 +134,13 @@ def main():
 
         n = naver_lowest(query)
         if n:
-            rows.append([TODAY, tid, cat, "naver", n["price"], n["name"], n["mall"], n["url"], n["product_id"]])
+            rows.append([TODAY, tid, cat, "naver", n["price"], n["name"], n["mall"], n["url"], n["product_id"], n["image"]])
             ok += 1
             print(f"    네이버 최저가 {n['price']:,}원 ({n['mall']})")
 
         c = coupang_search(query)
         if c:
-            rows.append([TODAY, tid, cat, "coupang", c["price"], c["name"], "쿠팡", c["url"], c["product_id"]])
+            rows.append([TODAY, tid, cat, "coupang", c["price"], c["name"], "쿠팡", c["url"], c["product_id"], c["image"]])
             ok += 1
             print(f"    쿠팡 {c['price']:,}원")
 

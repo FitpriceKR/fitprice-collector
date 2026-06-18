@@ -97,6 +97,9 @@ let activeCat=null, search="";
 function catsPresent(){const s=[];for(const k in CATS){if(DATA.some(p=>p.category===k))s.push(k);}return s;}
 function emoji(p){return (CATS[p.category]||{}).e||'🏷️';}
 function thumbStyle(p){const g={protein:'#3a2d6b',creatine:'#0f4d4d',booster:'#6b2d2d',guard:'#2d3f6b',etc:'#5b4d1b'};return `background:linear-gradient(135deg,${g[p.category]||'#333'},#0d0f12)`;}
+function imgTag(src,fit){return `<img src="${src}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:${fit};border-radius:inherit;background:#fff" onerror="this.replaceWith(document.createTextNode(this.closest('[data-fallback]').dataset.fallback||''))">`;}
+function thumbHTML(p){return `<div class="pthumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'cover'):emoji(p)}</div>`;}
+function heroHTML(p){return `<div class="hero-thumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'contain'):emoji(p)}</div>`;}
 
 function renderEmpty(){
   document.getElementById('chips').innerHTML='';
@@ -117,7 +120,7 @@ function rowsFor(){
 }
 function prow(p){
   return `<div class="prow" onclick="openDetail('${p.id}')">
-    <div class="pthumb" style="${thumbStyle(p)}">${emoji(p)}</div>
+    ${thumbHTML(p)}
     <div class="pinfo">
       <div class="pbrand">${p.brand||''} · ${p.mall||''}</div>
       <div class="pname">${p.name}</div>
@@ -141,7 +144,7 @@ function openDetail(id){
   v.innerHTML=`
     <div class="detail-top">
       <button class="back" onclick="closeDetail()">‹ 뒤로</button>
-      <div class="hero-thumb" style="${thumbStyle(p)}">${emoji(p)}</div>
+      ${heroHTML(p)}
       <div class="d-brand">${p.brand||''} · ${(CATS[p.category]||{}).n||''}</div>
       <div class="d-name">${p.name}</div>
       <div class="price-block"><div class="cur-price">${won(p.price)}</div>

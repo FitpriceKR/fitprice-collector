@@ -45,6 +45,7 @@ def main():
             "mall":  r.get("mall", ""),
             "url":   r.get("url", ""),
             "name":  r.get("name", ""),
+            "image": r.get("image", ""),
             "category": r.get("category", ""),
         })
 
@@ -69,6 +70,7 @@ def main():
             "category": last["category"],
             "brand": name.split()[0] if name else "",
             "name": name,
+            "image": last.get("image", ""),
             "mall": last["mall"],
             "url": last["url"],
             "price": latest,
