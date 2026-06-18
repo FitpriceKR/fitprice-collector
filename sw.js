@@ -1,5 +1,5 @@
 // 핏프라이스 서비스워커 — 앱 셸 캐시 + 가격데이터는 항상 최신
-const CACHE = "fitprice-v4";
+const CACHE = "fitprice-v5";
 const SHELL = [
   "./", "./index.html",
   "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"
@@ -30,4 +30,15 @@ self.addEventListener("fetch", e => {
     // 그 외는 캐시 우선
     e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
   }
+});
+
+// 알림 클릭 시 앱 열기/포커스
+self.addEventListener("notificationclick", e => {
+  e.notification.close();
+  e.waitUntil(
+    clients.matchAll({ type: "window" }).then(cs => {
+      for (const c of cs) { if ("focus" in c) return c.focus(); }
+      if (clients.openWindow) return clients.openWindow("./");
+    })
+  );
 });
