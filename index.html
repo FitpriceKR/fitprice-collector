@@ -91,7 +91,7 @@
 <script>
 const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"},booster:{n:"부스터",e:"⚡"},guard:{n:"보호대",e:"🛡️"},etc:{n:"기타",e:"🏋️"}};
 const won=n=>Number(n).toLocaleString('ko-KR')+'원';
-function axisWon(v){ if(v>=10000){const m=v/10000; return (Number.isInteger(m)?m:Math.round(m*10)/10)+'만원';} return Math.round(v/1000)+'천원'; }
+function axisWon(v){ v=Math.round(v); if(v%10000===0) return (v/10000)+'만원'; if(v%1000===0) return (v/1000)+'천원'; return v.toLocaleString('ko-KR')+'원'; }
 const DATA=(window.FITPRICE_DATA||[]).slice();
 let activeCat=null, search="";
 
@@ -173,14 +173,18 @@ function drawChart(p){
   const ctx=document.getElementById('chart'); if(!ctx)return;
   if(chart)chart.destroy();
   const labels=p.hist.map(h=>h.d.slice(5)); const vals=p.hist.map(h=>h.price);
-  const minIdx=vals.indexOf(Math.min(...vals));
+  const dmin=Math.min(...vals), dmax=Math.max(...vals);
+  const minIdx=vals.indexOf(dmin), maxIdx=vals.indexOf(dmax);
+  const pad=Math.max(Math.round((dmax-dmin)*0.25),100);
   const grad=ctx.getContext('2d').createLinearGradient(0,0,0,170);
   grad.addColorStop(0,'rgba(198,255,46,.35)');grad.addColorStop(1,'rgba(198,255,46,0)');
   chart=new Chart(ctx,{type:'line',data:{labels,datasets:[{data:vals,borderColor:'#c6ff2e',borderWidth:2,tension:.35,fill:true,backgroundColor:grad,
-    pointRadius:vals.map((_,i)=>i===minIdx||i===vals.length-1?5:(vals.length<=8?3:0)),
-    pointBackgroundColor:vals.map((_,i)=>i===minIdx?'#5b9bff':(i===vals.length-1?'#fff':'#c6ff2e')),pointBorderColor:'#0d0f12',pointBorderWidth:2}]},
+    pointRadius:vals.map((_,i)=>(i===minIdx||i===maxIdx||i===vals.length-1)?5:(vals.length<=8?3:0)),
+    pointBackgroundColor:vals.map((_,i)=>i===minIdx?'#5b9bff':(i===maxIdx?'#ff5b6e':(i===vals.length-1?'#fff':'#c6ff2e'))),pointBorderColor:'#0d0f12',pointBorderWidth:2}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>won(c.parsed.y)}}},
-      scales:{y:{grid:{color:'#222831'},ticks:{color:'#8b93a3',font:{size:10},callback:axisWon}},
+      scales:{y:{min:dmin-pad,max:dmax+pad,grid:{color:'#222831'},
+                 afterBuildTicks:a=>{a.ticks = (dmin===dmax)?[{value:dmin}]:[{value:dmin},{value:dmax}];},
+                 ticks:{color:'#8b93a3',font:{size:10},callback:axisWon,autoSkip:false}},
               x:{grid:{display:false},ticks:{color:'#8b93a3',font:{size:9},maxTicksLimit:6,autoSkip:true}}}}});
 }
 
