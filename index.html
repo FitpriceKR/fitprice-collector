@@ -16,6 +16,9 @@
 <script src="app_data.js" onerror="window.__noData=true"></script>
 <style>
   :root{--bg:#0d0f12;--surface:#16191f;--surface2:#1e222b;--line:#2a2f3a;--text:#f2f4f7;--muted:#8b93a3;--accent:#c6ff2e;--red:#ff5b6e;--blue:#5b9bff;--gold:#ffce5b;}
+  :root[data-theme="light"]{--bg:#f4f5f2;--surface:#ffffff;--surface2:#eef0ec;--line:#e2e4df;--text:#191b18;--muted:#6a6e69;--accent:#4e8a00;--red:#d63a4d;--blue:#2f6fd6;--gold:#b07d0a;}
+  :root[data-theme="light"] body{background:#dfe1dd;}
+  :root[data-theme="light"] .hero{background:linear-gradient(120deg,#e8f3d0,#ffffff);}
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
   body{background:#000;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;color:var(--text);display:flex;justify-content:center;min-height:100vh;}
   #phone{position:relative;width:100%;max-width:430px;min-height:100vh;background:var(--bg);display:flex;flex-direction:column;overflow:hidden;}
@@ -91,6 +94,13 @@
   .advice.ok{background:rgba(91,155,255,.1);border-color:rgba(91,155,255,.4);color:var(--blue);}
   .advice.high{background:rgba(255,91,110,.1);border-color:rgba(255,91,110,.4);color:var(--red);}
   .advice.mid{background:var(--surface);color:var(--text);} .advice.mid .advice-s{color:var(--muted);}
+  .unitprice{font-size:12px;color:var(--accent);font-weight:700;margin-top:7px;}
+  .suggest{display:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-top:8px;padding:10px 14px;}
+  .sg-h{font-size:11px;color:var(--muted);font-weight:700;margin:6px 0 8px;display:flex;align-items:center;}
+  .sg-clear{margin-left:auto;color:var(--muted);font-weight:600;cursor:pointer;}
+  .sg-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:4px;}
+  .sg-chip{background:var(--surface2);border:1px solid var(--line);border-radius:18px;padding:6px 11px;font-size:12px;color:var(--text);cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+  .sg-chip i{font-style:normal;color:var(--muted);font-size:13px;}
   /* home */
   .hero{margin:12px 0 4px;background:linear-gradient(120deg,#1e2a12,#0d0f12);border:1px solid var(--line);border-radius:18px;padding:18px;}
   .hero-t{font-size:19px;font-weight:900;line-height:1.32;letter-spacing:-.4px;} .hero-t b{color:var(--accent);}
@@ -114,11 +124,13 @@
   <header>
     <div class="brand">⚡ 핏<b>프라이스</b>
       <span class="brand-right">
+        <button id="themeBtn" class="bell" onclick="toggleTheme()" aria-label="테마 전환">☀️</button>
         <button id="bell" class="bell" onclick="enableNotif()" aria-label="가격 알림 켜기">🔔</button>
         <span class="upd" id="upd"></span>
       </span>
     </div>
     <div class="searchbar">🔎 <input id="searchInput" placeholder="상품 검색 (예: 크레아틴)"></div>
+    <div class="suggest" id="suggest"></div>
   </header>
   <div class="disclosure">ℹ️ 일부 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</div>
   <main>
@@ -139,13 +151,47 @@ const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"}
 const won=n=>Number(n).toLocaleString('ko-KR')+'원';
 function axisWon(v){ v=Math.round(v); if(v%10000===0) return (v/10000)+'만원'; if(v%1000===0) return (v/1000)+'천원'; return v.toLocaleString('ko-KR')+'원'; }
 const DATA=(window.FITPRICE_DATA||[]).slice();
-let activeCat=null, search="", sortMode="default", lowOnly=false;
+let activeCat=null, search="", sortMode="default", lowOnly=false, currentP=null;
 
 /* ---------- 저장소(찜·알림) ---------- */
 const LS={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
 let wish=new Set(LS.get('fp_wish',[]));
 let notified=LS.get('fp_notified',{});
 function saveWish(){LS.set('fp_wish',[...wish]);}
+
+/* ---------- 검색 추천 ---------- */
+const POPULAR=['프로틴','웨이 프로틴','크레아틴','프리워크아웃','마이프로틴','BCAA','게이너','손목 보호대'];
+function recent(){return LS.get('fp_recent',[]);}
+function addRecent(q){q=(q||'').trim();if(!q)return;let r=recent().filter(x=>x!==q);r.unshift(q);LS.set('fp_recent',r.slice(0,8));}
+function esc(s){return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
+function renderSuggest(){
+  const el=document.getElementById('suggest');if(!el)return;
+  const r=recent();let html='';
+  if(r.length) html+=`<div class="sg-h">최근 검색어<span class="sg-clear" onclick="clearRecent()">모두 지우기</span></div><div class="sg-row">${r.map(q=>`<span class="sg-chip" onclick="pickSearch('${esc(q)}')">${q}<i onclick="rmRecent(event,'${esc(q)}')">×</i></span>`).join('')}</div>`;
+  html+=`<div class="sg-h">인기 검색어</div><div class="sg-row">${POPULAR.map(q=>`<span class="sg-chip" onclick="pickSearch('${esc(q)}')">🔥 ${q}</span>`).join('')}</div>`;
+  el.innerHTML=html;
+}
+function showSuggest(){renderSuggest();const el=document.getElementById('suggest');if(el)el.style.display='block';}
+function hideSuggest(){const el=document.getElementById('suggest');if(el)el.style.display='none';}
+function pickSearch(q){const si=document.getElementById('searchInput');si.value=q;search=q.trim();addRecent(q);hideSuggest();renderList();document.querySelector('main').scrollTop=0;}
+function clearRecent(){LS.set('fp_recent',[]);renderSuggest();}
+function rmRecent(ev,q){ev.stopPropagation();LS.set('fp_recent',recent().filter(x=>x!==q));renderSuggest();}
+
+/* ---------- 테마 ---------- */
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);LS.set('fp_theme',t);const b=document.getElementById('themeBtn');if(b)b.textContent=(t==='light'?'🌙':'☀️');const m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='light'?'#f4f5f2':'#0d0f12');}
+function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';applyTheme(cur==='light'?'dark':'light');if(currentP&&document.getElementById('detailView').classList.contains('active'))drawChart(currentP);}
+
+/* ---------- 용량당 가격 ---------- */
+function unitPrice(p){
+  const s=(p.name||'')+' ';let m;
+  if((m=s.match(/(\d+(?:\.\d+)?)\s*kg/i))){const g=parseFloat(m[1])*1000;return `100g당 약 ${won(Math.round(p.price/(g/100)))}`;}
+  if((m=s.match(/(\d+(?:\.\d+)?)\s*g(?![a-zA-Z])/i))){const g=parseFloat(m[1]);if(g>=50)return `100g당 약 ${won(Math.round(p.price/(g/100)))}`;}
+  if((m=s.match(/(\d+)\s*개입?/))){const c=parseInt(m[1]);if(c>1)return `1개당 약 ${won(Math.round(p.price/c))}`;}
+  if((m=s.match(/(\d+)\s*정/))){const c=parseInt(m[1]);if(c>1)return `1정당 약 ${won(Math.round(p.price/c))}`;}
+  if((m=s.match(/(\d+)\s*캡슐/))){const c=parseInt(m[1]);if(c>1)return `1캡슐당 약 ${won(Math.round(p.price/c))}`;}
+  if((m=s.match(/(\d+(?:\.\d+)?)\s*ml/i))){const v=parseFloat(m[1]);if(v>=50)return `100ml당 약 ${won(Math.round(p.price/(v/100)))}`;}
+  return null;
+}
 
 /* ---------- 렌더 헬퍼 ---------- */
 function catsPresent(){const s=[];for(const k in CATS){if(DATA.some(p=>p.category===k))s.push(k);}return s;}
@@ -313,6 +359,7 @@ function adviceHTML(p){const a=buyAdvice(p);return `<div class="advice ${a.tone}
 let chart=null;
 function openDetail(id){
   const p=DATA.find(x=>x.id===id); if(!p)return;
+  currentP=p;
   document.getElementById('listView').classList.remove('active');
   const v=document.getElementById('detailView'); v.classList.add('active');
   const trend = p.days>1 ? '주간 가격 변화 · 파란 점이 역대 최저가 시점' : '데이터가 더 쌓이면 변화가 선으로 그려집니다 (현재 '+p.days+'일치)';
@@ -328,6 +375,7 @@ function openDetail(id){
       <div class="price-sub">
         ${p.dropPct>0?`전일 <del>${won(p.hist.length>1?p.hist[p.hist.length-2].price:p.price)}</del> 대비 <b>${p.dropPct}% 하락</b> · `:''}최저가 판매처: ${p.mall||'-'}
       </div>
+      ${unitPrice(p)?`<div class="unitprice">📊 ${unitPrice(p)}</div>`:''}
       <div class="stat-grid">
         <div class="stat"><div class="lbl">역대 최저</div><div class="val lo">${won(p.min)}</div></div>
         <div class="stat"><div class="lbl">평균</div><div class="val">${won(p.avg)}</div></div>
@@ -354,24 +402,33 @@ function drawChart(p){
   const dmin=Math.min(...vals), dmax=Math.max(...vals);
   const minIdx=vals.indexOf(dmin), maxIdx=vals.indexOf(dmax);
   const pad=Math.max(Math.round((dmax-dmin)*0.25),100);
+  const light=document.documentElement.getAttribute('data-theme')==='light';
+  const gridC=light?'#e6e7e3':'#222831', tickC=light?'#6a6e69':'#8b93a3', lastC=light?'#191b18':'#fff', dotBd=light?'#ffffff':'#0d0f12';
   const grad=ctx.getContext('2d').createLinearGradient(0,0,0,170);
   grad.addColorStop(0,'rgba(198,255,46,.35)');grad.addColorStop(1,'rgba(198,255,46,0)');
-  chart=new Chart(ctx,{type:'line',data:{labels,datasets:[{data:vals,borderColor:'#c6ff2e',borderWidth:2,tension:.35,fill:true,backgroundColor:grad,
+  chart=new Chart(ctx,{type:'line',data:{labels,datasets:[{data:vals,borderColor:'#9fd400',borderWidth:2,tension:.35,fill:true,backgroundColor:grad,
     pointRadius:vals.map((_,i)=>(i===minIdx||i===maxIdx||i===vals.length-1)?5:(vals.length<=8?3:0)),
-    pointBackgroundColor:vals.map((_,i)=>i===minIdx?'#5b9bff':(i===maxIdx?'#ff5b6e':(i===vals.length-1?'#fff':'#c6ff2e'))),pointBorderColor:'#0d0f12',pointBorderWidth:2}]},
+    pointBackgroundColor:vals.map((_,i)=>i===minIdx?'#5b9bff':(i===maxIdx?'#ff5b6e':(i===vals.length-1?lastC:'#9fd400'))),pointBorderColor:dotBd,pointBorderWidth:2}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>won(c.parsed.y)}}},
-      scales:{y:{min:dmin-pad,max:dmax+pad,grid:{color:'#222831'},
+      scales:{y:{min:dmin-pad,max:dmax+pad,grid:{color:gridC},
                  afterBuildTicks:a=>{a.ticks=(dmin===dmax)?[{value:dmin}]:[{value:dmin},{value:dmax}];},
-                 ticks:{color:'#8b93a3',font:{size:10},callback:axisWon,autoSkip:false}},
-              x:{grid:{display:false},ticks:{color:'#8b93a3',font:{size:9},maxTicksLimit:6,autoSkip:true}}}}});
+                 ticks:{color:tickC,font:{size:10},callback:axisWon,autoSkip:false}},
+              x:{grid:{display:false},ticks:{color:tickC,font:{size:9},maxTicksLimit:6,autoSkip:true}}}}});
 }
 
 /* ---------- toast ---------- */
 let toastT;
 function toast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),1900);}
 
-document.getElementById('searchInput').addEventListener('input',e=>{search=e.target.value.trim();renderList();});
+(function(){
+  const si=document.getElementById('searchInput');
+  si.addEventListener('focus',()=>{ if(!si.value.trim()) showSuggest(); });
+  si.addEventListener('blur',()=>{ setTimeout(hideSuggest,180); });
+  si.addEventListener('input',e=>{ search=e.target.value.trim(); if(search) hideSuggest(); else showSuggest(); renderList(); });
+  si.addEventListener('keydown',e=>{ if(e.key==='Enter'){ addRecent(si.value); hideSuggest(); si.blur(); } });
+})();
 function init(){
+  applyTheme(LS.get('fp_theme','dark'));
   if(!DATA.length){renderEmpty();return;}
   document.getElementById('upd').textContent = window.FITPRICE_UPDATED ? ('업데이트 '+window.FITPRICE_UPDATED) : '';
   updateBell();
