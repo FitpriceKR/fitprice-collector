@@ -81,6 +81,22 @@
   .empty code{background:var(--surface2);padding:2px 7px;border-radius:6px;color:var(--accent);font-size:12px;}
   .toast{position:absolute;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:#fff;color:#0d0f12;font-size:13px;font-weight:700;padding:11px 18px;border-radius:30px;opacity:0;transition:.25s;z-index:50;pointer-events:none;white-space:nowrap;}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  /* home */
+  .hero{margin:12px 0 4px;background:linear-gradient(120deg,#1e2a12,#0d0f12);border:1px solid var(--line);border-radius:18px;padding:18px;}
+  .hero-t{font-size:19px;font-weight:900;line-height:1.32;letter-spacing:-.4px;} .hero-t b{color:var(--accent);}
+  .hero-s{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.4;}
+  .sec-h{font-size:16px;font-weight:800;margin:20px 0 10px;letter-spacing:-.3px;}
+  .hscroll{display:flex;gap:12px;overflow-x:auto;margin:0 -18px;padding:2px 18px 6px;scrollbar-width:none;}
+  .hscroll::-webkit-scrollbar{display:none;}
+  .dealcard{flex:0 0 144px;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;}
+  .dealthumb{height:96px;display:flex;align-items:center;justify-content:center;font-size:40px;}
+  .dealname{font-size:12px;color:var(--text);margin:9px 11px 0;line-height:1.3;height:31px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .dealprice{font-size:15px;font-weight:800;margin:6px 11px 0;}
+  .dealdrop{font-size:11px;font-weight:800;color:var(--red);margin:3px 11px 12px;}
+  .catgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-bottom:10px;}
+  .catcell{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 8px;text-align:center;font-size:12px;font-weight:700;cursor:pointer;}
+  .catcell .ce{display:block;font-size:24px;margin-bottom:6px;} .catcell .cc{display:block;font-size:10px;color:var(--muted);font-weight:600;margin-top:3px;}
+  .collecting{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;font-size:13px;color:var(--muted);line-height:1.6;margin-top:6px;}
 </style>
 </head>
 <body>
@@ -136,12 +152,13 @@ function renderEmpty(){
 }
 function renderChips(){
   const cs=catsPresent();
-  if(!activeCat) activeCat=cs[0];
-  let html=`<div class="chip ${activeCat==='wish'?'active':''}" onclick="setCat('wish')">💚 찜${wish.size?(' '+wish.size):''}</div>`;
+  if(!activeCat) activeCat='home';
+  let html=`<div class="chip ${activeCat==='home'?'active':''}" onclick="setCat('home')">🏠 홈</div>`;
+  html+=`<div class="chip ${activeCat==='wish'?'active':''}" onclick="setCat('wish')">💚 찜${wish.size?(' '+wish.size):''}</div>`;
   html+=cs.map(c=>`<div class="chip ${c===activeCat?'active':''}" onclick="setCat('${c}')">${CATS[c].e} ${CATS[c].n}</div>`).join('');
   document.getElementById('chips').innerHTML=html;
 }
-function setCat(c){activeCat=c;renderChips();renderList();document.querySelector('main').scrollTop=0;}
+function setCat(c){activeCat=c;search='';const si=document.getElementById('searchInput');if(si)si.value='';renderChips();renderList();document.querySelector('main').scrollTop=0;}
 
 function rowsFor(){
   if(search) return DATA.filter(p=>(p.name+p.brand).toLowerCase().includes(search.toLowerCase()));
@@ -164,8 +181,31 @@ function prow(p){
     <button class="heart ${on?'on':''}" data-id="${p.id}" onclick="toggleWish('${p.id}',event)" aria-label="찜">${on?'♥':'♡'}</button>
   </div>`;
 }
+function dealCard(p){
+  return `<div class="dealcard" onclick="openDetail('${p.id}')">
+    <div class="dealthumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'cover'):emoji(p)}</div>
+    <div class="dealname">${p.name}</div>
+    <div class="dealprice">${won(p.price)}</div>
+    <div class="dealdrop">▼ ${p.dropPct}% 하락</div>
+  </div>`;
+}
+function renderHome(){
+  document.getElementById('secnote').textContent='';
+  const cs=catsPresent();
+  const drops=DATA.filter(p=>p.dropPct>0).sort((a,b)=>b.dropPct-a.dropPct).slice(0,12);
+  const lows=DATA.filter(p=>p.isAllTimeLow).slice(0,8);
+  const upd=window.FITPRICE_UPDATED?(' · '+window.FITPRICE_UPDATED+' 기준'):'';
+  let html=`<div class="hero"><div class="hero-t">운동용품 <b>최저가</b>를<br>한눈에</div><div class="hero-s">최근 가격 변화로 지금이 살 때인지 알려드려요${upd}</div></div>`;
+  if(drops.length) html+=`<div class="sec-h">🔥 지금 가격 급락</div><div class="hscroll">${drops.map(dealCard).join('')}</div>`;
+  if(lows.length) html+=`<div class="sec-h">🏆 지금 역대 최저가</div><div>${lows.map(prow).join('')}</div>`;
+  if(!drops.length&&!lows.length) html+=`<div class="collecting">📊 아직 가격 변화 데이터를 모으는 중이에요.<br>매일 쌓이면 급락·역대 최저가 상품이 여기 나타납니다.</div>`;
+  html+=`<div class="sec-h">📦 카테고리</div><div class="catgrid">${cs.map(c=>`<div class="catcell" onclick="setCat('${c}')"><span class="ce">${CATS[c].e}</span>${CATS[c].n}<span class="cc">${DATA.filter(p=>p.category===c).length}개</span></div>`).join('')}</div>`;
+  document.getElementById('list').innerHTML=html;
+  updateHearts();
+}
 function renderList(){
   renderAlertBar();
+  if(activeCat==='home' && !search){ renderHome(); return; }
   const arr=rowsFor();
   document.getElementById('secnote').textContent = search ? `'${search}' 검색 ${arr.length}건`
     : (activeCat==='wish' ? `찜한 상품 ${arr.length}개` : `${(CATS[activeCat]||{}).n||''} ${arr.length}개`);
