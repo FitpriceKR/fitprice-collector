@@ -85,6 +85,12 @@
   .sortbar:empty{display:none;} .sortbar::-webkit-scrollbar{display:none;}
   .sortbtn{flex:0 0 auto;background:var(--surface2);border:1px solid var(--line);color:var(--muted);font-size:12px;font-weight:600;padding:7px 12px;border-radius:20px;cursor:pointer;}
   .sortbtn.active{background:rgba(198,255,46,.14);border-color:var(--accent);color:var(--accent);}
+  .advice{margin:16px 18px 0;border-radius:16px;padding:14px 16px;border:1px solid var(--line);}
+  .advice-t{font-size:14px;font-weight:800;line-height:1.4;} .advice-s{font-size:12px;margin-top:6px;line-height:1.45;}
+  .advice.good{background:rgba(198,255,46,.1);border-color:rgba(198,255,46,.4);color:var(--accent);}
+  .advice.ok{background:rgba(91,155,255,.1);border-color:rgba(91,155,255,.4);color:var(--blue);}
+  .advice.high{background:rgba(255,91,110,.1);border-color:rgba(255,91,110,.4);color:var(--red);}
+  .advice.mid{background:var(--surface);color:var(--text);} .advice.mid .advice-s{color:var(--muted);}
   /* home */
   .hero{margin:12px 0 4px;background:linear-gradient(120deg,#1e2a12,#0d0f12);border:1px solid var(--line);border-radius:18px;padding:18px;}
   .hero-t{font-size:19px;font-weight:900;line-height:1.32;letter-spacing:-.4px;} .hero-t b{color:var(--accent);}
@@ -288,6 +294,22 @@ async function notifyCheck(){
 }
 
 /* ---------- 상세 ---------- */
+function buyAdvice(p){
+  const range=p.max-p.min;
+  if(p.days<2 || range<=0) return {tone:'mid',title:'📊 아직 판단하기엔 일러요',sub:'가격이 더 쌓이면 지금이 살 때인지 알려드릴게요.'};
+  const pos=(p.price-p.min)/range;
+  let tone,title;
+  if(p.isAllTimeLow){tone='good';title='🟢 지금이 역대 최저가예요 — 사기 좋은 때!';}
+  else if(pos<=0.25){tone='good';title='🟢 최근 중 싼 편 — 살 만해요';}
+  else if(pos<=0.6){tone='mid';title='🟡 평소 가격대예요';}
+  else {tone='high';title='🔴 지금은 비싼 편 — 조금 기다려 보세요';}
+  const dAvg=p.price-p.avg;
+  let sub = dAvg<0?`평균 ${won(p.avg)}보다 ${won(-dAvg)} 저렴`:(dAvg>0?`평균 ${won(p.avg)}보다 ${won(dAvg)} 비쌈`:'평균 가격과 비슷');
+  if(!p.isAllTimeLow) sub+=` · 역대 최저가보다 ${won(p.price-p.min)} 높음`;
+  return {tone,title,sub};
+}
+function adviceHTML(p){const a=buyAdvice(p);return `<div class="advice ${a.tone}"><div class="advice-t">${a.title}</div><div class="advice-s">${a.sub}</div></div>`;}
+
 let chart=null;
 function openDetail(id){
   const p=DATA.find(x=>x.id===id); if(!p)return;
@@ -312,6 +334,7 @@ function openDetail(id){
         <div class="stat"><div class="lbl">역대 최고</div><div class="val hi">${won(p.max)}</div></div>
       </div>
     </div>
+    ${adviceHTML(p)}
     <div class="chart-card"><h3>📉 가격 변화</h3><div class="sub">${trend}</div>
       <div class="chart-wrap"><canvas id="chart"></canvas></div></div>
     <div class="cta-wrap">
