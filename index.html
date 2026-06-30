@@ -81,6 +81,10 @@
   .empty code{background:var(--surface2);padding:2px 7px;border-radius:6px;color:var(--accent);font-size:12px;}
   .toast{position:absolute;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);background:#fff;color:#0d0f12;font-size:13px;font-weight:700;padding:11px 18px;border-radius:30px;opacity:0;transition:.25s;z-index:50;pointer-events:none;white-space:nowrap;}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  .sortbar{display:flex;gap:7px;overflow-x:auto;padding:10px 18px 0;scrollbar-width:none;}
+  .sortbar:empty{display:none;} .sortbar::-webkit-scrollbar{display:none;}
+  .sortbtn{flex:0 0 auto;background:var(--surface2);border:1px solid var(--line);color:var(--muted);font-size:12px;font-weight:600;padding:7px 12px;border-radius:20px;cursor:pointer;}
+  .sortbtn.active{background:rgba(198,255,46,.14);border-color:var(--accent);color:var(--accent);}
   /* home */
   .hero{margin:12px 0 4px;background:linear-gradient(120deg,#1e2a12,#0d0f12);border:1px solid var(--line);border-radius:18px;padding:18px;}
   .hero-t{font-size:19px;font-weight:900;line-height:1.32;letter-spacing:-.4px;} .hero-t b{color:var(--accent);}
@@ -115,6 +119,7 @@
     <div id="listView" class="view active">
       <div id="alertBar"></div>
       <div class="chips" id="chips"></div>
+      <div class="sortbar" id="sortbar"></div>
       <div class="secnote" id="secnote"></div>
       <div class="plist" id="list"></div>
     </div>
@@ -128,7 +133,7 @@ const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"}
 const won=n=>Number(n).toLocaleString('ko-KR')+'원';
 function axisWon(v){ v=Math.round(v); if(v%10000===0) return (v/10000)+'만원'; if(v%1000===0) return (v/1000)+'천원'; return v.toLocaleString('ko-KR')+'원'; }
 const DATA=(window.FITPRICE_DATA||[]).slice();
-let activeCat=null, search="";
+let activeCat=null, search="", sortMode="default", lowOnly=false;
 
 /* ---------- 저장소(찜·알림) ---------- */
 const LS={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
@@ -161,10 +166,25 @@ function renderChips(){
 function setCat(c){activeCat=c;search='';const si=document.getElementById('searchInput');if(si)si.value='';renderChips();renderList();document.querySelector('main').scrollTop=0;}
 
 function rowsFor(){
-  if(search) return DATA.filter(p=>(p.name+p.brand).toLowerCase().includes(search.toLowerCase()));
-  if(activeCat==='wish') return [...wish].map(id=>DATA.find(p=>p.id===id)).filter(Boolean);
-  return DATA.filter(p=>p.category===activeCat);
+  let arr;
+  if(search) arr=DATA.filter(p=>(p.name+p.brand).toLowerCase().includes(search.toLowerCase()));
+  else if(activeCat==='wish') arr=[...wish].map(id=>DATA.find(p=>p.id===id)).filter(Boolean);
+  else arr=DATA.filter(p=>p.category===activeCat);
+  if(lowOnly) arr=arr.filter(p=>p.isAllTimeLow);
+  if(sortMode==='priceAsc') arr=[...arr].sort((a,b)=>a.price-b.price);
+  else if(sortMode==='priceDesc') arr=[...arr].sort((a,b)=>b.price-a.price);
+  else if(sortMode==='drop') arr=[...arr].sort((a,b)=>b.dropPct-a.dropPct);
+  return arr;
 }
+function renderSortBar(){
+  const el=document.getElementById('sortbar'); if(!el)return;
+  if(activeCat==='home' && !search){ el.innerHTML=''; return; }
+  const opt=(m,l)=>`<button class="sortbtn ${sortMode===m?'active':''}" onclick="setSort('${m}')">${l}</button>`;
+  el.innerHTML = opt('priceAsc','최저가순')+opt('drop','할인율순')+opt('priceDesc','높은가격순')
+    +`<button class="sortbtn ${lowOnly?'active':''}" onclick="toggleLowOnly()">🏆 역대최저만</button>`;
+}
+function setSort(m){ sortMode=(sortMode===m?'default':m); renderList(); }
+function toggleLowOnly(){ lowOnly=!lowOnly; renderList(); }
 function prow(p){
   const on=wish.has(p.id);
   return `<div class="prow">
@@ -205,10 +225,12 @@ function renderHome(){
 }
 function renderList(){
   renderAlertBar();
+  renderSortBar();
   if(activeCat==='home' && !search){ renderHome(); return; }
   const arr=rowsFor();
-  document.getElementById('secnote').textContent = search ? `'${search}' 검색 ${arr.length}건`
-    : (activeCat==='wish' ? `찜한 상품 ${arr.length}개` : `${(CATS[activeCat]||{}).n||''} ${arr.length}개`);
+  const sortLbl = lowOnly?' · 역대최저만':'';
+  document.getElementById('secnote').textContent = (search ? `'${search}' 검색 ${arr.length}건`
+    : (activeCat==='wish' ? `찜한 상품 ${arr.length}개` : `${(CATS[activeCat]||{}).n||''} ${arr.length}개`)) + sortLbl;
   if(!arr.length){
     document.getElementById('list').innerHTML = activeCat==='wish'
       ? `<div class="empty"><div class="big">💚</div>아직 찜한 상품이 없어요.<br>상품의 하트(♡)를 눌러 찜하면<br>역대 최저가가 될 때 알려드려요.</div>`
