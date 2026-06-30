@@ -129,10 +129,10 @@
         <span class="upd" id="upd"></span>
       </span>
     </div>
-    <div class="searchbar">🔎 <input id="searchInput" placeholder="상품 검색 (예: 크레아틴)"></div>
+    <div class="searchbar">🔎 <input id="searchInput" placeholder="추적 중인 운동용품 검색"></div>
     <div class="suggest" id="suggest"></div>
   </header>
-  <div class="disclosure">ℹ️ 일부 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.</div>
+  <div class="disclosure">ℹ️ 표시 가격·링크는 네이버쇼핑 등 판매처 기준이며, 제휴 링크를 통해 구매 시 일정 수수료를 받을 수 있습니다(구매 가격은 동일).</div>
   <main>
     <div id="listView" class="view active">
       <div id="alertBar"></div>
@@ -151,6 +151,12 @@ const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"}
 const won=n=>Number(n).toLocaleString('ko-KR')+'원';
 function axisWon(v){ v=Math.round(v); if(v%10000===0) return (v/10000)+'만원'; if(v%1000===0) return (v/1000)+'천원'; return v.toLocaleString('ko-KR')+'원'; }
 const DATA=(window.FITPRICE_DATA||[]).slice();
+const MIN_DAYS=7;
+function he(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+DATA.forEach(p=>{
+  if(p.days<MIN_DAYS) p.isAllTimeLow=false;                 // 데이터 적을 땐 '역대최저' 신뢰 안 함
+  p._below=(p.avg>0 && p.days>=MIN_DAYS)?Math.round((p.avg-p.price)/p.avg*100):0; // 평균 대비 낮은 정도(%)
+});
 let activeCat=null, search="", sortMode="default", lowOnly=false, currentP=null;
 
 /* ---------- 저장소(찜·알림) ---------- */
@@ -197,9 +203,9 @@ function unitPrice(p){
 function catsPresent(){const s=[];for(const k in CATS){if(DATA.some(p=>p.category===k))s.push(k);}return s;}
 function emoji(p){return (CATS[p.category]||{}).e||'🏷️';}
 function thumbStyle(p){const g={protein:'#3a2d6b',creatine:'#0f4d4d',booster:'#6b2d2d',guard:'#2d3f6b',etc:'#5b4d1b'};return `background:linear-gradient(135deg,${g[p.category]||'#333'},#0d0f12)`;}
-function imgTag(src,fit){return `<img src="${src}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:${fit};border-radius:inherit;background:#fff" onerror="this.replaceWith(document.createTextNode(this.closest('[data-fallback]').dataset.fallback||''))">`;}
-function thumbHTML(p){return `<div class="pthumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'cover'):emoji(p)}</div>`;}
-function heroHTML(p){return `<div class="hero-thumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'contain'):emoji(p)}</div>`;}
+function imgTag(src,fit,alt){return `<img src="${src}" alt="${he(alt)}" loading="lazy" style="width:100%;height:100%;object-fit:${fit};border-radius:inherit;background:#fff" onerror="this.replaceWith(document.createTextNode(this.closest('[data-fallback]').dataset.fallback||''))">`;}
+function thumbHTML(p){return `<div class="pthumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'cover',p.name):emoji(p)}</div>`;}
+function heroHTML(p){return `<div class="hero-thumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'contain',p.name):emoji(p)}</div>`;}
 
 function renderEmpty(){
   document.getElementById('chips').innerHTML='';
@@ -243,8 +249,8 @@ function prow(p){
     <div class="rowmain" onclick="openDetail('${p.id}')">
       ${thumbHTML(p)}
       <div class="pinfo">
-        <div class="pbrand">${p.brand||''} · ${p.mall||''}</div>
-        <div class="pname">${p.name}</div>
+        <div class="pbrand">${he(p.brand)||''} · ${he(p.mall)||''}</div>
+        <div class="pname">${he(p.name)}</div>
         <div class="pmeta"><span class="price">${won(p.price)}</span>
           ${p.isAllTimeLow?'<span class="badge low">역대최저</span>':''}
           ${p.dropPct>0?`<span class="badge dropb">▼${p.dropPct}%</span>`:''}</div>
@@ -253,22 +259,28 @@ function prow(p){
     <button class="heart ${on?'on':''}" data-id="${p.id}" onclick="toggleWish('${p.id}',event)" aria-label="찜">${on?'♥':'♡'}</button>
   </div>`;
 }
+function dealScore(p){return Math.max(p.dropPct||0,p._below||0);}
+function dealLabel(p){
+  if(p.dropPct>0 && p.dropPct>=(p._below||0)) return '▼ '+p.dropPct+'% 하락';
+  if((p._below||0)>=5) return '평균보다 '+p._below+'%↓';
+  return p.dropPct>0?('▼ '+p.dropPct+'% 하락'):'좋은 가격';
+}
 function dealCard(p){
   return `<div class="dealcard" onclick="openDetail('${p.id}')">
-    <div class="dealthumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'cover'):emoji(p)}</div>
-    <div class="dealname">${p.name}</div>
+    <div class="dealthumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'cover',p.name):emoji(p)}</div>
+    <div class="dealname">${he(p.name)}</div>
     <div class="dealprice">${won(p.price)}</div>
-    <div class="dealdrop">▼ ${p.dropPct}% 하락</div>
+    <div class="dealdrop">${dealLabel(p)}</div>
   </div>`;
 }
 function renderHome(){
   document.getElementById('secnote').textContent='';
   const cs=catsPresent();
-  const drops=DATA.filter(p=>p.dropPct>0).sort((a,b)=>b.dropPct-a.dropPct).slice(0,12);
+  const drops=DATA.filter(p=>p.dropPct>0 || (p._below||0)>=5).sort((a,b)=>dealScore(b)-dealScore(a)).slice(0,12);
   const lows=DATA.filter(p=>p.isAllTimeLow).slice(0,8);
   const upd=window.FITPRICE_UPDATED?(' · '+window.FITPRICE_UPDATED+' 기준'):'';
   let html=`<div class="hero"><div class="hero-t">운동용품 <b>최저가</b>를<br>한눈에</div><div class="hero-s">최근 가격 변화로 지금이 살 때인지 알려드려요${upd}</div></div>`;
-  if(drops.length) html+=`<div class="sec-h">🔥 지금 가격 급락</div><div class="hscroll">${drops.map(dealCard).join('')}</div>`;
+  if(drops.length) html+=`<div class="sec-h">🔥 지금 사기 좋은 가격</div><div class="hscroll">${drops.map(dealCard).join('')}</div>`;
   if(lows.length) html+=`<div class="sec-h">🏆 지금 역대 최저가</div><div>${lows.map(prow).join('')}</div>`;
   if(!drops.length&&!lows.length) html+=`<div class="collecting">📊 아직 가격 변화 데이터를 모으는 중이에요.<br>매일 쌓이면 급락·역대 최저가 상품이 여기 나타납니다.</div>`;
   html+=`<div class="sec-h">📦 카테고리</div><div class="catgrid">${cs.map(c=>`<div class="catcell" onclick="setCat('${c}')"><span class="ce">${CATS[c].e}</span>${CATS[c].n}<span class="cc">${DATA.filter(p=>p.category===c).length}개</span></div>`).join('')}</div>`;
@@ -284,9 +296,11 @@ function renderList(){
   document.getElementById('secnote').textContent = (search ? `'${search}' 검색 ${arr.length}건`
     : (activeCat==='wish' ? `찜한 상품 ${arr.length}개` : `${(CATS[activeCat]||{}).n||''} ${arr.length}개`)) + sortLbl;
   if(!arr.length){
-    document.getElementById('list').innerHTML = activeCat==='wish'
-      ? `<div class="empty"><div class="big">💚</div>아직 찜한 상품이 없어요.<br>상품의 하트(♡)를 눌러 찜하면<br>역대 최저가가 될 때 알려드려요.</div>`
-      : `<div class="empty"><div class="big">🔍</div>해당 상품이 없어요.</div>`;
+    let html;
+    if(activeCat==='wish') html=`<div class="empty"><div class="big">💚</div>아직 찜한 상품이 없어요.<br>상품의 하트(♡)를 눌러 찜하면<br>역대 최저가가 될 때 알려드려요.</div>`;
+    else if(search) html=`<div class="empty"><div class="big">🔍</div>추적 목록에 없는 상품이에요.<br><a href="https://search.shopping.naver.com/search/all?query=${encodeURIComponent(search)}" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">네이버쇼핑에서 '${he(search)}' 검색 →</a></div>`;
+    else html=`<div class="empty"><div class="big">🔍</div>해당 상품이 없어요.</div>`;
+    document.getElementById('list').innerHTML=html;
   } else {
     document.getElementById('list').innerHTML=arr.map(prow).join('');
   }
@@ -342,7 +356,7 @@ async function notifyCheck(){
 /* ---------- 상세 ---------- */
 function buyAdvice(p){
   const range=p.max-p.min;
-  if(p.days<2 || range<=0) return {tone:'mid',title:'📊 아직 판단하기엔 일러요',sub:'가격이 더 쌓이면 지금이 살 때인지 알려드릴게요.'};
+  if(p.days<MIN_DAYS || range<=0) return {tone:'mid',title:'📊 아직 판단하기엔 일러요',sub:`가격을 더 모으는 중이에요 (현재 ${p.days}일 · ${MIN_DAYS}일부터 판단)`};
   const pos=(p.price-p.min)/range;
   let tone,title;
   if(p.isAllTimeLow){tone='good';title='🟢 지금이 역대 최저가예요 — 사기 좋은 때!';}
@@ -360,20 +374,21 @@ let chart=null;
 function openDetail(id){
   const p=DATA.find(x=>x.id===id); if(!p)return;
   currentP=p;
+  if(!history.state||!history.state.fp) history.pushState({fp:'detail'},'');   // 폰 뒤로가기로 닫기
   document.getElementById('listView').classList.remove('active');
   const v=document.getElementById('detailView'); v.classList.add('active');
-  const trend = p.days>1 ? '주간 가격 변화 · 파란 점이 역대 최저가 시점' : '데이터가 더 쌓이면 변화가 선으로 그려집니다 (현재 '+p.days+'일치)';
+  const trend = p.days>1 ? '일별 가격 변화 · 파란 점이 역대 최저가 시점' : '데이터가 더 쌓이면 변화가 선으로 그려집니다 (현재 '+p.days+'일치)';
   const on=wish.has(p.id);
   v.innerHTML=`
     <div class="detail-top">
-      <button class="back" onclick="closeDetail()">‹ 뒤로</button>
+      <button class="back" onclick="goBack()">‹ 뒤로</button>
       ${heroHTML(p)}
-      <div class="d-brand">${p.brand||''} · ${(CATS[p.category]||{}).n||''}</div>
-      <div class="d-name">${p.name}</div>
+      <div class="d-brand">${he(p.brand)||''} · ${(CATS[p.category]||{}).n||''}</div>
+      <div class="d-name">${he(p.name)}</div>
       <div class="price-block"><div class="cur-price">${won(p.price)}</div>
         ${p.isAllTimeLow?'<div class="alltime">🏆 역대 최저가</div>':''}</div>
       <div class="price-sub">
-        ${p.dropPct>0?`전일 <del>${won(p.hist.length>1?p.hist[p.hist.length-2].price:p.price)}</del> 대비 <b>${p.dropPct}% 하락</b> · `:''}최저가 판매처: ${p.mall||'-'}
+        ${p.dropPct>0?`직전 수집일 <del>${won(p.hist.length>1?p.hist[p.hist.length-2].price:p.price)}</del> 대비 <b>${p.dropPct}% 하락</b> · `:''}최저가 판매처: ${he(p.mall)||'-'}
       </div>
       ${unitPrice(p)?`<div class="unitprice">📊 ${unitPrice(p)}</div>`:''}
       <div class="stat-grid">
@@ -386,14 +401,16 @@ function openDetail(id){
     <div class="chart-card"><h3>📉 가격 변화</h3><div class="sub">${trend}</div>
       <div class="chart-wrap"><canvas id="chart"></canvas></div></div>
     <div class="cta-wrap">
-      <a class="cta" href="${p.url||'#'}" target="_blank" rel="noopener">🛒 ${p.mall||'판매처'}에서 최저가 보기</a>
+      <a class="cta" href="${p.url||'#'}" target="_blank" rel="noopener">🛒 ${he(p.mall)||'판매처'}에서 최저가 보기</a>
       <button class="wishbtn ${on?'on':''}" data-id="${p.id}" onclick="toggleWish('${p.id}')">${on?'💚 찜한 상품 (알림 켜짐)':'🤍 찜하고 가격 알림 받기'}</button>
-      <div class="cta-note">최저가 판매처로 연결됩니다. 쿠팡 파트너스 링크인 경우 구매 시 수수료가 발생할 수 있으며 구매 가격은 동일합니다.</div>
+      <div class="cta-note">최저가 판매처로 연결됩니다. 제휴 링크인 경우 구매 시 일정 수수료가 발생할 수 있으며, 구매 가격은 동일합니다.</div>
     </div>`;
   document.querySelector('main').scrollTop=0;
   drawChart(p);
 }
-function closeDetail(){document.getElementById('detailView').classList.remove('active');document.getElementById('listView').classList.add('active');renderAlertBar();}
+function closeDetail(){document.getElementById('detailView').classList.remove('active');document.getElementById('listView').classList.add('active');currentP=null;renderAlertBar();}
+function goBack(){ if(history.state&&history.state.fp) history.back(); else closeDetail(); }
+window.addEventListener('popstate',()=>{ if(document.getElementById('detailView').classList.contains('active')) closeDetail(); });
 
 function drawChart(p){
   const ctx=document.getElementById('chart'); if(!ctx)return;
