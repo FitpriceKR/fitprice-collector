@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>핏프라이스 — 운동용품 최저가</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="핏프라이스 — 운동용품 최저가">
+<meta property="og:description" content="프로틴·크레아틴·부스터·보호대의 최저가와 가격 변화를 매일 추적. 지금이 살 때인지 알려드려요.">
+<meta property="og:url" content="https://fitpricekr.github.io/fitprice-collector/">
+<meta property="og:image" content="https://fitpricekr.github.io/fitprice-collector/icon-512.png">
+<meta name="twitter:card" content="summary">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0d0f12">
 <meta name="mobile-web-app-capable" content="yes">
@@ -54,6 +60,7 @@
   .badge{font-size:10px;font-weight:800;padding:3px 7px;border-radius:6px;}
   .badge.low{background:rgba(198,255,46,.15);color:var(--accent);}
   .badge.dropb{background:rgba(255,91,110,.15);color:var(--red);}
+  .uprice{font-size:11px;color:var(--accent);font-weight:700;}
   .heart{flex:0 0 auto;background:none;border:none;font-size:23px;line-height:1;color:var(--muted);cursor:pointer;padding:6px;}
   .heart.on{color:var(--red);}
   .secnote{padding:14px 18px 4px;font-size:12px;color:var(--muted);}
@@ -67,15 +74,20 @@
   .cur-price{font-size:28px;font-weight:900;letter-spacing:-1px;}
   .alltime{display:inline-flex;align-items:center;gap:5px;background:rgba(198,255,46,.15);color:var(--accent);font-size:12px;font-weight:800;padding:6px 10px;border-radius:9px;}
   .price-sub{font-size:12px;color:var(--muted);margin-top:7px;} .price-sub b{color:var(--red);} .price-sub del{color:var(--muted);}
+  .stale{margin-top:8px;font-size:11.5px;color:var(--gold);font-weight:600;line-height:1.4;}
   .stat-grid{display:flex;gap:9px;margin-top:16px;}
   .stat{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center;}
   .stat .lbl{font-size:10.5px;color:var(--muted);font-weight:600;} .stat .val{font-size:15px;font-weight:800;margin-top:5px;}
   .stat .val.lo{color:var(--blue);} .stat .val.hi{color:var(--red);}
   .chart-card{margin:16px 18px 0;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 14px 10px;}
   .chart-card h3{font-size:13px;font-weight:800;margin-bottom:4px;} .chart-card .sub{font-size:11px;color:var(--muted);margin-bottom:10px;}
+  .rangebar{display:flex;gap:6px;margin:0 0 10px;}
+  .rangebtn{flex:1;background:var(--surface2);border:1px solid var(--line);color:var(--muted);font-size:11px;font-weight:700;padding:6px 0;border-radius:9px;cursor:pointer;}
+  .rangebtn.active{background:rgba(198,255,46,.14);border-color:var(--accent);color:var(--accent);}
   .chart-wrap{position:relative;height:170px;}
   .cta-wrap{padding:18px;}
   .cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--accent);color:#0d0f12;font-size:15px;font-weight:800;border:none;border-radius:16px;padding:15px;cursor:pointer;text-decoration:none;}
+  .cta-sub{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:10px;background:var(--surface2);border:1px solid var(--line);color:var(--text);font-size:13px;font-weight:700;border-radius:14px;padding:12px;cursor:pointer;text-decoration:none;}
   .wishbtn{width:100%;margin-top:10px;background:var(--surface2);border:1px solid var(--line);color:var(--text);font-size:14px;font-weight:700;border-radius:14px;padding:13px;cursor:pointer;}
   .wishbtn.on{border-color:var(--accent);color:var(--accent);background:rgba(198,255,46,.08);}
   .cta-note{text-align:center;font-size:10.5px;color:var(--muted);margin-top:9px;line-height:1.4;}
@@ -86,6 +98,8 @@
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
   .sortbar{display:flex;gap:7px;overflow-x:auto;padding:10px 18px 0;scrollbar-width:none;}
   .sortbar:empty{display:none;} .sortbar::-webkit-scrollbar{display:none;}
+  .bandbar{display:flex;gap:7px;overflow-x:auto;padding:8px 18px 0;scrollbar-width:none;}
+  .bandbar:empty{display:none;} .bandbar::-webkit-scrollbar{display:none;}
   .sortbtn{flex:0 0 auto;background:var(--surface2);border:1px solid var(--line);color:var(--muted);font-size:12px;font-weight:600;padding:7px 12px;border-radius:20px;cursor:pointer;}
   .sortbtn.active{background:rgba(198,255,46,.14);border-color:var(--accent);color:var(--accent);}
   .advice{margin:16px 18px 0;border-radius:16px;padding:14px 16px;border:1px solid var(--line);}
@@ -138,6 +152,7 @@
       <div id="alertBar"></div>
       <div class="chips" id="chips"></div>
       <div class="sortbar" id="sortbar"></div>
+      <div class="bandbar" id="bandbar"></div>
       <div class="secnote" id="secnote"></div>
       <div class="plist" id="list"></div>
     </div>
@@ -151,13 +166,22 @@ const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"}
 const won=n=>Number(n).toLocaleString('ko-KR')+'원';
 function axisWon(v){ v=Math.round(v); if(v%10000===0) return (v/10000)+'만원'; if(v%1000===0) return (v/1000)+'천원'; return v.toLocaleString('ko-KR')+'원'; }
 const DATA=(window.FITPRICE_DATA||[]).slice();
+const META=window.FITPRICE_META||null;
 const MIN_DAYS=7;
 function he(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function unit100(p){ // 100g(≈100ml)당 가격 — 정렬용 숫자, 계산 불가면 null
+  const s=(p.name||'')+' ';let m;
+  if((m=s.match(/(\d+(?:\.\d+)?)\s*kg/i))) return p.price/(parseFloat(m[1])*10);
+  if((m=s.match(/(\d+(?:\.\d+)?)\s*g(?![a-zA-Z])/i))){const g=parseFloat(m[1]);if(g>=50)return p.price/(g/100);}
+  if((m=s.match(/(\d+(?:\.\d+)?)\s*ml/i))){const v=parseFloat(m[1]);if(v>=50)return p.price/(v/100);}
+  return null;
+}
 DATA.forEach(p=>{
   if(p.days<MIN_DAYS) p.isAllTimeLow=false;                 // 데이터 적을 땐 '역대최저' 신뢰 안 함
   p._below=(p.avg>0 && p.days>=MIN_DAYS)?Math.round((p.avg-p.price)/p.avg*100):0; // 평균 대비 낮은 정도(%)
+  p._unit100=unit100(p);
 });
-let activeCat=null, search="", sortMode="default", lowOnly=false, currentP=null;
+let activeCat=null, search="", sortMode="default", lowOnly=false, priceBand=null, currentP=null, chartRange='all';
 
 /* ---------- 저장소(찜·알림) ---------- */
 const LS={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
@@ -223,28 +247,34 @@ function renderChips(){
 }
 function setCat(c){activeCat=c;search='';const si=document.getElementById('searchInput');if(si)si.value='';renderChips();renderList();document.querySelector('main').scrollTop=0;}
 
+const BANDS=[{k:'b1',l:'1만원 이하',lo:0,hi:10000},{k:'b2',l:'1~3만원',lo:10000,hi:30000},{k:'b3',l:'3~5만원',lo:30000,hi:50000},{k:'b4',l:'5만원 이상',lo:50000,hi:Infinity}];
 function rowsFor(){
   let arr;
   if(search) arr=DATA.filter(p=>(p.name+p.brand).toLowerCase().includes(search.toLowerCase()));
   else if(activeCat==='wish') arr=[...wish].map(id=>DATA.find(p=>p.id===id)).filter(Boolean);
   else arr=DATA.filter(p=>p.category===activeCat);
   if(lowOnly) arr=arr.filter(p=>p.isAllTimeLow);
+  if(priceBand){const b=BANDS.find(x=>x.k===priceBand);if(b)arr=arr.filter(p=>p.price>=b.lo&&p.price<b.hi);}
   if(sortMode==='priceAsc') arr=[...arr].sort((a,b)=>a.price-b.price);
   else if(sortMode==='priceDesc') arr=[...arr].sort((a,b)=>b.price-a.price);
   else if(sortMode==='drop') arr=[...arr].sort((a,b)=>b.dropPct-a.dropPct);
+  else if(sortMode==='unit') arr=[...arr].sort((a,b)=>((a._unit100==null?Infinity:a._unit100)-(b._unit100==null?Infinity:b._unit100)));
   return arr;
 }
 function renderSortBar(){
-  const el=document.getElementById('sortbar'); if(!el)return;
-  if(activeCat==='home' && !search){ el.innerHTML=''; return; }
+  const el=document.getElementById('sortbar'), bb=document.getElementById('bandbar'); if(!el)return;
+  if(activeCat==='home' && !search){ el.innerHTML=''; if(bb)bb.innerHTML=''; return; }
   const opt=(m,l)=>`<button class="sortbtn ${sortMode===m?'active':''}" onclick="setSort('${m}')">${l}</button>`;
-  el.innerHTML = opt('priceAsc','최저가순')+opt('drop','할인율순')+opt('priceDesc','높은가격순')
+  el.innerHTML = opt('priceAsc','최저가순')+opt('unit','100g당 가격순')+opt('drop','할인율순')+opt('priceDesc','높은가격순')
     +`<button class="sortbtn ${lowOnly?'active':''}" onclick="toggleLowOnly()">🏆 역대최저만</button>`;
+  if(bb) bb.innerHTML=BANDS.map(b=>`<button class="sortbtn ${priceBand===b.k?'active':''}" onclick="setBand('${b.k}')">${b.l}</button>`).join('');
 }
 function setSort(m){ sortMode=(sortMode===m?'default':m); renderList(); }
 function toggleLowOnly(){ lowOnly=!lowOnly; renderList(); }
+function setBand(k){ priceBand=(priceBand===k?null:k); renderList(); }
 function prow(p){
   const on=wish.has(p.id);
+  const up=(sortMode==='unit'&&p._unit100!=null)?`<span class="uprice">100g당 ${won(Math.round(p._unit100))}</span>`:'';
   return `<div class="prow">
     <div class="rowmain" onclick="openDetail('${p.id}')">
       ${thumbHTML(p)}
@@ -253,7 +283,7 @@ function prow(p){
         <div class="pname">${he(p.name)}</div>
         <div class="pmeta"><span class="price">${won(p.price)}</span>
           ${p.isAllTimeLow?'<span class="badge low">역대최저</span>':''}
-          ${p.dropPct>0?`<span class="badge dropb">▼${p.dropPct}%</span>`:''}</div>
+          ${p.dropPct>0?`<span class="badge dropb">▼${p.dropPct}%</span>`:''}${up}</div>
       </div>
     </div>
     <button class="heart ${on?'on':''}" data-id="${p.id}" onclick="toggleWish('${p.id}',event)" aria-label="찜">${on?'♥':'♡'}</button>
@@ -279,7 +309,8 @@ function renderHome(){
   const drops=DATA.filter(p=>p.dropPct>0 || (p._below||0)>=5).sort((a,b)=>dealScore(b)-dealScore(a)).slice(0,12);
   const lows=DATA.filter(p=>p.isAllTimeLow).slice(0,8);
   const upd=window.FITPRICE_UPDATED?(' · '+window.FITPRICE_UPDATED+' 기준'):'';
-  let html=`<div class="hero"><div class="hero-t">운동용품 <b>최저가</b>를<br>한눈에</div><div class="hero-s">최근 가격 변화로 지금이 살 때인지 알려드려요${upd}</div></div>`;
+  const cov=(META&&META.total)?` · ${META.freshCount}/${META.total}개 수집됨`:'';
+  let html=`<div class="hero"><div class="hero-t">운동용품 <b>최저가</b>를<br>한눈에</div><div class="hero-s">최근 가격 변화로 지금이 살 때인지 알려드려요${upd}${cov}</div></div>`;
   if(drops.length) html+=`<div class="sec-h">🔥 지금 사기 좋은 가격</div><div class="hscroll">${drops.map(dealCard).join('')}</div>`;
   if(lows.length) html+=`<div class="sec-h">🏆 지금 역대 최저가</div><div>${lows.map(prow).join('')}</div>`;
   if(!drops.length&&!lows.length) html+=`<div class="collecting">📊 아직 가격 변화 데이터를 모으는 중이에요.<br>매일 쌓이면 급락·역대 최저가 상품이 여기 나타납니다.</div>`;
@@ -293,8 +324,9 @@ function renderList(){
   if(activeCat==='home' && !search){ renderHome(); return; }
   const arr=rowsFor();
   const sortLbl = lowOnly?' · 역대최저만':'';
+  const bandLbl = priceBand?(' · '+(BANDS.find(x=>x.k===priceBand)||{}).l):'';
   document.getElementById('secnote').textContent = (search ? `'${search}' 검색 ${arr.length}건`
-    : (activeCat==='wish' ? `찜한 상품 ${arr.length}개` : `${(CATS[activeCat]||{}).n||''} ${arr.length}개`)) + sortLbl;
+    : (activeCat==='wish' ? `찜한 상품 ${arr.length}개` : `${(CATS[activeCat]||{}).n||''} ${arr.length}개`)) + sortLbl + bandLbl;
   if(!arr.length){
     let html;
     if(activeCat==='wish') html=`<div class="empty"><div class="big">💚</div>아직 찜한 상품이 없어요.<br>상품의 하트(♡)를 눌러 찜하면<br>역대 최저가가 될 때 알려드려요.</div>`;
@@ -370,6 +402,27 @@ function buyAdvice(p){
 }
 function adviceHTML(p){const a=buyAdvice(p);return `<div class="advice ${a.tone}"><div class="advice-t">${a.title}</div><div class="advice-s">${a.sub}</div></div>`;}
 
+/* ---------- 차트 기간 ---------- */
+function rangeBtns(){
+  const os=[['1m','1개월'],['3m','3개월'],['6m','6개월'],['all','전체']];
+  return os.map(([k,l])=>`<button class="rangebtn ${chartRange===k?'active':''}" onclick="setRange('${k}')">${l}</button>`).join('');
+}
+function setRange(k){
+  chartRange=k; LS.set('fp_range',k);
+  const rb=document.querySelector('.rangebar'); if(rb)rb.innerHTML=rangeBtns();
+  if(currentP)drawChart(currentP);
+}
+function histFor(p){
+  if(chartRange==='all'||p.hist.length<2) return p.hist;
+  const days={'1m':30,'3m':90,'6m':180}[chartRange]||0;
+  if(!days) return p.hist;
+  const c=new Date(p.hist[p.hist.length-1].d+'T00:00:00');
+  c.setDate(c.getDate()-days);
+  const cs=c.toISOString().slice(0,10);
+  const arr=p.hist.filter(h=>h.d>=cs);
+  return arr.length>1?arr:p.hist;
+}
+
 let chart=null;
 function openDetail(id){
   const p=DATA.find(x=>x.id===id); if(!p)return;
@@ -379,6 +432,13 @@ function openDetail(id){
   const v=document.getElementById('detailView'); v.classList.add('active');
   const trend = p.days>1 ? '일별 가격 변화 · 파란 점이 역대 최저가 시점' : '데이터가 더 쌓이면 변화가 선으로 그려집니다 (현재 '+p.days+'일치)';
   const on=wish.has(p.id);
+  const lastD=p.hist.length?p.hist[p.hist.length-1].d:null;
+  const stale=(META&&META.lastDate&&lastD&&lastD<META.lastDate)?`<div class="stale">⚠️ ${lastD} 이후 수집되지 않은 상품이에요 — 현재 판매가와 다를 수 있어요</div>`:'';
+  const cp=p.coupang||null;
+  const ctas = cp
+    ? `<a class="cta" href="${cp.url}" target="_blank" rel="noopener">🛒 쿠팡에서 구매 · ${won(cp.price)}</a>
+      <a class="cta-sub" href="${p.url||'#'}" target="_blank" rel="noopener">${he(p.mall)||'판매처'} 최저가 보기 · ${won(p.price)}</a>`
+    : `<a class="cta" href="${p.url||'#'}" target="_blank" rel="noopener">🛒 ${he(p.mall)||'판매처'}에서 최저가 보기</a>`;
   v.innerHTML=`
     <div class="detail-top">
       <button class="back" onclick="goBack()">‹ 뒤로</button>
@@ -390,6 +450,7 @@ function openDetail(id){
       <div class="price-sub">
         ${p.dropPct>0?`직전 수집일 <del>${won(p.hist.length>1?p.hist[p.hist.length-2].price:p.price)}</del> 대비 <b>${p.dropPct}% 하락</b> · `:''}최저가 판매처: ${he(p.mall)||'-'}
       </div>
+      ${stale}
       ${unitPrice(p)?`<div class="unitprice">📊 ${unitPrice(p)}</div>`:''}
       <div class="stat-grid">
         <div class="stat"><div class="lbl">역대 최저</div><div class="val lo">${won(p.min)}</div></div>
@@ -399,9 +460,10 @@ function openDetail(id){
     </div>
     ${adviceHTML(p)}
     <div class="chart-card"><h3>📉 가격 변화</h3><div class="sub">${trend}</div>
+      <div class="rangebar">${rangeBtns()}</div>
       <div class="chart-wrap"><canvas id="chart"></canvas></div></div>
     <div class="cta-wrap">
-      <a class="cta" href="${p.url||'#'}" target="_blank" rel="noopener">🛒 ${he(p.mall)||'판매처'}에서 최저가 보기</a>
+      ${ctas}
       <button class="wishbtn ${on?'on':''}" data-id="${p.id}" onclick="toggleWish('${p.id}')">${on?'💚 찜한 상품 (알림 켜짐)':'🤍 찜하고 가격 알림 받기'}</button>
       <div class="cta-note">최저가 판매처로 연결됩니다. 제휴 링크인 경우 구매 시 일정 수수료가 발생할 수 있으며, 구매 가격은 동일합니다.</div>
     </div>`;
@@ -415,7 +477,8 @@ window.addEventListener('popstate',()=>{ if(document.getElementById('detailView'
 function drawChart(p){
   const ctx=document.getElementById('chart'); if(!ctx)return;
   if(chart)chart.destroy();
-  const labels=p.hist.map(h=>h.d.slice(5)); const vals=p.hist.map(h=>h.price);
+  const hist=histFor(p);
+  const labels=hist.map(h=>h.d.slice(5)); const vals=hist.map(h=>h.price);
   const dmin=Math.min(...vals), dmax=Math.max(...vals);
   const minIdx=vals.indexOf(dmin), maxIdx=vals.indexOf(dmax);
   const pad=Math.max(Math.round((dmax-dmin)*0.25),100);
@@ -446,6 +509,7 @@ function toast(msg){const t=document.getElementById('toast');if(!t)return;t.text
 })();
 function init(){
   applyTheme(LS.get('fp_theme','dark'));
+  chartRange=LS.get('fp_range','all');
   if(!DATA.length){renderEmpty();return;}
   document.getElementById('upd').textContent = window.FITPRICE_UPDATED ? ('업데이트 '+window.FITPRICE_UPDATED) : '';
   updateBell();

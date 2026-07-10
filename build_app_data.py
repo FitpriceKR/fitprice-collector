@@ -4,17 +4,15 @@
 prices.csv  →  app_data.js / app_data.json  (앱이 읽는 가공 데이터)
 
 수집 스크립트(collect_prices.py)가 매일 쌓은 prices.csv를 읽어 상품별로
-  - 현재가, 역대 최저/최고/평균가, "역대 최저가 여부", 전일 대비 하락률
+  - 현재가, 역대 최저/최고/평균가, "역대 최저가 여부", 직전 수집일 대비 하락률
   - 날짜별 가격 추이(여러 판매처가 있으면 그날의 최저가를 채택)
+  - 쿠팡 수집분이 있으면 coupang {price, url} (파트너스 딥링크) 첨부
+  - 수집 커버리지 메타(FITPRICE_META): 마지막 수집일, 수집 성공/미수집 상품
 를 계산해서 앱이 바로 쓸 수 있는 형태로 내보냅니다.
 
 사용법:
   python build_app_data.py                 # prices.csv 읽어 현재 폴더에 출력
   python build_app_data.py 입력.csv 출력폴더
-
-출력:
-  app_data.js   → window.FITPRICE_DATA 전역변수 (HTML이 file://로 바로 로드 가능)
-  app_data.json → 동일 데이터의 순수 JSON (DB/다른 용도용)
 """
 import csv, json, sys, os, datetime
 from collections import defaultdict
@@ -65,7 +63,7 @@ def main():
         prev = prices[-2] if len(prices) > 1 else None
         drop = round((prev - latest) / prev * 100) if prev and prev > 0 else 0
         name = last["name"] or tid
-        products.append({
+        prod = {
             "id": tid,
             "category": last["category"],
             "brand": name.split()[0] if name else "",
@@ -79,22 +77,56 @@ def main():
             "dropPct": drop if drop > 0 else 0,
             "days": len(hist),
             "hist": hist,
-        })
+        }
+        # 마지막 수집일에 쿠팡 데이터가 있으면 첨부(구매 버튼이 파트너스 링크로 전환됨)
+        last_day = sorted(daymap)[-1]
+        cp = next((x for x in daymap[last_day] if x["source"] == "coupang"), None)
+        if cp:
+            prod["coupang"] = {"price": cp["price"], "url": cp["url"]}
+        products.append(prod)
 
     order = {c: i for i, c in enumerate(CAT_ORDER)}
     products.sort(key=lambda p: (order.get(p["category"], 99), p["name"]))
 
+    # ---------- 수집 커버리지 메타 ----------
+    all_ids = []
+    pj_path = os.path.join(os.path.dirname(os.path.abspath(inp)), "products.json")
+    if not os.path.exists(pj_path):
+        pj_path = "products.json"
+    if os.path.exists(pj_path):
+        try:
+            all_ids = [p["id"] for p in json.load(open(pj_path, encoding="utf-8"))]
+        except Exception:
+            all_ids = []
+    last_date = max((p["hist"][-1]["d"] for p in products), default=None)
+    fresh     = sum(1 for p in products if p["hist"][-1]["d"] == last_date)
+    stale_ids = [p["id"] for p in products if p["hist"][-1]["d"] != last_date]
+    never_ids = [i for i in all_ids if i not in by_id]
+    meta = {
+        "lastDate": last_date,
+        "total": len(all_ids) or len(products),
+        "freshCount": fresh,
+        "staleIds": stale_ids,   # 추적 이력은 있는데 최근에 수집 안 된 상품
+        "neverIds": never_ids,   # 한 번도 수집 못 한 상품
+    }
+
     os.makedirs(outdir, exist_ok=True)
     today = datetime.date.today().isoformat()
     with open(os.path.join(outdir, "app_data.json"), "w", encoding="utf-8") as f:
-        json.dump({"updated": today, "products": products}, f, ensure_ascii=False, indent=1)
+        json.dump({"updated": today, "meta": meta, "products": products}, f, ensure_ascii=False, indent=1)
     with open(os.path.join(outdir, "app_data.js"), "w", encoding="utf-8") as f:
         f.write("window.FITPRICE_DATA = " + json.dumps(products, ensure_ascii=False) + ";\n")
         f.write("window.FITPRICE_UPDATED = " + json.dumps(today) + ";\n")
+        f.write("window.FITPRICE_META = " + json.dumps(meta, ensure_ascii=False) + ";\n")
 
     days = max((p["days"] for p in products), default=0)
     print(f"상품 {len(products)}개 처리 완료 → app_data.js, app_data.json")
     print(f"누적 수집 일수(최대): {days}일  /  기준일: {today}")
+    print(f"커버리지: 마지막 수집일 {last_date} 기준 {fresh}/{meta['total']}개 최신")
+    if stale_ids:
+        print(f"  · 최근 수집 누락: {', '.join(stale_ids)}")
+    if never_ids:
+        print(f"  · 수집 이력 없음: {', '.join(never_ids)}")
     if days < 2:
         print("※ 아직 1일치라 추이 그래프는 점 1개로 보입니다. 매일 쌓이면 선이 그려집니다.")
 
