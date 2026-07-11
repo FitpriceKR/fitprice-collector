@@ -1,7 +1,7 @@
 {
- "updated": "2026-07-10",
+ "updated": "2026-07-11",
  "meta": {
-  "lastDate": "2026-07-10",
+  "lastDate": "2026-07-11",
   "total": 179,
   "freshCount": 169,
   "staleIds": [],
@@ -20,6 +20,32 @@
  },
  "products": [
   {
+   "id": "p39",
+   "category": "protein",
+   "brand": "BSN",
+   "name": "BSN 신타6 오리지널 프로틴 파우더 4.56kg 바닐라  14회 분량(1개입)  바닐라 아이스크림  1개",
+   "image": "https://shopping-phinf.pstatic.net/main_5619580/56195802954.2.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=8972736482&ctag=8972736482&lptag=I26262905381&itemId=26262905381&vendorItemId=93241193548&spec=10305199",
+   "price": 49700,
+   "min": 49500,
+   "max": 49700,
+   "avg": 49600,
+   "isAllTimeLow": false,
+   "dropPct": 0,
+   "days": 2,
+   "hist": [
+    {
+     "d": "2026-07-10",
+     "price": 49500
+    },
+    {
+     "d": "2026-07-11",
+     "price": 49700
+    }
+   ]
+  },
+  {
    "id": "p40",
    "category": "protein",
    "brand": "BSN",
@@ -33,7 +59,7 @@
    "avg": 53300,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -134,6 +160,10 @@
     {
      "d": "2026-07-10",
      "price": 53300
+    },
+    {
+     "d": "2026-07-11",
+     "price": 53300
     }
    ]
   },
@@ -151,10 +181,14 @@
    "avg": 44300,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 44300
+    },
+    {
+     "d": "2026-07-11",
      "price": 44300
     }
    ]
@@ -170,10 +204,10 @@
    "price": 85400,
    "min": 83900,
    "max": 85400,
-   "avg": 83960,
+   "avg": 84015,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -274,50 +308,114 @@
     {
      "d": "2026-07-10",
      "price": 85400
+    },
+    {
+     "d": "2026-07-11",
+     "price": 85400
     }
    ]
   },
   {
    "id": "p33",
    "category": "protein",
-   "brand": "Dymatize,",
-   "name": "Dymatize, ISO100® 가수분해, 100% 분리유청단백질, 딸기맛, 61",
-   "image": "https://shopping-phinf.pstatic.net/main_9120161/91201619218.jpg",
-   "mall": "델루비아",
-   "url": "https://smartstore.naver.com/main/products/13657108433",
-   "price": 86900,
+   "brand": "Dymatize",
+   "name": "Dymatize ISO100 가수분해 분리유청단백질 딸기",
+   "image": "https://shopping-phinf.pstatic.net/main_5824507/58245070196.20260621101624.jpg",
+   "mall": "네이버",
+   "url": "https://search.shopping.naver.com/catalog/58245070196",
+   "price": 95350,
    "min": 86900,
-   "max": 86900,
-   "avg": 86900,
-   "isAllTimeLow": true,
+   "max": 95350,
+   "avg": 91125,
+   "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
      "price": 86900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 95350
     }
    ]
   },
   {
    "id": "p37",
    "category": "protein",
-   "brand": "Dymatize,",
-   "name": "Dymatize, ISO100® 가수분해, 100% 분리유청단백질, 딸기맛, 61",
-   "image": "https://shopping-phinf.pstatic.net/main_9120161/91201619218.jpg",
-   "mall": "델루비아",
-   "url": "https://smartstore.naver.com/main/products/13657108433",
-   "price": 86900,
+   "brand": "Dymatize",
+   "name": "Dymatize ISO100 가수분해 분리유청단백질 딸기",
+   "image": "https://shopping-phinf.pstatic.net/main_5824507/58245070196.20260621101624.jpg",
+   "mall": "네이버",
+   "url": "https://search.shopping.naver.com/catalog/58245070196",
+   "price": 95350,
    "min": 86900,
-   "max": 86900,
-   "avg": 86900,
-   "isAllTimeLow": true,
+   "max": 95350,
+   "avg": 91125,
+   "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
      "price": 86900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 95350
+    }
+   ]
+  },
+  {
+   "id": "p34",
+   "category": "protein",
+   "brand": "Iso-100",
+   "name": "Iso-100 가수분해 프로틴 파우더 100 웨이 프로틴 아이솔레이트 고메 바닐라 76 서빙 2.3 kg  2.3kg  1개",
+   "image": "https://shopping-phinf.pstatic.net/main_5392950/53929501713.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7804393710&ctag=7804393710&lptag=I25217305648&itemId=25217305648&vendorItemId=93467426180&spec=10305199",
+   "price": 196560,
+   "min": 139900,
+   "max": 196560,
+   "avg": 168230,
+   "isAllTimeLow": false,
+   "dropPct": 0,
+   "days": 2,
+   "hist": [
+    {
+     "d": "2026-07-10",
+     "price": 139900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 196560
+    }
+   ]
+  },
+  {
+   "id": "p36",
+   "category": "protein",
+   "brand": "Iso-100",
+   "name": "Iso-100 가수분해 프로틴 파우더 100 웨이 프로틴 아이솔레이트 고메 바닐라 76 서빙 2.3 kg  2.3kg  1개",
+   "image": "https://shopping-phinf.pstatic.net/main_5392950/53929501713.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7804393710&ctag=7804393710&lptag=I25217305648&itemId=25217305648&vendorItemId=93467426180&spec=10305199",
+   "price": 196560,
+   "min": 139900,
+   "max": 196560,
+   "avg": 168230,
+   "isAllTimeLow": false,
+   "dropPct": 0,
+   "days": 2,
+   "hist": [
+    {
+     "d": "2026-07-10",
+     "price": 139900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 196560
     }
    ]
   },
@@ -335,33 +433,15 @@
    "avg": 29800,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
      "price": 29800
-    }
-   ]
-  },
-  {
-   "id": "p69",
-   "category": "protein",
-   "brand": "NUTRITIONFACTORY",
-   "name": "NUTRITIONFACTORY 뉴욕웨이 몬스터 게이너보충제 단백질보충제 식사대용 2kg 4kg 233660",
-   "image": "https://shopping-phinf.pstatic.net/main_6020213/60202132133.jpg",
-   "mall": "G마켓",
-   "url": "https://link.gmarket.co.kr/gate/pcs?item-no=4763847494&sub-id=1003&service-code=10000003&lcd=100000037",
-   "price": 35640,
-   "min": 35640,
-   "max": 35640,
-   "avg": 35640,
-   "isAllTimeLow": true,
-   "dropPct": 0,
-   "days": 1,
-   "hist": [
+    },
     {
-     "d": "2026-07-10",
-     "price": 35640
+     "d": "2026-07-11",
+     "price": 29800
     }
    ]
   },
@@ -379,10 +459,14 @@
    "avg": 28500,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 28500
+    },
+    {
+     "d": "2026-07-11",
      "price": 28500
     }
    ]
@@ -401,10 +485,14 @@
    "avg": 28500,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 28500
+    },
+    {
+     "d": "2026-07-11",
      "price": 28500
     }
    ]
@@ -423,7 +511,7 @@
    "avg": 34100,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -523,6 +611,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 34100
+    },
+    {
+     "d": "2026-07-11",
      "price": 34100
     }
    ]
@@ -541,10 +633,14 @@
    "avg": 94050,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 94050
+    },
+    {
+     "d": "2026-07-11",
      "price": 94050
     }
    ]
@@ -557,13 +653,13 @@
    "image": "https://shopping-phinf.pstatic.net/main_9010949/90109490970.1.jpg",
    "mall": "Small Sense",
    "url": "https://smartstore.naver.com/main/products/12564980117",
-   "price": 61940,
+   "price": 60510,
    "min": 44740,
    "max": 61940,
-   "avg": 61252,
+   "avg": 61223,
    "isAllTimeLow": false,
-   "dropPct": 0,
-   "days": 25,
+   "dropPct": 2,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -664,6 +760,10 @@
     {
      "d": "2026-07-10",
      "price": 61940
+    },
+    {
+     "d": "2026-07-11",
+     "price": 60510
     }
    ]
   },
@@ -671,17 +771,17 @@
    "id": "p55",
    "category": "protein",
    "brand": "THE",
-   "name": "THE 더 PROTEIN WORKS 프로틴웍스 웨이 프로틴 360 쉐이크 파우더, 프렌치 바닐라 맛, 600g 266203",
-   "image": "https://shopping-phinf.pstatic.net/main_9047494/90474943757.jpg",
-   "mall": "성실청년과일샵",
-   "url": "https://smartstore.naver.com/main/products/12930432765",
-   "price": 61900,
+   "name": "THE PROTEIN WORKS 프로틴 웍스 완두콩 단백질 80 I 비건, 100 , 식물성, 고단백, 텐 프리, 락토오스 초콜릿 실크, 1kg [B07ZCHFQZY]",
+   "image": "https://shopping-phinf.pstatic.net/main_9010949/90109490970.1.jpg",
+   "mall": "Small Sense",
+   "url": "https://smartstore.naver.com/main/products/12564980117",
+   "price": 60510,
    "min": 44740,
    "max": 61900,
-   "avg": 57851,
+   "avg": 57953,
    "isAllTimeLow": false,
-   "dropPct": 0,
-   "days": 25,
+   "dropPct": 2,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -782,6 +882,10 @@
     {
      "d": "2026-07-10",
      "price": 61900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 60510
     }
    ]
   },
@@ -799,7 +903,7 @@
    "avg": 6900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -899,6 +1003,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 6900
+    },
+    {
+     "d": "2026-07-11",
      "price": 6900
     }
    ]
@@ -907,17 +1015,17 @@
    "id": "p77",
    "category": "protein",
    "brand": "[마이프로틴]",
-   "name": "[마이프로틴] 드링크 시그니처 초콜릿 340ml",
-   "image": "https://shopping-phinf.pstatic.net/main_6001499/60014998845.jpg",
+   "name": "[마이프로틴] 드링크 클래식 밀크티 340ml",
+   "image": "https://shopping-phinf.pstatic.net/main_6001499/60014998856.jpg",
    "mall": "컬리",
-   "url": "https://redirect.kurly.com/entry?utm_source=NaverShopping&utm_medium=2001&utm_term=1002169726&dealNo=1002169724&no=1002169726&kfpartnerID=1000000",
+   "url": "https://redirect.kurly.com/entry?utm_source=NaverShopping&utm_medium=2001&utm_term=1002169726&dealNo=1002169725&no=1002169726&kfpartnerID=1000000",
    "price": 3800,
    "min": 3800,
    "max": 3800,
    "avg": 3800,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -1017,6 +1125,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 3800
+    },
+    {
+     "d": "2026-07-11",
      "price": 3800
     }
    ]
@@ -1035,7 +1147,7 @@
    "avg": 4700,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -1136,6 +1248,10 @@
     {
      "d": "2026-07-10",
      "price": 4700
+    },
+    {
+     "d": "2026-07-11",
+     "price": 4700
     }
    ]
   },
@@ -1150,10 +1266,10 @@
    "price": 29220,
    "min": 27360,
    "max": 29220,
-   "avg": 29146,
+   "avg": 29148,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -1254,6 +1370,10 @@
     {
      "d": "2026-07-10",
      "price": 29220
+    },
+    {
+     "d": "2026-07-11",
+     "price": 29220
     }
    ]
   },
@@ -1271,10 +1391,14 @@
    "avg": 42610,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 42610
+    },
+    {
+     "d": "2026-07-11",
      "price": 42610
     }
    ]
@@ -1293,10 +1417,14 @@
    "avg": 42610,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 42610
+    },
+    {
+     "d": "2026-07-11",
      "price": 42610
     }
    ]
@@ -1312,10 +1440,10 @@
    "price": 43500,
    "min": 34890,
    "max": 43500,
-   "avg": 38128,
+   "avg": 38384,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 20,
+   "days": 21,
    "hist": [
     {
      "d": "2026-06-16",
@@ -1396,6 +1524,10 @@
     {
      "d": "2026-07-10",
      "price": 43500
+    },
+    {
+     "d": "2026-07-11",
+     "price": 43500
     }
    ]
   },
@@ -1413,10 +1545,14 @@
    "avg": 58700,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 58700
+    },
+    {
+     "d": "2026-07-11",
      "price": 58700
     }
    ]
@@ -1429,13 +1565,13 @@
    "image": "https://shopping-phinf.pstatic.net/main_8466439/84664397268.1.jpg",
    "mall": "핏지컬",
    "url": "https://smartstore.naver.com/main/products/7119896946",
-   "price": 139900,
+   "price": 199900,
    "min": 139900,
-   "max": 162500,
-   "avg": 161596,
-   "isAllTimeLow": true,
-   "dropPct": 14,
-   "days": 25,
+   "max": 199900,
+   "avg": 163069,
+   "isAllTimeLow": false,
+   "dropPct": 0,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -1536,50 +1672,10 @@
     {
      "d": "2026-07-10",
      "price": 139900
-    }
-   ]
-  },
-  {
-   "id": "p34",
-   "category": "protein",
-   "brand": "다이마타이즈",
-   "name": "다이마타이즈 아이소100 ISO100 2.3kg WPI 분리유청단백질 아이솔레이트 초코",
-   "image": "https://shopping-phinf.pstatic.net/main_8466439/84664397268.1.jpg",
-   "mall": "핏지컬",
-   "url": "https://smartstore.naver.com/main/products/7119896946",
-   "price": 139900,
-   "min": 139900,
-   "max": 139900,
-   "avg": 139900,
-   "isAllTimeLow": true,
-   "dropPct": 0,
-   "days": 1,
-   "hist": [
+    },
     {
-     "d": "2026-07-10",
-     "price": 139900
-    }
-   ]
-  },
-  {
-   "id": "p36",
-   "category": "protein",
-   "brand": "다이마타이즈",
-   "name": "다이마타이즈 아이소100 ISO100 2.3kg WPI 분리유청단백질 아이솔레이트 초코",
-   "image": "https://shopping-phinf.pstatic.net/main_8466439/84664397268.1.jpg",
-   "mall": "핏지컬",
-   "url": "https://smartstore.naver.com/main/products/7119896946",
-   "price": 139900,
-   "min": 139900,
-   "max": 139900,
-   "avg": 139900,
-   "isAllTimeLow": true,
-   "dropPct": 0,
-   "days": 1,
-   "hist": [
-    {
-     "d": "2026-07-10",
-     "price": 139900
+     "d": "2026-07-11",
+     "price": 199900
     }
    ]
   },
@@ -1597,7 +1693,7 @@
    "avg": 12200,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -1697,6 +1793,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 12200
+    },
+    {
+     "d": "2026-07-11",
      "price": 12200
     }
    ]
@@ -1712,10 +1812,10 @@
    "price": 28500,
    "min": 20900,
    "max": 28500,
-   "avg": 22420,
+   "avg": 22654,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -1815,6 +1915,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 28500
+    },
+    {
+     "d": "2026-07-11",
      "price": 28500
     }
    ]
@@ -1833,7 +1937,7 @@
    "avg": 32900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 5,
+   "days": 6,
    "hist": [
     {
      "d": "2026-07-06",
@@ -1853,6 +1957,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 32900
+    },
+    {
+     "d": "2026-07-11",
      "price": 32900
     }
    ]
@@ -1871,10 +1979,14 @@
    "avg": 32900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 32900
+    },
+    {
+     "d": "2026-07-11",
      "price": 32900
     }
    ]
@@ -1893,10 +2005,14 @@
    "avg": 32900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 32900
+    },
+    {
+     "d": "2026-07-11",
      "price": 32900
     }
    ]
@@ -1915,10 +2031,14 @@
    "avg": 32900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 32900
+    },
+    {
+     "d": "2026-07-11",
      "price": 32900
     }
    ]
@@ -1934,10 +2054,10 @@
    "price": 64860,
    "min": 49900,
    "max": 64860,
-   "avg": 53490,
+   "avg": 53928,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -2037,6 +2157,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 64860
+    },
+    {
+     "d": "2026-07-11",
      "price": 64860
     }
    ]
@@ -2055,10 +2179,14 @@
    "avg": 49000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 49000
+    },
+    {
+     "d": "2026-07-11",
      "price": 49000
     }
    ]
@@ -2077,10 +2205,14 @@
    "avg": 73900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 73900
+    },
+    {
+     "d": "2026-07-11",
      "price": 73900
     }
    ]
@@ -2099,10 +2231,14 @@
    "avg": 73900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 73900
+    },
+    {
+     "d": "2026-07-11",
      "price": 73900
     }
    ]
@@ -2121,10 +2257,14 @@
    "avg": 73900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 73900
+    },
+    {
+     "d": "2026-07-11",
      "price": 73900
     }
    ]
@@ -2143,10 +2283,14 @@
    "avg": 53900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 53900
+    },
+    {
+     "d": "2026-07-11",
      "price": 53900
     }
    ]
@@ -2165,10 +2309,14 @@
    "avg": 53900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 53900
+    },
+    {
+     "d": "2026-07-11",
      "price": 53900
     }
    ]
@@ -2187,7 +2335,7 @@
    "avg": 25000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 5,
+   "days": 6,
    "hist": [
     {
      "d": "2026-07-06",
@@ -2207,6 +2355,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 25000
+    },
+    {
+     "d": "2026-07-11",
      "price": 25000
     }
    ]
@@ -2225,7 +2377,7 @@
    "avg": 25000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 5,
+   "days": 6,
    "hist": [
     {
      "d": "2026-07-06",
@@ -2245,6 +2397,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 25000
+    },
+    {
+     "d": "2026-07-11",
      "price": 25000
     }
    ]
@@ -2263,7 +2419,7 @@
    "avg": 25000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 4,
+   "days": 5,
    "hist": [
     {
      "d": "2026-07-07",
@@ -2279,6 +2435,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 25000
+    },
+    {
+     "d": "2026-07-11",
      "price": 25000
     }
    ]
@@ -2297,7 +2457,7 @@
    "avg": 25000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 4,
+   "days": 5,
    "hist": [
     {
      "d": "2026-07-07",
@@ -2313,6 +2473,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 25000
+    },
+    {
+     "d": "2026-07-11",
      "price": 25000
     }
    ]
@@ -2331,7 +2495,7 @@
    "avg": 25000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 4,
+   "days": 5,
    "hist": [
     {
      "d": "2026-07-07",
@@ -2347,6 +2511,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 25000
+    },
+    {
+     "d": "2026-07-11",
      "price": 25000
     }
    ]
@@ -2365,7 +2533,7 @@
    "avg": 25000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 4,
+   "days": 5,
    "hist": [
     {
      "d": "2026-07-07",
@@ -2381,6 +2549,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 25000
+    },
+    {
+     "d": "2026-07-11",
      "price": 25000
     }
    ]
@@ -2399,10 +2571,14 @@
    "avg": 84800,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 84800
+    },
+    {
+     "d": "2026-07-11",
      "price": 84800
     }
    ]
@@ -2421,33 +2597,15 @@
    "avg": 84800,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
      "price": 84800
-    }
-   ]
-  },
-  {
-   "id": "p13",
-   "category": "protein",
-   "brand": "마이프로틴",
-   "name": "마이프로틴 임팩트웨이 네츄럴초코",
-   "image": "https://shopping-phinf.pstatic.net/main_5932007/59320078234.20260324162812.jpg",
-   "mall": "네이버",
-   "url": "https://search.shopping.naver.com/catalog/59320078234",
-   "price": 43900,
-   "min": 43900,
-   "max": 43900,
-   "avg": 43900,
-   "isAllTimeLow": true,
-   "dropPct": 0,
-   "days": 1,
-   "hist": [
+    },
     {
-     "d": "2026-07-10",
-     "price": 43900
+     "d": "2026-07-11",
+     "price": 84800
     }
    ]
   },
@@ -2465,7 +2623,7 @@
    "avg": 27080,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 4,
+   "days": 5,
    "hist": [
     {
      "d": "2026-07-07",
@@ -2482,6 +2640,36 @@
     {
      "d": "2026-07-10",
      "price": 27080
+    },
+    {
+     "d": "2026-07-11",
+     "price": 27080
+    }
+   ]
+  },
+  {
+   "id": "p13",
+   "category": "protein",
+   "brand": "마이프로틴",
+   "name": "마이프로틴 임팩트웨이 프로틴 초콜렛 민트",
+   "image": "https://shopping-phinf.pstatic.net/main_5937572/59375723712.20260324161006.jpg",
+   "mall": "네이버",
+   "url": "https://search.shopping.naver.com/catalog/59375723712",
+   "price": 51900,
+   "min": 43900,
+   "max": 51900,
+   "avg": 47900,
+   "isAllTimeLow": false,
+   "dropPct": 0,
+   "days": 2,
+   "hist": [
+    {
+     "d": "2026-07-10",
+     "price": 43900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 51900
     }
    ]
   },
@@ -2489,17 +2677,17 @@
    "id": "p78",
    "category": "protein",
    "brand": "마이프로틴",
-   "name": "마이프로틴 저당 식물성 프로틴바 초콜릿 씨솔트 12개입",
-   "image": "https://shopping-phinf.pstatic.net/main_8708215/87082151650.jpg",
+   "name": "마이프로틴 저당 식물성 프로틴바 피넛버터 12개입",
+   "image": "https://shopping-phinf.pstatic.net/main_8708215/87082155767.jpg",
    "mall": "YOUR  FAVORITE",
-   "url": "https://smartstore.naver.com/main/products/9537649380",
+   "url": "https://smartstore.naver.com/main/products/9537653497",
    "price": 29500,
    "min": 26900,
    "max": 29500,
-   "avg": 27420,
+   "avg": 27500,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -2599,6 +2787,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 29500
+    },
+    {
+     "d": "2026-07-11",
      "price": 29500
     }
    ]
@@ -2614,10 +2806,10 @@
    "price": 82680,
    "min": 80900,
    "max": 82680,
-   "avg": 81256,
+   "avg": 81311,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -2717,6 +2909,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 82680
+    },
+    {
+     "d": "2026-07-11",
      "price": 82680
     }
    ]
@@ -2735,10 +2931,14 @@
    "avg": 86270,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 86270
+    },
+    {
+     "d": "2026-07-11",
      "price": 86270
     }
    ]
@@ -2757,10 +2957,14 @@
    "avg": 89500,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 89500
+    },
+    {
+     "d": "2026-07-11",
      "price": 89500
     }
    ]
@@ -2769,17 +2973,17 @@
    "id": "p41",
    "category": "protein",
    "brand": "머슬팜",
-   "name": "머슬팜 컴뱃 100% 웨이 프로틴 파우더 드링크 믹스 초콜릿 밀크, 2.269kg, 1개",
-   "image": "https://shopping-phinf.pstatic.net/main_5364688/53646882627.20250319151150.jpg",
+   "name": "머슬팜 컴뱃 100% 웨이 프로틴 파우더 드링크 믹스 초콜릿 밀크",
+   "image": "https://shopping-phinf.pstatic.net/main_3534159/35341596618.20250319151149.jpg",
    "mall": "네이버",
-   "url": "https://search.shopping.naver.com/catalog/53646882627",
+   "url": "https://search.shopping.naver.com/catalog/35341596618",
    "price": 55800,
    "min": 55800,
    "max": 55800,
    "avg": 55800,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -2879,6 +3083,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 55800
+    },
+    {
+     "d": "2026-07-11",
      "price": 55800
     }
    ]
@@ -2897,7 +3105,7 @@
    "avg": 69900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -2998,6 +3206,36 @@
     {
      "d": "2026-07-10",
      "price": 69900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 69900
+    }
+   ]
+  },
+  {
+   "id": "p69",
+   "category": "protein",
+   "brand": "메온셀",
+   "name": "메온셀 에너업 게이너 단백질보충제",
+   "image": "https://shopping-phinf.pstatic.net/main_8835176/88351762942.jpg",
+   "mall": "파이브챌린지",
+   "url": "https://smartstore.naver.com/main/products/10807256952",
+   "price": 36000,
+   "min": 36000,
+   "max": 36000,
+   "avg": 36000,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 2,
+   "hist": [
+    {
+     "d": "2026-07-10",
+     "price": 36000
+    },
+    {
+     "d": "2026-07-11",
+     "price": 36000
     }
    ]
   },
@@ -3015,7 +3253,7 @@
    "avg": 3900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -3115,6 +3353,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 3900
+    },
+    {
+     "d": "2026-07-11",
      "price": 3900
     }
    ]
@@ -3130,10 +3372,10 @@
    "price": 44440,
    "min": 32000,
    "max": 44440,
-   "avg": 36478,
+   "avg": 36785,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -3233,6 +3475,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 44440
+    },
+    {
+     "d": "2026-07-11",
      "price": 44440
     }
    ]
@@ -3248,10 +3494,10 @@
    "price": 44440,
    "min": 32000,
    "max": 44440,
-   "avg": 36478,
+   "avg": 36785,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -3352,28 +3598,10 @@
     {
      "d": "2026-07-10",
      "price": 44440
-    }
-   ]
-  },
-  {
-   "id": "p39",
-   "category": "protein",
-   "brand": "신타6",
-   "name": "신타6 아이솔레이트 바닐라 BSN 오리지널 프로틴 분리유청단백질 WPI 912",
-   "image": "https://shopping-phinf.pstatic.net/main_8616280/86162802724.2.jpg",
-   "mall": "유로아트",
-   "url": "https://smartstore.naver.com/main/products/8618302401",
-   "price": 49500,
-   "min": 49500,
-   "max": 49500,
-   "avg": 49500,
-   "isAllTimeLow": true,
-   "dropPct": 0,
-   "days": 1,
-   "hist": [
+    },
     {
-     "d": "2026-07-10",
-     "price": 49500
+     "d": "2026-07-11",
+     "price": 44440
     }
    ]
   },
@@ -3391,10 +3619,14 @@
    "avg": 50310,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 50310
+    },
+    {
+     "d": "2026-07-11",
      "price": 50310
     }
    ]
@@ -3413,10 +3645,14 @@
    "avg": 50310,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 50310
+    },
+    {
+     "d": "2026-07-11",
      "price": 50310
     }
    ]
@@ -3435,10 +3671,14 @@
    "avg": 87190,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 87190
+    },
+    {
+     "d": "2026-07-11",
      "price": 87190
     }
    ]
@@ -3454,10 +3694,10 @@
    "price": 48460,
    "min": 48460,
    "max": 57700,
-   "avg": 48830,
+   "avg": 48815,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -3558,6 +3798,10 @@
     {
      "d": "2026-07-10",
      "price": 48460
+    },
+    {
+     "d": "2026-07-11",
+     "price": 48460
     }
    ]
   },
@@ -3575,7 +3819,7 @@
    "avg": 72600,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -3675,6 +3919,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 72600
+    },
+    {
+     "d": "2026-07-11",
      "price": 72600
     }
    ]
@@ -3693,10 +3941,14 @@
    "avg": 43900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 43900
+    },
+    {
+     "d": "2026-07-11",
      "price": 43900
     }
    ]
@@ -3715,10 +3967,14 @@
    "avg": 43900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 43900
+    },
+    {
+     "d": "2026-07-11",
      "price": 43900
     }
    ]
@@ -3737,10 +3993,14 @@
    "avg": 43900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 43900
+    },
+    {
+     "d": "2026-07-11",
      "price": 43900
     }
    ]
@@ -3759,7 +4019,7 @@
    "avg": 52300,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -3859,6 +4119,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 52300
+    },
+    {
+     "d": "2026-07-11",
      "price": 52300
     }
    ]
@@ -3877,7 +4141,7 @@
    "avg": 35500,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -3977,6 +4241,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 35500
+    },
+    {
+     "d": "2026-07-11",
      "price": 35500
     }
    ]
@@ -3995,7 +4263,7 @@
    "avg": 69900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -4095,6 +4363,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 69900
+    },
+    {
+     "d": "2026-07-11",
      "price": 69900
     }
    ]
@@ -4113,10 +4385,14 @@
    "avg": 12000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 12000
+    },
+    {
+     "d": "2026-07-11",
      "price": 12000
     }
    ]
@@ -4135,7 +4411,7 @@
    "avg": 43900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -4235,6 +4511,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 43900
+    },
+    {
+     "d": "2026-07-11",
      "price": 43900
     }
    ]
@@ -4250,10 +4530,10 @@
    "price": 43900,
    "min": 42580,
    "max": 43900,
-   "avg": 43583,
+   "avg": 43595,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -4353,6 +4633,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 43900
+    },
+    {
+     "d": "2026-07-11",
      "price": 43900
     }
    ]
@@ -4371,7 +4655,7 @@
    "avg": 72900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -4472,6 +4756,10 @@
     {
      "d": "2026-07-10",
      "price": 72900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 72900
     }
    ]
   },
@@ -4479,21 +4767,25 @@
    "id": "p71",
    "category": "protein",
    "brand": "칼로바이",
-   "name": "칼로바이 퍼펙트 파워쉐이크 20G (초코맛 딸기맛)  칼로바이 20G 초코",
-   "image": "https://shopping-phinf.pstatic.net/main_6079342/60793428502.jpg",
-   "mall": "쿠팡",
-   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9642631232&ctag=9642631232&lptag=P9642631232&itemId=28813442766&vendorItemId=95748368022&spec=10305199",
-   "price": 8030,
+   "name": "칼로바이 퍼펙트 파워쉐이크 20G (초코맛/딸기맛)",
+   "image": "https://shopping-phinf.pstatic.net/main_6056663/60566635228.jpg",
+   "mall": "롯데ON",
+   "url": "https://www.lotteon.com/p/product/LO2706903309?sitmNo=LO2706903309_2706903310&ch_no=100065&ch_dtl_no=1000030&entryPoint=pcs&dp_infw_cd=CHT",
+   "price": 8540,
    "min": 8030,
-   "max": 8030,
-   "avg": 8030,
-   "isAllTimeLow": true,
+   "max": 8540,
+   "avg": 8285,
+   "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
      "price": 8030
+    },
+    {
+     "d": "2026-07-11",
+     "price": 8540
     }
    ]
   },
@@ -4511,7 +4803,7 @@
    "avg": 44900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -4611,6 +4903,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 44900
+    },
+    {
+     "d": "2026-07-11",
      "price": 44900
     }
    ]
@@ -4626,10 +4922,10 @@
    "price": 67500,
    "min": 65340,
    "max": 67500,
-   "avg": 66984,
+   "avg": 67004,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -4730,6 +5026,10 @@
     {
      "d": "2026-07-10",
      "price": 67500
+    },
+    {
+     "d": "2026-07-11",
+     "price": 67500
     }
    ]
   },
@@ -4744,10 +5044,10 @@
    "price": 99000,
    "min": 65200,
    "max": 99000,
-   "avg": 70100,
+   "avg": 73311,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 8,
+   "days": 9,
    "hist": [
     {
      "d": "2026-06-18",
@@ -4780,6 +5080,10 @@
     {
      "d": "2026-07-10",
      "price": 99000
+    },
+    {
+     "d": "2026-07-11",
+     "price": 99000
     }
    ]
   },
@@ -4794,10 +5098,10 @@
    "price": 19870,
    "min": 18550,
    "max": 19870,
-   "avg": 19659,
+   "avg": 19667,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -4898,6 +5202,10 @@
     {
      "d": "2026-07-10",
      "price": 19870
+    },
+    {
+     "d": "2026-07-11",
+     "price": 19870
     }
    ]
   },
@@ -4912,10 +5220,10 @@
    "price": 58410,
    "min": 47690,
    "max": 58410,
-   "avg": 51128,
+   "avg": 51408,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -5016,6 +5324,10 @@
     {
      "d": "2026-07-10",
      "price": 58410
+    },
+    {
+     "d": "2026-07-11",
+     "price": 58410
     }
    ]
   },
@@ -5033,10 +5345,14 @@
    "avg": 16500,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 16500
+    },
+    {
+     "d": "2026-07-11",
      "price": 16500
     }
    ]
@@ -5055,7 +5371,7 @@
    "avg": 10900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -5155,6 +5471,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 10900
+    },
+    {
+     "d": "2026-07-11",
      "price": 10900
     }
    ]
@@ -5173,7 +5493,7 @@
    "avg": 9900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -5273,6 +5593,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 9900
+    },
+    {
+     "d": "2026-07-11",
      "price": 9900
     }
    ]
@@ -5291,10 +5615,14 @@
    "avg": 19900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 19900
+    },
+    {
+     "d": "2026-07-11",
      "price": 19900
     }
    ]
@@ -5313,7 +5641,7 @@
    "avg": 18200,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -5413,6 +5741,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 18200
+    },
+    {
+     "d": "2026-07-11",
      "price": 18200
     }
    ]
@@ -5431,7 +5763,7 @@
    "avg": 3820,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -5531,6 +5863,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 3820
+    },
+    {
+     "d": "2026-07-11",
      "price": 3820
     }
    ]
@@ -5549,7 +5885,7 @@
    "avg": 3820,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -5649,6 +5985,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 3820
+    },
+    {
+     "d": "2026-07-11",
      "price": 3820
     }
    ]
@@ -5667,7 +6007,7 @@
    "avg": 3820,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -5767,6 +6107,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 3820
+    },
+    {
+     "d": "2026-07-11",
      "price": 3820
     }
    ]
@@ -5782,10 +6126,10 @@
    "price": 7900,
    "min": 5900,
    "max": 7900,
-   "avg": 6780,
+   "avg": 6823,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -5885,6 +6229,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 7900
+    },
+    {
+     "d": "2026-07-11",
      "price": 7900
     }
    ]
@@ -5900,10 +6248,10 @@
    "price": 19800,
    "min": 16900,
    "max": 19800,
-   "avg": 17480,
+   "avg": 17569,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -6003,6 +6351,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 19800
+    },
+    {
+     "d": "2026-07-11",
      "price": 19800
     }
    ]
@@ -6021,10 +6373,14 @@
    "avg": 19800,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 19800
+    },
+    {
+     "d": "2026-07-11",
      "price": 19800
     }
    ]
@@ -6040,10 +6396,10 @@
    "price": 30510,
    "min": 20900,
    "max": 30510,
-   "avg": 25705,
+   "avg": 27307,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 2,
+   "days": 3,
    "hist": [
     {
      "d": "2026-07-06",
@@ -6051,6 +6407,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 30510
+    },
+    {
+     "d": "2026-07-11",
      "price": 30510
     }
    ]
@@ -6066,10 +6426,10 @@
    "price": 20900,
    "min": 16900,
    "max": 20900,
-   "avg": 17700,
+   "avg": 17823,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -6169,6 +6529,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 20900
+    },
+    {
+     "d": "2026-07-11",
      "price": 20900
     }
    ]
@@ -6184,10 +6548,10 @@
    "price": 20900,
    "min": 16900,
    "max": 20900,
-   "avg": 17700,
+   "avg": 17823,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -6288,6 +6652,10 @@
     {
      "d": "2026-07-10",
      "price": 20900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 20900
     }
    ]
   },
@@ -6302,10 +6670,10 @@
    "price": 9900,
    "min": 9900,
    "max": 12900,
-   "avg": 10356,
+   "avg": 10338,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -6406,6 +6774,10 @@
     {
      "d": "2026-07-10",
      "price": 9900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 9900
     }
    ]
   },
@@ -6423,7 +6795,7 @@
    "avg": 24900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -6523,6 +6895,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 24900
+    },
+    {
+     "d": "2026-07-11",
      "price": 24900
     }
    ]
@@ -6541,7 +6917,7 @@
    "avg": 14000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -6641,6 +7017,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 14000
+    },
+    {
+     "d": "2026-07-11",
      "price": 14000
     }
    ]
@@ -6659,7 +7039,7 @@
    "avg": 35900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -6759,6 +7139,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 35900
+    },
+    {
+     "d": "2026-07-11",
      "price": 35900
     }
    ]
@@ -6777,7 +7161,7 @@
    "avg": 35900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -6877,6 +7261,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 35900
+    },
+    {
+     "d": "2026-07-11",
      "price": 35900
     }
    ]
@@ -6895,7 +7283,7 @@
    "avg": 21720,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -6995,6 +7383,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 21720
+    },
+    {
+     "d": "2026-07-11",
      "price": 21720
     }
    ]
@@ -7010,10 +7402,10 @@
    "price": 14660,
    "min": 14660,
    "max": 15690,
-   "avg": 14742,
+   "avg": 14739,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -7114,6 +7506,10 @@
     {
      "d": "2026-07-10",
      "price": 14660
+    },
+    {
+     "d": "2026-07-11",
+     "price": 14660
     }
    ]
   },
@@ -7128,10 +7524,10 @@
    "price": 57630,
    "min": 3820,
    "max": 57630,
-   "avg": 46032,
+   "avg": 46643,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 18,
+   "days": 19,
    "hist": [
     {
      "d": "2026-06-16",
@@ -7204,6 +7600,10 @@
     {
      "d": "2026-07-10",
      "price": 57630
+    },
+    {
+     "d": "2026-07-11",
+     "price": 57630
     }
    ]
   },
@@ -7221,7 +7621,7 @@
    "avg": 17200,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -7322,6 +7722,10 @@
     {
      "d": "2026-07-10",
      "price": 17200
+    },
+    {
+     "d": "2026-07-11",
+     "price": 17200
     }
    ]
   },
@@ -7336,10 +7740,10 @@
    "price": 27900,
    "min": 17000,
    "max": 27900,
-   "avg": 26165,
+   "avg": 26232,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -7440,6 +7844,10 @@
     {
      "d": "2026-07-10",
      "price": 27900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 27900
     }
    ]
   },
@@ -7454,10 +7862,10 @@
    "price": 25000,
    "min": 21500,
    "max": 25000,
-   "avg": 24364,
+   "avg": 24417,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 11,
+   "days": 12,
    "hist": [
     {
      "d": "2026-06-30",
@@ -7502,6 +7910,10 @@
     {
      "d": "2026-07-10",
      "price": 25000
+    },
+    {
+     "d": "2026-07-11",
+     "price": 25000
     }
    ]
   },
@@ -7519,7 +7931,7 @@
    "avg": 25000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 9,
+   "days": 10,
    "hist": [
     {
      "d": "2026-07-01",
@@ -7556,6 +7968,10 @@
     {
      "d": "2026-07-10",
      "price": 25000
+    },
+    {
+     "d": "2026-07-11",
+     "price": 25000
     }
    ]
   },
@@ -7563,17 +7979,17 @@
    "id": "c26",
    "category": "creatine",
    "brand": "유니버셜뉴트리션",
-   "name": "유니버셜뉴트리션 유니버셜 뉴트리션 크레아틴 파우더 300g 미국 정품 빠른 배송",
-   "image": "https://shopping-phinf.pstatic.net/main_5947888/59478882203.jpg",
-   "mall": "G마켓",
-   "url": "https://link.gmarket.co.kr/gate/pcs?item-no=4350789911&sub-id=1003&service-code=10000003&lcd=100000068",
-   "price": 33200,
+   "name": "유니버셜뉴트리션 크레아틴 파우더 300g",
+   "image": "https://shopping-phinf.pstatic.net/main_8701956/87019563941.jpg",
+   "mall": "BOXES",
+   "url": "https://smartstore.naver.com/main/products/9475063618",
+   "price": 35020,
    "min": 33200,
-   "max": 33200,
-   "avg": 33200,
-   "isAllTimeLow": true,
+   "max": 35020,
+   "avg": 33340,
+   "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -7673,7 +8089,11 @@
     },
     {
      "d": "2026-07-10",
-     "price": 33200
+     "price": 35020
+    },
+    {
+     "d": "2026-07-11",
+     "price": 35020
     }
    ]
   },
@@ -7691,10 +8111,14 @@
    "avg": 45500,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 45500
+    },
+    {
+     "d": "2026-07-11",
      "price": 45500
     }
    ]
@@ -7710,10 +8134,10 @@
    "price": 128090,
    "min": 11900,
    "max": 128090,
-   "avg": 16548,
+   "avg": 20838,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -7814,6 +8238,10 @@
     {
      "d": "2026-07-10",
      "price": 128090
+    },
+    {
+     "d": "2026-07-11",
+     "price": 128090
     }
    ]
   },
@@ -7828,10 +8256,10 @@
    "price": 19900,
    "min": 17200,
    "max": 19900,
-   "avg": 19516,
+   "avg": 19531,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -7931,6 +8359,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 19900
+    },
+    {
+     "d": "2026-07-11",
      "price": 19900
     }
    ]
@@ -7949,7 +8381,7 @@
    "avg": 56680,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -8049,6 +8481,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 56680
+    },
+    {
+     "d": "2026-07-11",
      "price": 56680
     }
    ]
@@ -8064,10 +8500,10 @@
    "price": 9370,
    "min": 9370,
    "max": 9580,
-   "avg": 9496,
+   "avg": 9491,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -8168,6 +8604,10 @@
     {
      "d": "2026-07-10",
      "price": 9370
+    },
+    {
+     "d": "2026-07-11",
+     "price": 9370
     }
    ]
   },
@@ -8182,10 +8622,10 @@
    "price": 102800,
    "min": 75800,
    "max": 102800,
-   "avg": 76880,
+   "avg": 77877,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -8286,6 +8726,10 @@
     {
      "d": "2026-07-10",
      "price": 102800
+    },
+    {
+     "d": "2026-07-11",
+     "price": 102800
     }
    ]
   },
@@ -8300,10 +8744,10 @@
    "price": 55000,
    "min": 40600,
    "max": 60250,
-   "avg": 45052,
+   "avg": 45435,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -8403,6 +8847,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 55000
+    },
+    {
+     "d": "2026-07-11",
      "price": 55000
     }
    ]
@@ -8421,7 +8869,7 @@
    "avg": 56980,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -8521,6 +8969,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 56980
+    },
+    {
+     "d": "2026-07-11",
      "price": 56980
     }
    ]
@@ -8539,10 +8991,14 @@
    "avg": 103920,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 103920
+    },
+    {
+     "d": "2026-07-11",
      "price": 103920
     }
    ]
@@ -8561,7 +9017,7 @@
    "avg": 106530,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -8662,6 +9118,10 @@
     {
      "d": "2026-07-10",
      "price": 106530
+    },
+    {
+     "d": "2026-07-11",
+     "price": 106530
     }
    ]
   },
@@ -8679,10 +9139,14 @@
    "avg": 106530,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 106530
+    },
+    {
+     "d": "2026-07-11",
      "price": 106530
     }
    ]
@@ -8698,10 +9162,10 @@
    "price": 3300,
    "min": 3300,
    "max": 12700,
-   "avg": 8000,
+   "avg": 6433,
    "isAllTimeLow": true,
-   "dropPct": 74,
-   "days": 2,
+   "dropPct": 0,
+   "days": 3,
    "hist": [
     {
      "d": "2026-06-16",
@@ -8709,6 +9173,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 3300
+    },
+    {
+     "d": "2026-07-11",
      "price": 3300
     }
    ]
@@ -8727,10 +9195,14 @@
    "avg": 3300,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 3300
+    },
+    {
+     "d": "2026-07-11",
      "price": 3300
     }
    ]
@@ -8746,10 +9218,10 @@
    "price": 22120,
    "min": 17500,
    "max": 22120,
-   "avg": 17720,
+   "avg": 17920,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 21,
+   "days": 22,
    "hist": [
     {
      "d": "2026-06-16",
@@ -8834,6 +9306,10 @@
     {
      "d": "2026-07-10",
      "price": 22120
+    },
+    {
+     "d": "2026-07-11",
+     "price": 22120
     }
    ]
   },
@@ -8848,10 +9324,10 @@
    "price": 31700,
    "min": 21100,
    "max": 31700,
-   "avg": 22476,
+   "avg": 22830,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -8952,6 +9428,10 @@
     {
      "d": "2026-07-10",
      "price": 31700
+    },
+    {
+     "d": "2026-07-11",
+     "price": 31700
     }
    ]
   },
@@ -8966,10 +9446,10 @@
    "price": 78310,
    "min": 70900,
    "max": 78310,
-   "avg": 75939,
+   "avg": 76030,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -9069,6 +9549,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 78310
+    },
+    {
+     "d": "2026-07-11",
      "price": 78310
     }
    ]
@@ -9087,7 +9571,7 @@
    "avg": 22900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -9188,6 +9672,10 @@
     {
      "d": "2026-07-10",
      "price": 22900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 22900
     }
    ]
   },
@@ -9202,10 +9690,10 @@
    "price": 75580,
    "min": 27900,
    "max": 76250,
-   "avg": 70357,
+   "avg": 70879,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 9,
+   "days": 10,
    "hist": [
     {
      "d": "2026-06-16",
@@ -9242,6 +9730,10 @@
     {
      "d": "2026-07-10",
      "price": 75580
+    },
+    {
+     "d": "2026-07-11",
+     "price": 75580
     }
    ]
   },
@@ -9256,10 +9748,10 @@
    "price": 42900,
    "min": 39500,
    "max": 42900,
-   "avg": 40836,
+   "avg": 40915,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -9360,6 +9852,10 @@
     {
      "d": "2026-07-10",
      "price": 42900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 42900
     }
    ]
   },
@@ -9374,10 +9870,10 @@
    "price": 29220,
    "min": 27900,
    "max": 29220,
-   "avg": 27953,
+   "avg": 28002,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -9478,6 +9974,10 @@
     {
      "d": "2026-07-10",
      "price": 29220
+    },
+    {
+     "d": "2026-07-11",
+     "price": 29220
     }
    ]
   },
@@ -9492,10 +9992,10 @@
    "price": 37650,
    "min": 32050,
    "max": 48160,
-   "avg": 43459,
+   "avg": 43235,
    "isAllTimeLow": false,
-   "dropPct": 22,
-   "days": 25,
+   "dropPct": 0,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -9595,6 +10095,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 37650
+    },
+    {
+     "d": "2026-07-11",
      "price": 37650
     }
    ]
@@ -9613,10 +10117,14 @@
    "avg": 2380,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 2380
+    },
+    {
+     "d": "2026-07-11",
      "price": 2380
     }
    ]
@@ -9635,7 +10143,7 @@
    "avg": 54250,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -9736,6 +10244,10 @@
     {
      "d": "2026-07-10",
      "price": 54250
+    },
+    {
+     "d": "2026-07-11",
+     "price": 54250
     }
    ]
   },
@@ -9753,10 +10265,14 @@
    "avg": 2370,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 2370
+    },
+    {
+     "d": "2026-07-11",
      "price": 2370
     }
    ]
@@ -9772,10 +10288,10 @@
    "price": 2651,
    "min": 1290,
    "max": 2651,
-   "avg": 1777,
+   "avg": 1811,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -9876,6 +10392,10 @@
     {
      "d": "2026-07-10",
      "price": 2651
+    },
+    {
+     "d": "2026-07-11",
+     "price": 2651
     }
    ]
   },
@@ -9893,10 +10413,14 @@
    "avg": 3190,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 3190
+    },
+    {
+     "d": "2026-07-11",
      "price": 3190
     }
    ]
@@ -9912,10 +10436,10 @@
    "price": 19200,
    "min": 7000,
    "max": 19200,
-   "avg": 7488,
+   "avg": 7938,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -10016,6 +10540,10 @@
     {
      "d": "2026-07-10",
      "price": 19200
+    },
+    {
+     "d": "2026-07-11",
+     "price": 19200
     }
    ]
   },
@@ -10033,7 +10561,7 @@
    "avg": 990,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -10133,6 +10661,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 990
+    },
+    {
+     "d": "2026-07-11",
      "price": 990
     }
    ]
@@ -10148,10 +10680,10 @@
    "price": 11600,
    "min": 11600,
    "max": 32900,
-   "avg": 26084,
+   "avg": 25527,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -10251,6 +10783,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 11600
+    },
+    {
+     "d": "2026-07-11",
      "price": 11600
     }
    ]
@@ -10266,10 +10802,10 @@
    "price": 11600,
    "min": 11600,
    "max": 32900,
-   "avg": 26084,
+   "avg": 25527,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -10370,6 +10906,10 @@
     {
      "d": "2026-07-10",
      "price": 11600
+    },
+    {
+     "d": "2026-07-11",
+     "price": 11600
     }
    ]
   },
@@ -10381,13 +10921,13 @@
    "image": "https://shopping-phinf.pstatic.net/main_6012199/60121990860.jpg",
    "mall": "TEMU kr",
    "url": "https://temuaffiliateprogram.pxf.io/c/5257454/1580294/18350?u=https%3A%2F%2Fwww.temu.com%2Fkr%2Fgoods.html%3Fsku_id%3D17612529393415%26goods_id%3D601103977543897%26_x_ns_catalog_id%3D10000%26_x_ns_product_id%3D17612529393415%26_x_ns_site_id%3D119%26_x_ns_ad%3d{ad}",
-   "price": 3491,
+   "price": 3460,
    "min": 2414,
    "max": 3491,
-   "avg": 2882,
+   "avg": 2905,
    "isAllTimeLow": false,
-   "dropPct": 0,
-   "days": 25,
+   "dropPct": 1,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -10488,6 +11028,10 @@
     {
      "d": "2026-07-10",
      "price": 3491
+    },
+    {
+     "d": "2026-07-11",
+     "price": 3460
     }
    ]
   },
@@ -10496,16 +11040,16 @@
    "category": "guard",
    "brand": "라이크미",
    "name": "라이크미 땡큐 면 무릎 보호대 lm0119",
-   "image": "https://shopping-phinf.pstatic.net/main_6043239/60432390701.20260628072628.jpg",
+   "image": "https://shopping-phinf.pstatic.net/main_5949619/59496196976.20260628072628.jpg",
    "mall": "네이버",
-   "url": "https://search.shopping.naver.com/catalog/60432390701",
+   "url": "https://search.shopping.naver.com/catalog/59496196976",
    "price": 2200,
    "min": 2200,
    "max": 2440,
-   "avg": 2278,
+   "avg": 2275,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -10606,6 +11150,10 @@
     {
      "d": "2026-07-10",
      "price": 2200
+    },
+    {
+     "d": "2026-07-11",
+     "price": 2200
     }
    ]
   },
@@ -10623,7 +11171,7 @@
    "avg": 14410,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -10723,6 +11271,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 14410
+    },
+    {
+     "d": "2026-07-11",
      "price": 14410
     }
    ]
@@ -10738,10 +11290,10 @@
    "price": 12660,
    "min": 10687,
    "max": 12660,
-   "avg": 12108,
+   "avg": 12129,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -10841,6 +11393,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 12660
+    },
+    {
+     "d": "2026-07-11",
      "price": 12660
     }
    ]
@@ -10859,7 +11415,7 @@
    "avg": 7000,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -10960,6 +11516,10 @@
     {
      "d": "2026-07-10",
      "price": 7000
+    },
+    {
+     "d": "2026-07-11",
+     "price": 7000
     }
    ]
   },
@@ -10974,10 +11534,10 @@
    "price": 2110,
    "min": 2110,
    "max": 2300,
-   "avg": 2138,
+   "avg": 2137,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -11078,6 +11638,10 @@
     {
      "d": "2026-07-10",
      "price": 2110
+    },
+    {
+     "d": "2026-07-11",
+     "price": 2110
     }
    ]
   },
@@ -11095,10 +11659,14 @@
    "avg": 640,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 640
+    },
+    {
+     "d": "2026-07-11",
      "price": 640
     }
    ]
@@ -11117,7 +11685,7 @@
    "avg": 1310,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -11217,6 +11785,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 1310
+    },
+    {
+     "d": "2026-07-11",
      "price": 1310
     }
    ]
@@ -11235,10 +11807,14 @@
    "avg": 600,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 600
+    },
+    {
+     "d": "2026-07-11",
      "price": 600
     }
    ]
@@ -11257,7 +11833,7 @@
    "avg": 920,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -11357,6 +11933,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 920
+    },
+    {
+     "d": "2026-07-11",
      "price": 920
     }
    ]
@@ -11375,7 +11955,7 @@
    "avg": 2900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -11475,6 +12055,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 2900
+    },
+    {
+     "d": "2026-07-11",
      "price": 2900
     }
    ]
@@ -11493,10 +12077,14 @@
    "avg": 540,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 540
+    },
+    {
+     "d": "2026-07-11",
      "price": 540
     }
    ]
@@ -11512,10 +12100,10 @@
    "price": 804,
    "min": 804,
    "max": 990,
-   "avg": 819,
+   "avg": 818,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -11616,6 +12204,10 @@
     {
      "d": "2026-07-10",
      "price": 804
+    },
+    {
+     "d": "2026-07-11",
+     "price": 804
     }
    ]
   },
@@ -11630,10 +12222,10 @@
    "price": 1450,
    "min": 1020,
    "max": 1450,
-   "avg": 1105,
+   "avg": 1118,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -11734,6 +12326,10 @@
     {
      "d": "2026-07-10",
      "price": 1450
+    },
+    {
+     "d": "2026-07-11",
+     "price": 1450
     }
    ]
   },
@@ -11751,10 +12347,14 @@
    "avg": 500,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 1,
+   "days": 2,
    "hist": [
     {
      "d": "2026-07-10",
+     "price": 500
+    },
+    {
+     "d": "2026-07-11",
      "price": 500
     }
    ]
@@ -11770,10 +12370,10 @@
    "price": 740,
    "min": 740,
    "max": 770,
-   "avg": 760,
+   "avg": 759,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 24,
+   "days": 25,
    "hist": [
     {
      "d": "2026-06-16",
@@ -11869,6 +12469,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 740
+    },
+    {
+     "d": "2026-07-11",
      "price": 740
     }
    ]
@@ -11887,7 +12491,7 @@
    "avg": 6800,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -11987,6 +12591,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 6800
+    },
+    {
+     "d": "2026-07-11",
      "price": 6800
     }
    ]
@@ -12005,7 +12613,7 @@
    "avg": 5600,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -12105,6 +12713,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-11",
      "price": 5600
     }
    ]
@@ -12123,7 +12735,7 @@
    "avg": 5600,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -12223,6 +12835,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-11",
      "price": 5600
     }
    ]
@@ -12241,7 +12857,7 @@
    "avg": 3800,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -12341,6 +12957,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 3800
+    },
+    {
+     "d": "2026-07-11",
      "price": 3800
     }
    ]
@@ -12359,7 +12979,7 @@
    "avg": 9890,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -12460,6 +13080,10 @@
     {
      "d": "2026-07-10",
      "price": 9890
+    },
+    {
+     "d": "2026-07-11",
+     "price": 9890
     }
    ]
   },
@@ -12474,10 +13098,10 @@
    "price": 40800,
    "min": 28960,
    "max": 40800,
-   "avg": 31316,
+   "avg": 31681,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -12578,6 +13202,10 @@
     {
      "d": "2026-07-10",
      "price": 40800
+    },
+    {
+     "d": "2026-07-11",
+     "price": 40800
     }
    ]
   },
@@ -12595,7 +13223,7 @@
    "avg": 17500,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -12695,6 +13323,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 17500
+    },
+    {
+     "d": "2026-07-11",
      "price": 17500
     }
    ]
@@ -12713,7 +13345,7 @@
    "avg": 10900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -12813,6 +13445,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 10900
+    },
+    {
+     "d": "2026-07-11",
      "price": 10900
     }
    ]
@@ -12831,7 +13467,7 @@
    "avg": 26900,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -12932,6 +13568,10 @@
     {
      "d": "2026-07-10",
      "price": 26900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 26900
     }
    ]
   },
@@ -12946,10 +13586,10 @@
    "price": 28900,
    "min": 26400,
    "max": 28900,
-   "avg": 26500,
+   "avg": 26592,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -13050,6 +13690,10 @@
     {
      "d": "2026-07-10",
      "price": 28900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 28900
     }
    ]
   },
@@ -13067,7 +13711,7 @@
    "avg": 24500,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -13168,6 +13812,10 @@
     {
      "d": "2026-07-10",
      "price": 24500
+    },
+    {
+     "d": "2026-07-11",
+     "price": 24500
     }
    ]
   },
@@ -13185,7 +13833,7 @@
    "avg": 22120,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 4,
+   "days": 5,
    "hist": [
     {
      "d": "2026-07-07",
@@ -13202,6 +13850,10 @@
     {
      "d": "2026-07-10",
      "price": 22120
+    },
+    {
+     "d": "2026-07-11",
+     "price": 22120
     }
    ]
   },
@@ -13216,10 +13868,10 @@
    "price": 13410,
    "min": 2840,
    "max": 13410,
-   "avg": 3588,
+   "avg": 3965,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -13320,6 +13972,10 @@
     {
      "d": "2026-07-10",
      "price": 13410
+    },
+    {
+     "d": "2026-07-11",
+     "price": 13410
     }
    ]
   },
@@ -13334,10 +13990,10 @@
    "price": 48000,
    "min": 44800,
    "max": 48000,
-   "avg": 44928,
+   "avg": 45046,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -13438,6 +14094,10 @@
     {
      "d": "2026-07-10",
      "price": 48000
+    },
+    {
+     "d": "2026-07-11",
+     "price": 48000
     }
    ]
   },
@@ -13455,7 +14115,7 @@
    "avg": 23100,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -13556,6 +14216,10 @@
     {
      "d": "2026-07-10",
      "price": 23100
+    },
+    {
+     "d": "2026-07-11",
+     "price": 23100
     }
    ]
   },
@@ -13570,10 +14234,10 @@
    "price": 14900,
    "min": 13980,
    "max": 14900,
-   "avg": 14744,
+   "avg": 14750,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -13674,6 +14338,10 @@
     {
      "d": "2026-07-10",
      "price": 14900
+    },
+    {
+     "d": "2026-07-11",
+     "price": 14900
     }
    ]
   },
@@ -13688,10 +14356,10 @@
    "price": 25850,
    "min": 17760,
    "max": 25850,
-   "avg": 18084,
+   "avg": 18382,
    "isAllTimeLow": false,
    "dropPct": 0,
-   "days": 25,
+   "days": 26,
    "hist": [
     {
      "d": "2026-06-16",
@@ -13792,6 +14460,10 @@
     {
      "d": "2026-07-10",
      "price": 25850
+    },
+    {
+     "d": "2026-07-11",
+     "price": 25850
     }
    ]
   },
@@ -13809,7 +14481,7 @@
    "avg": 9800,
    "isAllTimeLow": true,
    "dropPct": 0,
-   "days": 4,
+   "days": 5,
    "hist": [
     {
      "d": "2026-07-07",
@@ -13825,6 +14497,10 @@
     },
     {
      "d": "2026-07-10",
+     "price": 9800
+    },
+    {
+     "d": "2026-07-11",
      "price": 9800
     }
    ]
