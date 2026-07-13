@@ -3,10 +3,8 @@
  "meta": {
   "lastDate": "2026-07-13",
   "total": 189,
-  "freshCount": 188,
-  "staleIds": [
-   "g3"
-  ],
+  "freshCount": 189,
+  "staleIds": [],
   "neverIds": []
  },
  "products": [
@@ -947,10 +945,10 @@
    "category": "protein",
    "subcat": "",
    "brand": "[마이프로틴]",
-   "name": "[마이프로틴] 드링크 시그니처 초콜릿 340ml",
-   "image": "https://shopping-phinf.pstatic.net/main_6001499/60014998845.jpg",
+   "name": "[마이프로틴] 드링크 클래식 밀크티 340ml",
+   "image": "https://shopping-phinf.pstatic.net/main_6001499/60014998856.jpg",
    "mall": "컬리",
-   "url": "https://redirect.kurly.com/entry?utm_source=NaverShopping&utm_medium=2001&utm_term=1002169726&dealNo=1002169724&no=1002169726&kfpartnerID=1000000",
+   "url": "https://redirect.kurly.com/entry?utm_source=NaverShopping&utm_medium=2001&utm_term=1002169726&dealNo=1002169725&no=1002169726&kfpartnerID=1000000",
    "price": 3800,
    "min": 3800,
    "max": 3800,
@@ -3613,7 +3611,7 @@
    ]
   },
   {
-   "id": "p46",
+   "id": "p47",
    "category": "protein",
    "subcat": "",
    "brand": "식스스타",
@@ -3744,14 +3742,14 @@
    ]
   },
   {
-   "id": "p47",
+   "id": "p46",
    "category": "protein",
    "subcat": "",
    "brand": "식스스타",
-   "name": "식스스타 100% 웨이 프로틴 플러스 바닐라 크림 816g",
-   "image": "https://shopping-phinf.pstatic.net/main_9086416/90864162156.jpg",
+   "name": "식스스타 100% 웨이 프로틴 플러스 트리플 초콜릿 826g",
+   "image": "https://shopping-phinf.pstatic.net/main_9086416/90864162105.jpg",
    "mall": "B.비블랑",
-   "url": "https://smartstore.naver.com/main/products/13319651824",
+   "url": "https://smartstore.naver.com/main/products/13319651773",
    "price": 44440,
    "min": 32000,
    "max": 44440,
@@ -9947,6 +9945,33 @@
    ]
   },
   {
+   "id": "b1",
+   "category": "booster",
+   "subcat": "",
+   "brand": "셀루코어",
+   "name": "셀루코어 C4 오리지널 프리 운동 파우더 과일 펀치 면역 지원을 위한 비타민 C 남녀를 무설탕 에너지",
+   "image": "https://shopping-phinf.pstatic.net/main_6070742/60707425370.jpg",
+   "mall": "11번가",
+   "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=9469023302&tid=1000000061",
+   "price": 75580,
+   "min": 27900,
+   "max": 75580,
+   "avg": 51740,
+   "isAllTimeLow": false,
+   "dropPct": 0,
+   "days": 2,
+   "hist": [
+    {
+     "d": "2026-06-16",
+     "price": 27900
+    },
+    {
+     "d": "2026-07-13",
+     "price": 75580
+    }
+   ]
+  },
+  {
    "id": "b4",
    "category": "booster",
    "subcat": "",
@@ -10143,33 +10168,6 @@
     {
      "d": "2026-07-13",
      "price": 42900
-    }
-   ]
-  },
-  {
-   "id": "b1",
-   "category": "booster",
-   "subcat": "",
-   "brand": "셀루코어",
-   "name": "셀루코어 오리지널 오렌지 버스트 C4 프리워크아웃 195g",
-   "image": "https://shopping-phinf.pstatic.net/main_8878439/88784396048.jpg",
-   "mall": "럭만장자",
-   "url": "https://smartstore.naver.com/main/products/11239885717",
-   "price": 29220,
-   "min": 27900,
-   "max": 29220,
-   "avg": 28560,
-   "isAllTimeLow": false,
-   "dropPct": 0,
-   "days": 2,
-   "hist": [
-    {
-     "d": "2026-06-16",
-     "price": 27900
-    },
-    {
-     "d": "2026-07-13",
-     "price": 29220
     }
    ]
   },
@@ -11403,121 +11401,6 @@
    ]
   },
   {
-   "id": "g3",
-   "category": "guard",
-   "subcat": "wrist",
-   "brand": "반품/KM",
-   "name": "반품/KM 베어컴플렉스 카본 콤프 3홀 그립 손바닥보호대",
-   "image": "https://shopping-phinf.pstatic.net/main_2149224/21492240525.1.jpg",
-   "mall": "펀키보이",
-   "url": "https://www.funkeyboy.co.kr/goods/goods_view.php?goodsNo=1000038916&inflow=naver",
-   "price": 7000,
-   "min": 7000,
-   "max": 7000,
-   "avg": 7000,
-   "isAllTimeLow": true,
-   "dropPct": 0,
-   "days": 24,
-   "hist": [
-    {
-     "d": "2026-06-16",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-17",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-18",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-19",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-20",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-21",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-22",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-23",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-24",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-25",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-26",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-27",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-28",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-29",
-     "price": 7000
-    },
-    {
-     "d": "2026-06-30",
-     "price": 7000
-    },
-    {
-     "d": "2026-07-01",
-     "price": 7000
-    },
-    {
-     "d": "2026-07-02",
-     "price": 7000
-    },
-    {
-     "d": "2026-07-03",
-     "price": 7000
-    },
-    {
-     "d": "2026-07-04",
-     "price": 7000
-    },
-    {
-     "d": "2026-07-05",
-     "price": 7000
-    },
-    {
-     "d": "2026-07-06",
-     "price": 7000
-    },
-    {
-     "d": "2026-07-07",
-     "price": 7000
-    },
-    {
-     "d": "2026-07-08",
-     "price": 7000
-    },
-    {
-     "d": "2026-07-09",
-     "price": 7000
-    }
-   ]
-  },
-  {
    "id": "g12",
    "category": "guard",
    "subcat": "knee",
@@ -12026,6 +11909,256 @@
    ]
   },
   {
+   "id": "g3",
+   "category": "guard",
+   "subcat": "wrist",
+   "brand": "언더아머",
+   "name": "언더아머 퍼포먼스 와이드 손목밴드 손목보호대 1218006-001_NC유정점  블랙  블랙  1개",
+   "image": "https://shopping-phinf.pstatic.net/main_5365614/53656142655.4.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9574707147&ctag=9574707147&lptag=I34708580&itemId=34708580&vendorItemId=85297105972&spec=10305199",
+   "price": 3900,
+   "min": 3900,
+   "max": 7000,
+   "avg": 6876,
+   "isAllTimeLow": true,
+   "dropPct": 44,
+   "days": 25,
+   "hist": [
+    {
+     "d": "2026-06-16",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-17",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-18",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-19",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-20",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-21",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-22",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-23",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-24",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-25",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-26",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-27",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-28",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-29",
+     "price": 7000
+    },
+    {
+     "d": "2026-06-30",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-01",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-02",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-03",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-04",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-05",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-06",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-07",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-08",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-09",
+     "price": 7000
+    },
+    {
+     "d": "2026-07-13",
+     "price": 3900
+    }
+   ]
+  },
+  {
+   "id": "g9",
+   "category": "guard",
+   "subcat": "knee",
+   "brand": "역도용",
+   "name": "역도용 베어 그립 손목 랩 스트랩 엑스트라 스트렝스 짐 팩당 2개 12인치 및 18인치 남녀용 팅  18  2_Extra Strength:",
+   "image": "https://shopping-phinf.pstatic.net/main_6040558/60405583647.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9519307077&ctag=9519307077&lptag=I28375845572&itemId=28375845572&vendorItemId=95328098906&spec=10305199",
+   "price": 48230,
+   "min": 5600,
+   "max": 48230,
+   "avg": 7122,
+   "isAllTimeLow": false,
+   "dropPct": 0,
+   "days": 28,
+   "hist": [
+    {
+     "d": "2026-06-16",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-17",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-18",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-19",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-20",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-21",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-22",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-23",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-24",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-25",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-26",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-27",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-28",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-29",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-30",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-01",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-02",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-03",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-04",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-05",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-06",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-07",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-08",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-09",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-10",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-11",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-12",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-13",
+     "price": 48230
+    }
+   ]
+  },
+  {
    "id": "g17",
    "category": "guard",
    "subcat": "elbow",
@@ -12176,137 +12309,6 @@
     {
      "d": "2026-07-13",
      "price": 6800
-    }
-   ]
-  },
-  {
-   "id": "g9",
-   "category": "guard",
-   "subcat": "knee",
-   "brand": "피지컬프로",
-   "name": "피지컬프로 니 슬리브 무릎 압박 재활 밴드 보호대 네오프렌 5mm 7mm",
-   "image": "https://shopping-phinf.pstatic.net/main_8269975/82699751833.1.jpg",
-   "mall": "힘쎈스포츠",
-   "url": "https://smartstore.naver.com/main/products/5155230910",
-   "price": 5600,
-   "min": 5600,
-   "max": 5600,
-   "avg": 5600,
-   "isAllTimeLow": true,
-   "dropPct": 0,
-   "days": 28,
-   "hist": [
-    {
-     "d": "2026-06-16",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-17",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-18",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-19",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-20",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-21",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-22",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-23",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-24",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-25",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-26",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-27",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-28",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-29",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-30",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-01",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-02",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-03",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-04",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-05",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-06",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-07",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-08",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-09",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-10",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-11",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-12",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-13",
-     "price": 5600
     }
    ]
   },
