@@ -3,22 +3,9 @@
  "meta": {
   "lastDate": "2026-07-13",
   "total": 179,
-  "freshCount": 168,
-  "staleIds": [
-   "g24"
-  ],
-  "neverIds": [
-   "p30",
-   "p31",
-   "p32",
-   "p70",
-   "c34",
-   "g5",
-   "g8",
-   "g14",
-   "b4",
-   "b5"
-  ]
+  "freshCount": 179,
+  "staleIds": [],
+  "neverIds": []
  },
  "products": [
   {
@@ -1145,10 +1132,10 @@
    "id": "p77",
    "category": "protein",
    "brand": "[마이프로틴]",
-   "name": "[마이프로틴] 드링크 시그니처 초콜릿 340ml",
-   "image": "https://shopping-phinf.pstatic.net/main_6001499/60014998845.jpg",
+   "name": "[마이프로틴] 드링크 클래식 밀크티 340ml",
+   "image": "https://shopping-phinf.pstatic.net/main_6001499/60014998856.jpg",
    "mall": "컬리",
-   "url": "https://redirect.kurly.com/entry?utm_source=NaverShopping&utm_medium=2001&utm_term=1002169726&dealNo=1002169724&no=1002169726&kfpartnerID=1000000",
+   "url": "https://redirect.kurly.com/entry?utm_source=NaverShopping&utm_medium=2001&utm_term=1002169726&dealNo=1002169725&no=1002169726&kfpartnerID=1000000",
    "price": 3800,
    "min": 3800,
    "max": 3800,
@@ -1744,6 +1731,50 @@
    ]
   },
   {
+   "id": "p30",
+   "category": "protein",
+   "brand": "다이마타이즈",
+   "name": "다이마타이즈 ISO100 가수분해 100% 웨이프로틴 아이솔레이트 쿠키앤크림 620g",
+   "image": "https://shopping-phinf.pstatic.net/main_8717674/87176740937.jpg",
+   "mall": "웰스히어로",
+   "url": "https://smartstore.naver.com/main/products/9632238667",
+   "price": 82300,
+   "min": 82300,
+   "max": 82300,
+   "avg": 82300,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 82300
+    }
+   ]
+  },
+  {
+   "id": "p32",
+   "category": "protein",
+   "brand": "다이마타이즈",
+   "name": "다이마타이즈 아이소 100 하이드롤라이즈드 웨이 프로틴 아이솔레이트 파우더 쿠키 &amp; 크림  1개  620g",
+   "image": "https://shopping-phinf.pstatic.net/main_5551599/55515998294.5.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=8520325208&ctag=8520325208&lptag=I23653647740&itemId=23653647740&vendorItemId=90679011341&spec=10305199",
+   "price": 56540,
+   "min": 56540,
+   "max": 56540,
+   "avg": 56540,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 56540
+    }
+   ]
+  },
+  {
    "id": "p35",
    "category": "protein",
    "brand": "다이마타이즈",
@@ -1870,6 +1901,28 @@
     {
      "d": "2026-07-13",
      "price": 199900
+    }
+   ]
+  },
+  {
+   "id": "p31",
+   "category": "protein",
+   "brand": "다이마타이즈",
+   "name": "다이마타이즈 아이소100 웨이 프로틴 아이솔레이트 파우더 쿠키 앤 크림 620g",
+   "image": "https://shopping-phinf.pstatic.net/main_9015523/90155233394.jpg",
+   "mall": "LUXE J",
+   "url": "https://smartstore.naver.com/main/products/12610722538",
+   "price": 49900,
+   "min": 49900,
+   "max": 49900,
+   "avg": 49900,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 49900
     }
    ]
   },
@@ -3681,11 +3734,11 @@
    "image": "https://shopping-phinf.pstatic.net/main_5932001/59320018194.20260319154343.jpg",
    "mall": "네이버",
    "url": "https://search.shopping.naver.com/catalog/59320018194",
-   "price": 3900,
+   "price": 5900,
    "min": 3900,
-   "max": 3900,
-   "avg": 3900,
-   "isAllTimeLow": true,
+   "max": 5900,
+   "avg": 3971,
+   "isAllTimeLow": false,
    "dropPct": 0,
    "days": 28,
    "hist": [
@@ -3799,12 +3852,12 @@
     },
     {
      "d": "2026-07-13",
-     "price": 3900
+     "price": 5900
     }
    ]
   },
   {
-   "id": "p47",
+   "id": "p46",
    "category": "protein",
    "brand": "식스스타",
    "name": "식스스타 100% 웨이 프로틴 플러스 바닐라 크림 816g",
@@ -3934,13 +3987,13 @@
    ]
   },
   {
-   "id": "p46",
+   "id": "p47",
    "category": "protein",
    "brand": "식스스타",
-   "name": "식스스타 100% 웨이 프로틴 플러스 트리플 초콜릿 826g",
-   "image": "https://shopping-phinf.pstatic.net/main_9086416/90864162105.jpg",
+   "name": "식스스타 100% 웨이 프로틴 플러스 바닐라 크림 816g",
+   "image": "https://shopping-phinf.pstatic.net/main_9086416/90864162156.jpg",
    "mall": "B.비블랑",
-   "url": "https://smartstore.naver.com/main/products/13319651773",
+   "url": "https://smartstore.naver.com/main/products/13319651824",
    "price": 44440,
    "min": 32000,
    "max": 44440,
@@ -5208,6 +5261,28 @@
     {
      "d": "2026-07-13",
      "price": 43900
+    }
+   ]
+  },
+  {
+   "id": "p70",
+   "category": "protein",
+   "brand": "일동후디스",
+   "name": "일동후디스 하이뮨 프로틴 밸런스 오리지널, 190ml, 1개",
+   "image": "https://shopping-phinf.pstatic.net/main_8956308/89563080915.jpg",
+   "mall": "기린도매마트",
+   "url": "https://smartstore.naver.com/main/products/12018570223",
+   "price": 4110,
+   "min": 4110,
+   "max": 4110,
+   "avg": 4110,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 4110
     }
    ]
   },
@@ -7394,6 +7469,28 @@
     {
      "d": "2026-07-13",
      "price": 20900
+    }
+   ]
+  },
+  {
+   "id": "c34",
+   "category": "creatine",
+   "brand": "마이프로틴",
+   "name": "마이프로틴 크레아퓨어 모노크레아틴 250g",
+   "image": "https://shopping-phinf.pstatic.net/main_8672167/86721672672.1.jpg",
+   "mall": "로컬닷컴",
+   "url": "https://smartstore.naver.com/main/products/9177172349",
+   "price": 25800,
+   "min": 25800,
+   "max": 25800,
+   "avg": 25800,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 25800
     }
    ]
   },
@@ -10724,6 +10821,50 @@
    ]
   },
   {
+   "id": "b4",
+   "category": "booster",
+   "brand": "셀루코어",
+   "name": "셀루코어 C4 운동전 부스터 스포츠 프리워크아웃 프루트 펀치 210g 30서빙",
+   "image": "https://shopping-phinf.pstatic.net/main_8892863/88928637286.1.jpg",
+   "mall": "LUXE J",
+   "url": "https://smartstore.naver.com/main/products/11384126921",
+   "price": 24900,
+   "min": 24900,
+   "max": 24900,
+   "avg": 24900,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 24900
+    }
+   ]
+  },
+  {
+   "id": "b5",
+   "category": "booster",
+   "brand": "셀루코어",
+   "name": "셀루코어 C4 운동전 부스터 스포츠 프리워크아웃 프루트 펀치 210g 30서빙",
+   "image": "https://shopping-phinf.pstatic.net/main_8892863/88928637286.1.jpg",
+   "mall": "LUXE J",
+   "url": "https://smartstore.naver.com/main/products/11384126921",
+   "price": 24900,
+   "min": 24900,
+   "max": 24900,
+   "avg": 24900,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 24900
+    }
+   ]
+  },
+  {
    "id": "b3",
    "category": "booster",
    "brand": "셀루코어",
@@ -12256,6 +12397,28 @@
    ]
   },
   {
+   "id": "g14",
+   "category": "guard",
+   "brand": "맥데이비드st",
+   "name": "맥데이비드st 무릎보호대 팔꿈치보호대",
+   "image": "https://shopping-phinf.pstatic.net/main_1214228/12142284059.jpg",
+   "mall": "토탈스포츠",
+   "url": "https://smartstore.naver.com/main/products/2145060911",
+   "price": 2900,
+   "min": 2900,
+   "max": 2900,
+   "avg": 2900,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 2900
+    }
+   ]
+  },
+  {
    "id": "g22",
    "category": "guard",
    "brand": "머슬크로스",
@@ -12382,6 +12545,36 @@
     {
      "d": "2026-07-13",
      "price": 12660
+    }
+   ]
+  },
+  {
+   "id": "g24",
+   "category": "guard",
+   "brand": "블랙다이아몬드",
+   "name": "블랙다이아몬드 테이프 롤 BD550521 1개",
+   "image": "https://shopping-phinf.pstatic.net/main_5968637/59686374921.20260628083101.jpg",
+   "mall": "네이버",
+   "url": "https://search.shopping.naver.com/catalog/59686374921",
+   "price": 6300,
+   "min": 500,
+   "max": 6300,
+   "avg": 2433,
+   "isAllTimeLow": false,
+   "dropPct": 0,
+   "days": 3,
+   "hist": [
+    {
+     "d": "2026-07-10",
+     "price": 500
+    },
+    {
+     "d": "2026-07-11",
+     "price": 500
+    },
+    {
+     "d": "2026-07-13",
+     "price": 6300
     }
    ]
   },
@@ -12806,6 +12999,28 @@
     {
      "d": "2026-07-13",
      "price": 1310
+    }
+   ]
+  },
+  {
+   "id": "g8",
+   "category": "guard",
+   "brand": "스포츠",
+   "name": "스포츠 헬스 운동 팔꿈치보호대 레저 보호대 XL 맥데이비드 485R M 512R 손목보호대 L 일반형 513R S 듀얼 레이어 컴프레션 밴드 아대 통기성 엄지형  밴드 손목보호대",
+   "image": "https://shopping-phinf.pstatic.net/main_4318651/43186516868.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7554837927&ctag=7554837927&lptag=I19890315312&itemId=19890315312&vendorItemId=86990599854&spec=10305199",
+   "price": 7730,
+   "min": 7730,
+   "max": 7730,
+   "avg": 7730,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 7730
     }
    ]
   },
@@ -13528,32 +13743,6 @@
    ]
   },
   {
-   "id": "g24",
-   "category": "guard",
-   "brand": "클라이밍",
-   "name": "클라이밍 손가락마디보호대 배드민턴 손가락지지대 1P",
-   "image": "https://shopping-phinf.pstatic.net/main_9119927/91199270650.jpg",
-   "mall": "TG위든",
-   "url": "https://smartstore.naver.com/main/products/13654759865",
-   "price": 500,
-   "min": 500,
-   "max": 500,
-   "avg": 500,
-   "isAllTimeLow": true,
-   "dropPct": 0,
-   "days": 2,
-   "hist": [
-    {
-     "d": "2026-07-10",
-     "price": 500
-    },
-    {
-     "d": "2026-07-11",
-     "price": 500
-    }
-   ]
-  },
-  {
    "id": "g4",
    "category": "guard",
    "brand": "타월",
@@ -14070,13 +14259,35 @@
    ]
   },
   {
+   "id": "g5",
+   "category": "guard",
+   "brand": "하빈저",
+   "name": "하빈저 리프팅 스트랩 웨이트 트레이닝 손목 보호대 2개 세트  검은색",
+   "image": "https://shopping-phinf.pstatic.net/main_6082384/60823846096.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9574349599&ctag=9574349599&lptag=I28578287303&itemId=28578287303&vendorItemId=95754737402&spec=10305199",
+   "price": 7830,
+   "min": 7830,
+   "max": 7830,
+   "avg": 7830,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 7830
+    }
+   ]
+  },
+  {
    "id": "e15",
    "category": "etc",
    "brand": "[마이프로틴]",
-   "name": "[마이프로틴] 드링크 시그니처 초콜릿 340ml",
-   "image": "https://shopping-phinf.pstatic.net/main_6001499/60014998845.jpg",
+   "name": "[마이프로틴] 드링크 클래식 밀크티 340ml",
+   "image": "https://shopping-phinf.pstatic.net/main_6001499/60014998856.jpg",
    "mall": "컬리",
-   "url": "https://redirect.kurly.com/entry?utm_source=NaverShopping&utm_medium=2001&utm_term=1002169726&dealNo=1002169724&no=1002169726&kfpartnerID=1000000",
+   "url": "https://redirect.kurly.com/entry?utm_source=NaverShopping&utm_medium=2001&utm_term=1002169726&dealNo=1002169725&no=1002169726&kfpartnerID=1000000",
    "price": 3800,
    "min": 3800,
    "max": 3800,
