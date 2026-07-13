@@ -300,7 +300,14 @@ function renderHome(){
   if(a.length) html+=`<div class="alertbar" onclick="switchTab('wish')">🔔 찜한 상품 ${a.length}개에 좋은 가격 소식이 있어요 <b>· 보러가기 ›</b></div>`;
   for(const c of catsPresent()){
     const arr=DATA.filter(p=>p.category===c).sort((x,y)=>x.price-y.price);
-    const top=arr.slice(0,3);
+    // 같은 리스팅(이름+판매처)이 여러 추적 상품에 매칭된 경우 홈에선 한 번만 표시
+    const seen=new Set(), top=[];
+    for(const p of arr){
+      const k=(p.name||'')+'|'+(p.mall||'');
+      if(seen.has(k)) continue;
+      seen.add(k); top.push(p);
+      if(top.length===3) break;
+    }
     html+=`<div class="homesec">
       <div class="sec-h">${CATS[c].e} ${CATS[c].n} 최저가<span class="cnt">${arr.length}개 추적</span>
         <button class="more" onclick="gotoCategory('${c}')">전체보기 ›</button></div>
