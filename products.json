@@ -362,7 +362,7 @@
  {
   "id": "p73",
   "category": "protein",
-  "query": "바디닥터스 웨이 프로틴"
+  "query": "옵티멈뉴트리션 골드스탠다드 웨이 907g 모카"
  },
  {
   "id": "p74",
@@ -597,12 +597,12 @@
  {
   "id": "b6",
   "category": "booster",
-  "query": "고스트 레전드 프리워크아웃 소다"
+  "query": "레드콘 토탈워 프리워크아웃"
  },
  {
   "id": "b7",
   "category": "booster",
-  "query": "고스트 레전드 프리워크아웃 워터멜론"
+  "query": "셀루코어 C4 립드 프리워크아웃"
  },
  {
   "id": "b8",
@@ -695,7 +695,7 @@
   "id": "g3",
   "category": "guard",
   "subcat": "wrist",
-  "query": "험블 리스트랩"
+  "query": "헬스 손목보호대 리스트랩"
  },
  {
   "id": "g4",
@@ -731,7 +731,7 @@
   "id": "g9",
   "category": "guard",
   "subcat": "knee",
-  "query": "베어그립 무릎 슬리브 7mm"
+  "query": "베어그립 무릎보호대"
  },
  {
   "id": "g10",
