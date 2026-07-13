@@ -152,6 +152,7 @@
         <div class="suggest" id="suggest"></div>
       </div>
       <div class="chips" id="catChips"></div>
+      <div class="chips" id="subChips" style="padding-top:8px"></div>
       <div class="sortbar" id="sortbar"></div>
       <div class="bandbar" id="bandbar"></div>
       <div class="secnote" id="secnote"></div>
@@ -174,7 +175,11 @@
 </div>
 
 <script>
-const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"},booster:{n:"부스터",e:"⚡"},guard:{n:"보호대",e:"🛡️"},etc:{n:"기타",e:"🏋️"}};
+const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"},booster:{n:"부스터",e:"⚡"},guard:{n:"보호대",e:"🛡️"},supplement:{n:"영양제",e:"💊"},etc:{n:"기타",e:"🏋️"}};
+const SUBCATS={
+  guard:[["wrist","손목"],["belt","허리벨트"],["elbow","팔꿈치"],["knee","무릎"],["ankle","발목"],["strap","스트랩"],["grip","그립·장갑"],["tape","테이프"]],
+  supplement:[["omega3","오메가3"],["probiotic","유산균"],["vitamin","비타민·미네랄"],["caffeine","카페인"],["amino","아미노산"]]
+};
 const won=n=>Number(n).toLocaleString('ko-KR')+'원';
 function axisWon(v){
   v=Math.round(v);
@@ -203,7 +208,7 @@ DATA.forEach(p=>{
   p._below=(p.avg>0 && p.days>=MIN_DAYS)?Math.round((p.avg-p.price)/p.avg*100):0;
   p._unit100=unit100(p);
 });
-let activeTab='home', search="", catFilter=null, sortMode="default", lowOnly=false, priceBand=null, currentP=null, chartRange='all';
+let activeTab='home', search="", catFilter=null, subFilter=null, sortMode="default", lowOnly=false, priceBand=null, currentP=null, chartRange='all';
 
 /* ---------- 저장소 ---------- */
 const LS={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
@@ -265,7 +270,7 @@ function unitPrice(p){
 /* ---------- 렌더 헬퍼 ---------- */
 function catsPresent(){const s=[];for(const k in CATS){if(DATA.some(p=>p.category===k))s.push(k);}return s;}
 function emoji(p){return (CATS[p.category]||{}).e||'🏷️';}
-function thumbStyle(p){const g={protein:'#3a2d6b',creatine:'#0f4d4d',booster:'#6b2d2d',guard:'#2d3f6b',etc:'#5b4d1b'};return `background:linear-gradient(135deg,${g[p.category]||'#333'},#0d0f12)`;}
+function thumbStyle(p){const g={protein:'#3a2d6b',creatine:'#0f4d4d',booster:'#6b2d2d',guard:'#2d3f6b',supplement:'#2d6b4a',etc:'#5b4d1b'};return `background:linear-gradient(135deg,${g[p.category]||'#333'},#0d0f12)`;}
 function imgTag(src,fit,alt){return `<img src="${src}" alt="${he(alt)}" loading="lazy" style="width:100%;height:100%;object-fit:${fit};border-radius:inherit;background:#fff" onerror="this.replaceWith(document.createTextNode(this.closest('[data-fallback]').dataset.fallback||''))">`;}
 function thumbHTML(p){return `<div class="pthumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'cover',p.name):emoji(p)}</div>`;}
 function heroHTML(p){return `<div class="hero-thumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'contain',p.name):emoji(p)}</div>`;}
@@ -317,14 +322,17 @@ function renderHome(){
   el.innerHTML=html;
   updateHearts();
 }
-function gotoCategory(c){ catFilter=c; search=''; const si=document.getElementById('searchInput'); if(si)si.value=''; switchTab('search'); }
+function gotoCategory(c){ catFilter=c; subFilter=null; search=''; const si=document.getElementById('searchInput'); if(si)si.value=''; switchTab('search'); }
 
 /* ---------- 검색 탭 ---------- */
 const BANDS=[{k:'b1',l:'1만원 이하',lo:0,hi:10000},{k:'b2',l:'1~3만원',lo:10000,hi:30000},{k:'b3',l:'3~5만원',lo:30000,hi:50000},{k:'b4',l:'5만원 이상',lo:50000,hi:Infinity}];
 function searchRows(){
   let arr;
   if(search) arr=DATA.filter(p=>(p.name+p.brand).toLowerCase().includes(search.toLowerCase()));
-  else if(catFilter) arr=DATA.filter(p=>p.category===catFilter);
+  else if(catFilter){
+    arr=DATA.filter(p=>p.category===catFilter);
+    if(subFilter) arr=arr.filter(p=>p.subcat===subFilter);
+  }
   else arr=DATA.slice();
   if(lowOnly) arr=arr.filter(p=>p.isAllTimeLow);
   if(priceBand){const b=BANDS.find(x=>x.k===priceBand);if(b)arr=arr.filter(p=>p.price>=b.lo&&p.price<b.hi);}
@@ -339,6 +347,11 @@ function renderSearchTab(){
   document.getElementById('catChips').innerHTML=
     `<div class="chip ${!catFilter?'active':''}" onclick="setCatFilter(null)">전체</div>`+
     cats.map(c=>`<div class="chip ${c===catFilter?'active':''}" onclick="setCatFilter('${c}')">${CATS[c].e} ${CATS[c].n}</div>`).join('');
+  const subs=(!search&&catFilter&&SUBCATS[catFilter])?SUBCATS[catFilter]:null;
+  document.getElementById('subChips').innerHTML = subs
+    ? subs.filter(([k])=>DATA.some(p=>p.category===catFilter&&p.subcat===k))
+        .map(([k,l])=>`<div class="chip ${subFilter===k?'active':''}" onclick="setSubFilter('${k}')">${l}</div>`).join('')
+    : '';
   const opt=(m,l)=>`<button class="sortbtn ${sortMode===m?'active':''}" onclick="setSort('${m}')">${l}</button>`;
   document.getElementById('sortbar').innerHTML =
     opt('priceAsc','최저가순')+opt('unit','100g당 가격순')+opt('drop','할인율순')+opt('priceDesc','높은가격순')
@@ -346,7 +359,8 @@ function renderSearchTab(){
   document.getElementById('bandbar').innerHTML=
     BANDS.map(b=>`<button class="sortbtn ${priceBand===b.k?'active':''}" onclick="setBand('${b.k}')">${b.l}</button>`).join('');
   const arr=searchRows();
-  const base = search ? `'${search}' 검색 ${arr.length}건` : (catFilter ? `${CATS[catFilter].n} ${arr.length}개` : `전체 ${arr.length}개`);
+  const subLbl=(catFilter&&subFilter&&SUBCATS[catFilter])?((SUBCATS[catFilter].find(x=>x[0]===subFilter)||[])[1]||''):'';
+  const base = search ? `'${search}' 검색 ${arr.length}건` : (catFilter ? `${CATS[catFilter].n}${subLbl?' · '+subLbl:''} ${arr.length}개` : `전체 ${arr.length}개`);
   const sfx = (lowOnly?' · 역대최저만':'') + (priceBand?(' · '+(BANDS.find(x=>x.k===priceBand)||{}).l):'');
   document.getElementById('secnote').textContent=base+sfx;
   const list=document.getElementById('searchList');
@@ -359,7 +373,8 @@ function renderSearchTab(){
   }
   updateHearts();
 }
-function setCatFilter(c){ catFilter=c; renderSearchTab(); }
+function setCatFilter(c){ catFilter=c; subFilter=null; renderSearchTab(); }
+function setSubFilter(k){ subFilter=(subFilter===k?null:k); renderSearchTab(); }
 function setSort(m){ sortMode=(sortMode===m?'default':m); renderSearchTab(); }
 function toggleLowOnly(){ lowOnly=!lowOnly; renderSearchTab(); }
 function setBand(k){ priceBand=(priceBand===k?null:k); renderSearchTab(); }
@@ -391,7 +406,7 @@ function renderMy(){
       <div class="setrow"><span>📈 누적 추적</span><b class="dim">최대 ${maxDays}일</b></div>
     </div>
     <div class="mynote">ℹ️ 표시 가격·링크는 네이버쇼핑 등 판매처 기준이며, 제휴 링크를 통해 구매 시 FitPrice가 일정 수수료를 받을 수 있습니다. 구매 가격은 동일합니다. 가격은 매일 1회 수집되며 실제 판매가와 다를 수 있습니다.</div>
-    <div class="myver">⚡ FitPrice v12</div>`;
+    <div class="myver">⚡ FitPrice v14</div>`;
 }
 
 /* ---------- 찜/알림 ---------- */

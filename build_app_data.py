@@ -17,13 +17,27 @@ prices.csv  →  app_data.js / app_data.json  (앱이 읽는 가공 데이터)
 import csv, json, sys, os, datetime
 from collections import defaultdict
 
-CAT_ORDER = ["protein", "creatine", "booster", "guard", "etc"]
+CAT_ORDER = ["protein", "creatine", "booster", "guard", "supplement", "etc"]
 
 def main():
     inp    = sys.argv[1] if len(sys.argv) > 1 else "prices.csv"
     outdir = sys.argv[2] if len(sys.argv) > 2 else "."
     if not os.path.exists(inp):
         raise SystemExit(f"입력 CSV가 없습니다: {inp}\n먼저 수집을 한 번 돌려 prices.csv를 만드세요.")
+
+    # products.json: 커버리지 메타 + 카테고리/세부분류 최신화 용도
+    pj = []
+    pj_path = os.path.join(os.path.dirname(os.path.abspath(inp)), "products.json")
+    if not os.path.exists(pj_path):
+        pj_path = "products.json"
+    if os.path.exists(pj_path):
+        try:
+            pj = json.load(open(pj_path, encoding="utf-8"))
+        except Exception:
+            pj = []
+    all_ids  = [p["id"] for p in pj]
+    cat_map  = {p["id"]: p.get("category", "") for p in pj}
+    sub_map  = {p["id"]: p.get("subcat", "") for p in pj}
 
     rows = list(csv.DictReader(open(inp, encoding="utf-8-sig")))
     # tracking_id → { date → [그날 수집된 여러 판매처 행] }
@@ -49,6 +63,8 @@ def main():
 
     products = []
     for tid, daymap in by_id.items():
+        if all_ids and tid not in cat_map:
+            continue   # 추적 목록에서 빠진 상품(예: 카테고리 개편으로 제외)은 앱에 노출 안 함
         hist, last = [], None
         for d in sorted(daymap):
             cheapest = min(daymap[d], key=lambda x: x["price"])   # 그날의 최저가 채택
@@ -65,7 +81,8 @@ def main():
         name = last["name"] or tid
         prod = {
             "id": tid,
-            "category": last["category"],
+            "category": cat_map.get(tid) or last["category"],
+            "subcat": sub_map.get(tid, ""),
             "brand": name.split()[0] if name else "",
             "name": name,
             "image": last.get("image", ""),
@@ -89,15 +106,6 @@ def main():
     products.sort(key=lambda p: (order.get(p["category"], 99), p["name"]))
 
     # ---------- 수집 커버리지 메타 ----------
-    all_ids = []
-    pj_path = os.path.join(os.path.dirname(os.path.abspath(inp)), "products.json")
-    if not os.path.exists(pj_path):
-        pj_path = "products.json"
-    if os.path.exists(pj_path):
-        try:
-            all_ids = [p["id"] for p in json.load(open(pj_path, encoding="utf-8"))]
-        except Exception:
-            all_ids = []
     last_date = max((p["hist"][-1]["d"] for p in products), default=None)
     fresh     = sum(1 for p in products if p["hist"][-1]["d"] == last_date)
     stale_ids = [p["id"] for p in products if p["hist"][-1]["d"] != last_date]
