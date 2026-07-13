@@ -1,6 +1,13 @@
 {
  "date": "2026-07-13",
- "failures": {},
- "collected": 189,
+ "failures": {
+  "b16": {
+   "query": "USP랩스 잭3드 프리워크아웃",
+   "status": "no_result",
+   "found": 0,
+   "rejected_sample": []
+  }
+ },
+ "collected": 188,
  "total": 189
 }
