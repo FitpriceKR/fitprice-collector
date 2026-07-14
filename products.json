@@ -187,7 +187,8 @@
  {
   "id": "p38",
   "category": "protein",
-  "query": "BSN 신타6 단백질 쉐이크 2.27kg 초코"
+  "query": "BSN 신타6 단백질 쉐이크 2.27kg 초코",
+  "cp_url": "https://link.coupang.com/a/fmZsUBFFNA"
  },
  {
   "id": "p39",
@@ -398,6 +399,42 @@
   "id": "p80",
   "category": "protein",
   "query": "옵티멈뉴트리션 프로틴 크리스프바"
+ },
+ {
+  "id": "p81",
+  "category": "protein",
+  "query": "뉴욕웨이 라이트 단백질 보충제 2kg",
+  "cp_url": "https://link.coupang.com/a/fmXoWBC7z2"
+ },
+ {
+  "id": "p82",
+  "category": "protein",
+  "query": "뉴욕웨이 올에이지 WPI 미숫가루 단백질 2kg",
+  "cp_url": "https://link.coupang.com/a/fmZqfroLh6"
+ },
+ {
+  "id": "p83",
+  "category": "protein",
+  "query": "뉴욕웨이 WPI 초코 단백질 보충제 2kg",
+  "cp_url": "https://link.coupang.com/a/fmZyCuWTgy"
+ },
+ {
+  "id": "p84",
+  "category": "protein",
+  "query": "프로틴스토리 퓨어프로틴7",
+  "cp_url": "https://link.coupang.com/a/fmZBHrSElo"
+ },
+ {
+  "id": "p85",
+  "category": "protein",
+  "query": "JW중외제약 산양유 단백질 3W 프로틴 마스터",
+  "cp_url": "https://link.coupang.com/a/fmZGn08Fz2"
+ },
+ {
+  "id": "p86",
+  "category": "protein",
+  "query": "NS 프로틴 블렌드 WPI 딥초코 2kg",
+  "cp_url": "https://link.coupang.com/a/fmZJqBtX9E"
  },
  {
   "id": "c1",

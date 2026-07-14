@@ -405,8 +405,8 @@ function renderMy(){
       <div class="setrow"><span>📦 수집 현황</span><b class="dim">${cov}</b></div>
       <div class="setrow"><span>📈 누적 추적</span><b class="dim">최대 ${maxDays}일</b></div>
     </div>
-    <div class="mynote">ℹ️ 표시 가격·링크는 네이버쇼핑 등 판매처 기준이며, 제휴 링크를 통해 구매 시 FitPrice가 일정 수수료를 받을 수 있습니다. 구매 가격은 동일합니다. 가격은 매일 1회 수집되며 실제 판매가와 다를 수 있습니다.</div>
-    <div class="myver">⚡ FitPrice v14</div>`;
+    <div class="mynote">ℹ️ FitPrice는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다. 표시 가격·링크는 네이버쇼핑 등 판매처 기준이며, 구매 가격은 동일합니다. 가격은 매일 1회 수집되며 실제 판매가와 다를 수 있습니다.</div>
+    <div class="myver">⚡ FitPrice v15</div>`;
 }
 
 /* ---------- 찜/알림 ---------- */
@@ -501,9 +501,12 @@ function openDetail(id){
   const stale=(META&&META.lastDate&&lastD&&lastD<META.lastDate)?`<div class="stale">⚠️ ${lastD} 이후 수집되지 않은 상품이에요 — 현재 판매가와 다를 수 있어요</div>`:'';
   const cp=p.coupang||null;
   const ctas = cp
-    ? `<a class="cta" href="${cp.url}" target="_blank" rel="noopener">🛒 쿠팡에서 구매 · ${won(cp.price)}</a>
+    ? `<a class="cta" href="${cp.url}" target="_blank" rel="noopener">🛒 쿠팡에서 구매${cp.price?(' · '+won(cp.price)):'하기'}</a>
       <a class="cta-sub" href="${p.url||'#'}" target="_blank" rel="noopener">${he(p.mall)||'판매처'} 최저가 보기 · ${won(p.price)}</a>`
     : `<a class="cta" href="${p.url||'#'}" target="_blank" rel="noopener">🛒 ${he(p.mall)||'판매처'}에서 최저가 보기</a>`;
+  const ctaNote = cp
+    ? '이 앱은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다. 구매 가격은 동일합니다.'
+    : '최저가 판매처로 연결됩니다. 제휴 링크인 경우 구매 시 일정 수수료가 발생할 수 있으며, 구매 가격은 동일합니다.';
   v.innerHTML=`
     <div class="detail-top">
       <button class="back" onclick="goBack()">‹ 뒤로</button>
@@ -530,7 +533,7 @@ function openDetail(id){
     <div class="cta-wrap">
       ${ctas}
       <button class="wishbtn ${on?'on':''}" data-id="${p.id}" onclick="toggleWish('${p.id}')">${on?'💚 찜한 상품 (알림 켜짐)':'🤍 찜하고 가격 알림 받기'}</button>
-      <div class="cta-note">최저가 판매처로 연결됩니다. 제휴 링크인 경우 구매 시 일정 수수료가 발생할 수 있으며, 구매 가격은 동일합니다.</div>
+      <div class="cta-note">${ctaNote}</div>
     </div>`;
   document.getElementById('main').scrollTop=0;
   drawChart(p);

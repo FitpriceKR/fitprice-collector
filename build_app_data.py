@@ -38,6 +38,7 @@ def main():
     all_ids  = [p["id"] for p in pj]
     cat_map  = {p["id"]: p.get("category", "") for p in pj}
     sub_map  = {p["id"]: p.get("subcat", "") for p in pj}
+    cp_map   = {p["id"]: p.get("cp_url", "") for p in pj}   # 쿠팡 파트너스 수동 링크
 
     rows = list(csv.DictReader(open(inp, encoding="utf-8-sig")))
     # tracking_id → { date → [그날 수집된 여러 판매처 행] }
@@ -100,6 +101,8 @@ def main():
         cp = next((x for x in daymap[last_day] if x["source"] == "coupang"), None)
         if cp:
             prod["coupang"] = {"price": cp["price"], "url": cp["url"]}
+        elif cp_map.get(tid):
+            prod["coupang"] = {"url": cp_map[tid]}   # API 승인 전 수동 파트너스 링크(가격 없음)
         products.append(prod)
 
     order = {c: i for i, c in enumerate(CAT_ORDER)}
