@@ -2,8 +2,8 @@
  "updated": "2026-07-14",
  "meta": {
   "lastDate": "2026-07-14",
-  "total": 189,
-  "freshCount": 189,
+  "total": 195,
+  "freshCount": 195,
   "staleIds": [],
   "neverIds": []
  },
@@ -219,7 +219,10 @@
      "d": "2026-07-14",
      "price": 44300
     }
-   ]
+   ],
+   "coupang": {
+    "url": "https://link.coupang.com/a/fmZsUBFFNA"
+   }
   },
   {
    "id": "p67",
@@ -415,6 +418,32 @@
      "price": 196560
     }
    ]
+  },
+  {
+   "id": "p85",
+   "category": "protein",
+   "subcat": "",
+   "brand": "JW중외제약",
+   "name": "JW중외제약 JW중외제약 리얼메디 산양유 단백질 3W 프로틴 마스터 280g",
+   "image": "https://shopping-phinf.pstatic.net/main_5790595/57905956663.1.jpg",
+   "mall": "G마켓",
+   "url": "https://link.gmarket.co.kr/gate/pcs?item-no=4604013015&sub-id=1003&service-code=10000003&lcd=100000005",
+   "price": 17910,
+   "min": 17910,
+   "max": 17910,
+   "avg": 17910,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-14",
+     "price": 17910
+    }
+   ],
+   "coupang": {
+    "url": "https://link.coupang.com/a/fmZGn08Fz2"
+   }
   },
   {
    "id": "p5",
@@ -1410,6 +1439,84 @@
    ]
   },
   {
+   "id": "p86",
+   "category": "protein",
+   "subcat": "",
+   "brand": "뉴빅",
+   "name": "뉴빅 NS 프로틴 블렌드 딥초코, 2kg, 1개",
+   "image": "https://shopping-phinf.pstatic.net/main_5978815/59788153718.20260424160736.jpg",
+   "mall": "네이버",
+   "url": "https://search.shopping.naver.com/catalog/59788153718",
+   "price": 39800,
+   "min": 39800,
+   "max": 39800,
+   "avg": 39800,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-14",
+     "price": 39800
+    }
+   ],
+   "coupang": {
+    "url": "https://link.coupang.com/a/fmZJqBtX9E"
+   }
+  },
+  {
+   "id": "p82",
+   "category": "protein",
+   "subcat": "",
+   "brand": "뉴욕웨이",
+   "name": "뉴욕웨이 올에이지 WPI 함유 미숫가루맛 단백질보충제 단백질쉐이크 산양유 프로틴",
+   "image": "https://shopping-phinf.pstatic.net/main_5529167/55291677273.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=6981240019&ctag=6981240019&lptag=l260832595311&itemId=53250161983&vendorItemId=90949833401&spec=10305199",
+   "price": 29650,
+   "min": 29650,
+   "max": 29650,
+   "avg": 29650,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-14",
+     "price": 29650
+    }
+   ],
+   "coupang": {
+    "url": "https://link.coupang.com/a/fmZqfroLh6"
+   }
+  },
+  {
+   "id": "p83",
+   "category": "protein",
+   "subcat": "",
+   "brand": "뉴욕웨이",
+   "name": "뉴욕웨이 올에이지 WPI 함유 미숫가루맛 단백질보충제 단백질쉐이크 산양유 프로틴  1개  2kg",
+   "image": "https://shopping-phinf.pstatic.net/main_5340207/53402077129.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=8629011490&ctag=8629011490&lptag=I25036591317&itemId=25036591317&vendorItemId=90949833407&spec=10305199",
+   "price": 36900,
+   "min": 36900,
+   "max": 36900,
+   "avg": 36900,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-14",
+     "price": 36900
+    }
+   ],
+   "coupang": {
+    "url": "https://link.coupang.com/a/fmZyCuWTgy"
+   }
+  },
+  {
    "id": "p51",
    "category": "protein",
    "subcat": "",
@@ -1540,6 +1647,32 @@
      "price": 58700
     }
    ]
+  },
+  {
+   "id": "p81",
+   "category": "protein",
+   "subcat": "",
+   "brand": "니트로랩",
+   "name": "니트로랩 뉴욕웨이 라이트  2kg, 1개",
+   "image": "https://shopping-phinf.pstatic.net/main_5296093/52960934537.20250212144823.jpg",
+   "mall": "네이버",
+   "url": "https://search.shopping.naver.com/catalog/52960934537",
+   "price": 35400,
+   "min": 35400,
+   "max": 35400,
+   "avg": 35400,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-14",
+     "price": 35400
+    }
+   ],
+   "coupang": {
+    "url": "https://link.coupang.com/a/fmXoWBC7z2"
+   }
   },
   {
    "id": "p30",
@@ -5723,6 +5856,32 @@
      "price": 99000
     }
    ]
+  },
+  {
+   "id": "p84",
+   "category": "protein",
+   "subcat": "",
+   "brand": "프로틴스토리",
+   "name": "프로틴스토리 맛있는 단백질 퓨어프로틴7 초코 1kg",
+   "image": "https://shopping-phinf.pstatic.net/main_8815497/88154975855.1.jpg",
+   "mall": "프로틴스토리",
+   "url": "https://smartstore.naver.com/main/products/10610470266",
+   "price": 19000,
+   "min": 19000,
+   "max": 19000,
+   "avg": 19000,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-14",
+     "price": 19000
+    }
+   ],
+   "coupang": {
+    "url": "https://link.coupang.com/a/fmZBHrSElo"
+   }
   },
   {
    "id": "c25",
