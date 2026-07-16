@@ -1,17 +1,12 @@
 {
- "date": "2026-07-15",
+ "date": "2026-07-16",
  "failures": {
   "c18": {
    "query": "칼로바이 크레아틴 모노하이드레이트",
    "status": "all_rejected",
-   "found": 2,
+   "found": 1,
    "used_query": "칼로바이 크레아틴",
    "rejected_sample": [
-    {
-     "name": "다밀 뉴트리션 대용량 오곡맛",
-     "price": 17900,
-     "why": "카테고리 키워드 없음"
-    },
     {
      "name": "칼로바이 다밀 대용량 단백질쉐이크 오곡2통",
      "price": 45500,
@@ -22,14 +17,9 @@
   "c32": {
    "query": "칼로바이 크레아틴 캡슐",
    "status": "all_rejected",
-   "found": 2,
+   "found": 1,
    "used_query": "칼로바이 크레아틴",
    "rejected_sample": [
-    {
-     "name": "다밀 뉴트리션 대용량 오곡맛",
-     "price": 17900,
-     "why": "카테고리 키워드 없음"
-    },
     {
      "name": "칼로바이 다밀 대용량 단백질쉐이크 오곡2통",
      "price": 45500,
@@ -38,6 +28,6 @@
    ]
   }
  },
- "collected": 193,
- "total": 195
+ "collected": 213,
+ "total": 215
 }
