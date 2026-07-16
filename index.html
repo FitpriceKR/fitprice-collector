@@ -175,8 +175,9 @@
 </div>
 
 <script>
-const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"},booster:{n:"부스터",e:"⚡"},guard:{n:"보호대",e:"🛡️"},supplement:{n:"영양제",e:"💊"},etc:{n:"기타",e:"🏋️"}};
+const CATS={protein:{n:"프로틴",e:"🥤"},creatine:{n:"크레아틴",e:"⚪"},booster:{n:"부스터",e:"⚡"},chicken:{n:"닭가슴살",e:"🍗"},guard:{n:"보호대",e:"🛡️"},supplement:{n:"영양제",e:"💊"},etc:{n:"기타",e:"🏋️"}};
 const SUBCATS={
+  chicken:[["steam","스팀"],["smoked","훈제·구이"],["sauce","소스"],["steak","스테이크"],["sausage","소시지"],["meal","볶음밥·도시락"],["raw","생·냉동"]],
   guard:[["wrist","손목"],["belt","허리벨트"],["elbow","팔꿈치"],["knee","무릎"],["ankle","발목"],["strap","스트랩"],["grip","그립·장갑"],["tape","테이프"]],
   supplement:[["omega3","오메가3"],["probiotic","유산균"],["vitamin","비타민·미네랄"],["caffeine","카페인"],["amino","아미노산"]]
 };
@@ -208,7 +209,7 @@ DATA.forEach(p=>{
   p._below=(p.avg>0 && p.days>=MIN_DAYS)?Math.round((p.avg-p.price)/p.avg*100):0;
   p._unit100=unit100(p);
 });
-let activeTab='home', search="", catFilter=null, subFilter=null, sortMode="default", lowOnly=false, priceBand=null, currentP=null, chartRange='all';
+let activeTab='home', search="", catFilter=null, subFilter=null, sortMode="reco", priceBand=null, currentP=null, chartRange='all';
 
 /* ---------- 저장소 ---------- */
 const LS={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
@@ -270,13 +271,13 @@ function unitPrice(p){
 /* ---------- 렌더 헬퍼 ---------- */
 function catsPresent(){const s=[];for(const k in CATS){if(DATA.some(p=>p.category===k))s.push(k);}return s;}
 function emoji(p){return (CATS[p.category]||{}).e||'🏷️';}
-function thumbStyle(p){const g={protein:'#3a2d6b',creatine:'#0f4d4d',booster:'#6b2d2d',guard:'#2d3f6b',supplement:'#2d6b4a',etc:'#5b4d1b'};return `background:linear-gradient(135deg,${g[p.category]||'#333'},#0d0f12)`;}
+function thumbStyle(p){const g={protein:'#3a2d6b',creatine:'#0f4d4d',booster:'#6b2d2d',chicken:'#6b4a2d',guard:'#2d3f6b',supplement:'#2d6b4a',etc:'#5b4d1b'};return `background:linear-gradient(135deg,${g[p.category]||'#333'},#0d0f12)`;}
 function imgTag(src,fit,alt){return `<img src="${src}" alt="${he(alt)}" loading="lazy" style="width:100%;height:100%;object-fit:${fit};border-radius:inherit;background:#fff" onerror="this.replaceWith(document.createTextNode(this.closest('[data-fallback]').dataset.fallback||''))">`;}
 function thumbHTML(p){return `<div class="pthumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'cover',p.name):emoji(p)}</div>`;}
 function heroHTML(p){return `<div class="hero-thumb" style="${thumbStyle(p)}" data-fallback="${emoji(p)}">${p.image?imgTag(p.image,'contain',p.name):emoji(p)}</div>`;}
-function prow(p,showUnit){
+function prow(p){
   const on=wish.has(p.id);
-  const up=(showUnit&&p._unit100!=null)?`<span class="uprice">100g당 ${won(Math.round(p._unit100))}</span>`:'';
+  const up=(p.category==='protein'&&p._unit100!=null)?`<span class="uprice">100g당 ${won(Math.round(p._unit100))}</span>`:'';
   return `<div class="prow">
     <div class="rowmain" onclick="openDetail('${p.id}')">
       ${thumbHTML(p)}
@@ -316,7 +317,7 @@ function renderHome(){
     html+=`<div class="homesec">
       <div class="sec-h">${CATS[c].e} ${CATS[c].n} 최저가<span class="cnt">${arr.length}개 추적</span>
         <button class="more" onclick="gotoCategory('${c}')">전체보기 ›</button></div>
-      <div>${top.map(p=>prow(p,false)).join('')}</div>
+      <div>${top.map(prow).join('')}</div>
     </div>`;
   }
   el.innerHTML=html;
@@ -334,12 +335,11 @@ function searchRows(){
     if(subFilter) arr=arr.filter(p=>p.subcat===subFilter);
   }
   else arr=DATA.slice();
-  if(lowOnly) arr=arr.filter(p=>p.isAllTimeLow);
   if(priceBand){const b=BANDS.find(x=>x.k===priceBand);if(b)arr=arr.filter(p=>p.price>=b.lo&&p.price<b.hi);}
+  const score=p=>Math.max(p.dropPct||0,p._below||0);   // 지금 사기 좋은 정도
   if(sortMode==='priceAsc') arr=[...arr].sort((a,b)=>a.price-b.price);
-  else if(sortMode==='priceDesc') arr=[...arr].sort((a,b)=>b.price-a.price);
-  else if(sortMode==='drop') arr=[...arr].sort((a,b)=>b.dropPct-a.dropPct);
-  else if(sortMode==='unit') arr=[...arr].sort((a,b)=>((a._unit100==null?Infinity:a._unit100)-(b._unit100==null?Infinity:b._unit100)));
+  else if(sortMode==='reco') arr=[...arr].sort((a,b)=>(score(b)-score(a)) || ((b.isAllTimeLow?1:0)-(a.isAllTimeLow?1:0)) || (a.price-b.price));
+  else if(sortMode==='low') arr=[...arr].sort((a,b)=>((b.isAllTimeLow?1:0)-(a.isAllTimeLow?1:0)) || (score(b)-score(a)) || (a.price-b.price));
   return arr;
 }
 function renderSearchTab(){
@@ -354,14 +354,13 @@ function renderSearchTab(){
     : '';
   const opt=(m,l)=>`<button class="sortbtn ${sortMode===m?'active':''}" onclick="setSort('${m}')">${l}</button>`;
   document.getElementById('sortbar').innerHTML =
-    opt('priceAsc','최저가순')+opt('unit','100g당 가격순')+opt('drop','할인율순')+opt('priceDesc','높은가격순')
-    +`<button class="sortbtn ${lowOnly?'active':''}" onclick="toggleLowOnly()">🏆 역대최저만</button>`;
+    opt('reco','✨ 추천순')+opt('priceAsc','최저가순')+opt('low','🏆 역대최저순');
   document.getElementById('bandbar').innerHTML=
     BANDS.map(b=>`<button class="sortbtn ${priceBand===b.k?'active':''}" onclick="setBand('${b.k}')">${b.l}</button>`).join('');
   const arr=searchRows();
   const subLbl=(catFilter&&subFilter&&SUBCATS[catFilter])?((SUBCATS[catFilter].find(x=>x[0]===subFilter)||[])[1]||''):'';
   const base = search ? `'${search}' 검색 ${arr.length}건` : (catFilter ? `${CATS[catFilter].n}${subLbl?' · '+subLbl:''} ${arr.length}개` : `전체 ${arr.length}개`);
-  const sfx = (lowOnly?' · 역대최저만':'') + (priceBand?(' · '+(BANDS.find(x=>x.k===priceBand)||{}).l):'');
+  const sfx = priceBand?(' · '+(BANDS.find(x=>x.k===priceBand)||{}).l):'';
   document.getElementById('secnote').textContent=base+sfx;
   const list=document.getElementById('searchList');
   if(!arr.length){
@@ -369,14 +368,13 @@ function renderSearchTab(){
       ? `<div class="empty"><div class="big">🔍</div>추적 목록에 없는 상품이에요.<br><a href="https://search.shopping.naver.com/search/all?query=${encodeURIComponent(search)}" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">네이버쇼핑에서 '${he(search)}' 검색 →</a></div>`
       : `<div class="empty"><div class="big">🔍</div>조건에 맞는 상품이 없어요.</div>`;
   } else {
-    list.innerHTML=arr.map(p=>prow(p,sortMode==='unit')).join('');
+    list.innerHTML=arr.map(prow).join('');
   }
   updateHearts();
 }
 function setCatFilter(c){ catFilter=c; subFilter=null; renderSearchTab(); }
 function setSubFilter(k){ subFilter=(subFilter===k?null:k); renderSearchTab(); }
-function setSort(m){ sortMode=(sortMode===m?'default':m); renderSearchTab(); }
-function toggleLowOnly(){ lowOnly=!lowOnly; renderSearchTab(); }
+function setSort(m){ sortMode=m; renderSearchTab(); }
 function setBand(k){ priceBand=(priceBand===k?null:k); renderSearchTab(); }
 
 /* ---------- 찜 탭 ---------- */
@@ -384,7 +382,7 @@ function renderWish(){
   renderAlertBar();
   const arr=[...wish].map(id=>DATA.find(p=>p.id===id)).filter(Boolean);
   document.getElementById('wishList').innerHTML = arr.length
-    ? arr.map(p=>prow(p,false)).join('')
+    ? arr.map(prow).join('')
     : `<div class="empty"><div class="big">💚</div>아직 찜한 상품이 없어요.<br>상품의 하트(♡)를 눌러 찜하면<br>역대 최저가가 될 때 알려드려요.</div>`;
   updateHearts();
 }
@@ -394,19 +392,33 @@ function renderMy(){
   const theme=document.documentElement.getAttribute('data-theme')==='light'?'라이트':'다크';
   const maxDays=Math.max(0,...DATA.map(p=>p.days||0));
   const cov=(META&&META.total)?`${META.freshCount}/${META.total}개`:'-';
+  const dev=LS.get('fp_dev',false);
+  const devCard=dev?`
+    <div class="setcard">
+      <div class="setrow"><span>🛠 가격 업데이트</span><b class="dim">${window.FITPRICE_UPDATED||'-'}</b></div>
+      <div class="setrow"><span>🛠 수집 현황</span><b class="dim">${cov}</b></div>
+      <div class="setrow"><span>🛠 누적 추적</span><b class="dim">최대 ${maxDays}일</b></div>
+    </div>`:'';
   document.getElementById('myView').innerHTML=`
     <div class="setcard">
       <div class="setrow" onclick="toggleTheme()"><span>🌓 테마</span><b>${theme}</b></div>
       <div class="setrow" onclick="enableNotif()"><span>🔔 가격 하락 알림</span><b class="${notifEnabled()?'':'dim'}">${notifEnabled()?'켜짐':'꺼짐'}</b></div>
       <div class="setrow" onclick="switchTab('wish')"><span>💚 찜한 상품</span><b>${wish.size}개</b></div>
     </div>
-    <div class="setcard">
-      <div class="setrow"><span>📡 가격 업데이트</span><b class="dim">${window.FITPRICE_UPDATED||'-'}</b></div>
-      <div class="setrow"><span>📦 수집 현황</span><b class="dim">${cov}</b></div>
-      <div class="setrow"><span>📈 누적 추적</span><b class="dim">최대 ${maxDays}일</b></div>
-    </div>
+    ${devCard}
     <div class="mynote">ℹ️ FitPrice는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다. 표시 가격·링크는 네이버쇼핑 등 판매처 기준이며, 구매 가격은 동일합니다. 가격은 매일 1회 수집되며 실제 판매가와 다를 수 있습니다.</div>
-    <div class="myver">⚡ FitPrice v15</div>`;
+    <div class="myver" onclick="devTap()">⚡ FitPrice v17</div>`;
+}
+let _devTaps=0,_devT=null;
+function devTap(){
+  clearTimeout(_devT); _devT=setTimeout(()=>{_devTaps=0;},1500);
+  if(++_devTaps>=7){
+    _devTaps=0;
+    const on=!LS.get('fp_dev',false);
+    LS.set('fp_dev',on);
+    toast(on?'🛠 개발자 모드 켜짐':'개발자 모드 꺼짐');
+    renderMy();
+  }
 }
 
 /* ---------- 찜/알림 ---------- */

@@ -17,7 +17,7 @@ prices.csv  →  app_data.js / app_data.json  (앱이 읽는 가공 데이터)
 import csv, json, sys, os, datetime
 from collections import defaultdict
 
-CAT_ORDER = ["protein", "creatine", "booster", "guard", "supplement", "etc"]
+CAT_ORDER = ["protein", "creatine", "booster", "chicken", "guard", "supplement", "etc"]
 
 def main():
     inp    = sys.argv[1] if len(sys.argv) > 1 else "prices.csv"

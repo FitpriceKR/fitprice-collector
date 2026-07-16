@@ -717,6 +717,126 @@
   "query": "프리워크아웃 카페인 부스터"
  },
  {
+  "id": "k1",
+  "category": "chicken",
+  "subcat": "steam",
+  "query": "잇메이트 스팀 닭가슴살"
+ },
+ {
+  "id": "k2",
+  "category": "chicken",
+  "subcat": "smoked",
+  "query": "잇메이트 훈제 닭가슴살"
+ },
+ {
+  "id": "k3",
+  "category": "chicken",
+  "subcat": "sauce",
+  "query": "잇메이트 소스 닭가슴살"
+ },
+ {
+  "id": "k4",
+  "category": "chicken",
+  "subcat": "steam",
+  "query": "맛있닭 스팀 닭가슴살"
+ },
+ {
+  "id": "k5",
+  "category": "chicken",
+  "subcat": "steam",
+  "query": "맛있닭 소프트 닭가슴살"
+ },
+ {
+  "id": "k6",
+  "category": "chicken",
+  "subcat": "steak",
+  "query": "맛있닭 닭가슴살 스테이크"
+ },
+ {
+  "id": "k7",
+  "category": "chicken",
+  "subcat": "steam",
+  "query": "아임닭 스팀 닭가슴살"
+ },
+ {
+  "id": "k8",
+  "category": "chicken",
+  "subcat": "smoked",
+  "query": "아임닭 훈제 닭가슴살"
+ },
+ {
+  "id": "k9",
+  "category": "chicken",
+  "subcat": "steak",
+  "query": "아임닭 닭가슴살 스테이크"
+ },
+ {
+  "id": "k10",
+  "category": "chicken",
+  "subcat": "steam",
+  "query": "허닭 스팀 닭가슴살"
+ },
+ {
+  "id": "k11",
+  "category": "chicken",
+  "subcat": "smoked",
+  "query": "허닭 오븐구이 닭가슴살"
+ },
+ {
+  "id": "k12",
+  "category": "chicken",
+  "subcat": "sausage",
+  "query": "허닭 닭가슴살 소시지"
+ },
+ {
+  "id": "k13",
+  "category": "chicken",
+  "subcat": "steak",
+  "query": "미트리 닭가슴살 스테이크"
+ },
+ {
+  "id": "k14",
+  "category": "chicken",
+  "subcat": "sauce",
+  "query": "미트리 소스 닭가슴살"
+ },
+ {
+  "id": "k15",
+  "category": "chicken",
+  "subcat": "steak",
+  "query": "한끼통살 닭가슴살 스테이크"
+ },
+ {
+  "id": "k16",
+  "category": "chicken",
+  "subcat": "steam",
+  "query": "닭신 스팀 닭가슴살"
+ },
+ {
+  "id": "k17",
+  "category": "chicken",
+  "subcat": "sausage",
+  "query": "잇메이트 닭가슴살 소시지"
+ },
+ {
+  "id": "k18",
+  "category": "chicken",
+  "subcat": "meal",
+  "query": "맛있닭 닭가슴살 볶음밥"
+ },
+ {
+  "id": "k19",
+  "category": "chicken",
+  "subcat": "meal",
+  "query": "잇메이트 닭가슴살 볶음밥"
+ },
+ {
+  "id": "k20",
+  "category": "chicken",
+  "subcat": "raw",
+  "query": "하림 냉동 닭가슴살 1kg"
+ },
+ {
   "id": "g1",
   "category": "guard",
   "subcat": "wrist",
