@@ -79,6 +79,8 @@ def main():
         avg = round(sum(prices) / len(prices))
         prev = prices[-2] if len(prices) > 1 else None
         drop = round((prev - latest) / prev * 100) if prev and prev > 0 else 0
+        if drop > 70:
+            drop = 0   # 70% 초과 급락은 실제 세일이 아니라 매칭 리스팅 변경(묶음→단품 등)으로 간주
         name = last["name"] or tid
         prod = {
             "id": tid,
