@@ -3,14 +3,12 @@
  "meta": {
   "lastDate": "2026-07-16",
   "total": 215,
-  "freshCount": 212,
+  "freshCount": 213,
   "staleIds": [
    "c18",
    "c32"
   ],
-  "neverIds": [
-   "b20"
-  ]
+  "neverIds": []
  },
  "products": [
   {
@@ -4485,7 +4483,7 @@
    ]
   },
   {
-   "id": "p47",
+   "id": "p46",
    "category": "protein",
    "subcat": "",
    "brand": "식스스타",
@@ -4628,14 +4626,14 @@
    ]
   },
   {
-   "id": "p46",
+   "id": "p47",
    "category": "protein",
    "subcat": "",
    "brand": "식스스타",
-   "name": "식스스타 100% 웨이 프로틴 플러스 트리플 초콜릿 826g",
-   "image": "https://shopping-phinf.pstatic.net/main_9086416/90864162105.jpg",
+   "name": "식스스타 100% 웨이 프로틴 플러스 바닐라 크림 816g",
+   "image": "https://shopping-phinf.pstatic.net/main_9086416/90864162156.jpg",
    "mall": "B.비블랑",
-   "url": "https://smartstore.naver.com/main/products/13319651773",
+   "url": "https://smartstore.naver.com/main/products/13319651824",
    "price": 44440,
    "min": 32000,
    "max": 44440,
@@ -12095,6 +12093,29 @@
    ]
   },
   {
+   "id": "b20",
+   "category": "booster",
+   "subcat": "",
+   "brand": "웰파인",
+   "name": "웰파인 삼대오백 헬스부스터 프리워크아웃 70g",
+   "image": "https://shopping-phinf.pstatic.net/main_3471781/34717814618.20251013144351.jpg",
+   "mall": "네이버",
+   "url": "https://search.shopping.naver.com/catalog/34717814618",
+   "price": 19900,
+   "min": 19900,
+   "max": 19900,
+   "avg": 19900,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-16",
+     "price": 19900
+    }
+   ]
+  },
+  {
    "id": "b10",
    "category": "booster",
    "subcat": "",
@@ -12668,6 +12689,149 @@
     {
      "d": "2026-07-16",
      "price": 19200
+    }
+   ]
+  },
+  {
+   "id": "g13",
+   "category": "guard",
+   "subcat": "knee",
+   "brand": "LPS",
+   "name": "LPS 헬스 크로스핏 손목 보호대 쉬크 하빈저 제로투 쉴드 아대 밴드  프리사이즈  1개",
+   "image": "https://shopping-phinf.pstatic.net/main_3482673/34826734756.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=6791287926&ctag=6791287926&lptag=P6791287926&itemId=16000584791&vendorItemId=83205708506&spec=10305199",
+   "price": 20900,
+   "min": 5600,
+   "max": 22060,
+   "avg": 7686,
+   "isAllTimeLow": false,
+   "dropPct": 5,
+   "days": 31,
+   "hist": [
+    {
+     "d": "2026-06-16",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-17",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-18",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-19",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-20",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-21",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-22",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-23",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-24",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-25",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-26",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-27",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-28",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-29",
+     "price": 5600
+    },
+    {
+     "d": "2026-06-30",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-01",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-02",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-03",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-04",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-05",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-06",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-07",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-08",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-09",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-10",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-11",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-12",
+     "price": 5600
+    },
+    {
+     "d": "2026-07-13",
+     "price": 22060
+    },
+    {
+     "d": "2026-07-14",
+     "price": 22060
+    },
+    {
+     "d": "2026-07-15",
+     "price": 22060
+    },
+    {
+     "d": "2026-07-16",
+     "price": 20900
     }
    ]
   },
@@ -13790,15 +13954,15 @@
    "category": "guard",
    "subcat": "elbow",
    "brand": "베어",
-   "name": "베어 그립 데드트 정강이 보호대 - 남녀용 통기성 체육 장비 로프 클라이밍 부상 방지 종아리 지지대 보호 슬리브 궁극적인 Stealth Black Medium",
-   "image": "https://shopping-phinf.pstatic.net/main_9088955/90889551155.jpg",
-   "mall": "라비드샵",
-   "url": "https://smartstore.naver.com/main/products/13345040823",
-   "price": 68740,
+   "name": "베어 그립 데드트 정강이 보호대 남녀용 통기성 체육 장비 로프 클라이밍 부상 방지 종아리 지지대 보호 슬리브 궁극적인  02 S  02 검정색",
+   "image": "https://shopping-phinf.pstatic.net/main_6038264/60382642032.jpg",
+   "mall": "쿠팡",
+   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9524016615&ctag=9524016615&lptag=I28394441181&itemId=28394441181&vendorItemId=95537661816&spec=10305199",
+   "price": 10300,
    "min": 10300,
-   "max": 68740,
-   "avg": 24910,
-   "isAllTimeLow": false,
+   "max": 10300,
+   "avg": 10300,
+   "isAllTimeLow": true,
    "dropPct": 0,
    "days": 4,
    "hist": [
@@ -13816,7 +13980,7 @@
     },
     {
      "d": "2026-07-16",
-     "price": 68740
+     "price": 10300
     }
    ]
   },
@@ -14839,149 +15003,6 @@
    ]
   },
   {
-   "id": "g13",
-   "category": "guard",
-   "subcat": "knee",
-   "brand": "하빈져",
-   "name": "하빈져 프로 엘보우 슬리브 보호대 양쪽세트  블랙  1세트  L",
-   "image": "https://shopping-phinf.pstatic.net/main_5076809/50768091103.8.jpg",
-   "mall": "쿠팡",
-   "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7994458915&ctag=7994458915&lptag=U90121241371&itemId=22232071139&vendorItemId=90121241371&spec=10305197",
-   "price": 22060,
-   "min": 5600,
-   "max": 22060,
-   "avg": 7724,
-   "isAllTimeLow": false,
-   "dropPct": 0,
-   "days": 31,
-   "hist": [
-    {
-     "d": "2026-06-16",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-17",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-18",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-19",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-20",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-21",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-22",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-23",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-24",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-25",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-26",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-27",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-28",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-29",
-     "price": 5600
-    },
-    {
-     "d": "2026-06-30",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-01",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-02",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-03",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-04",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-05",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-06",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-07",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-08",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-09",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-10",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-11",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-12",
-     "price": 5600
-    },
-    {
-     "d": "2026-07-13",
-     "price": 22060
-    },
-    {
-     "d": "2026-07-14",
-     "price": 22060
-    },
-    {
-     "d": "2026-07-15",
-     "price": 22060
-    },
-    {
-     "d": "2026-07-16",
-     "price": 22060
-    }
-   ]
-  },
-  {
    "id": "s6",
    "category": "supplement",
    "subcat": "vitamin",
@@ -15626,10 +15647,10 @@
    "category": "supplement",
    "subcat": "amino",
    "brand": "마이프로틴",
-   "name": "마이프로틴 글루타민 파우더 500g, 1개",
-   "image": "https://shopping-phinf.pstatic.net/main_5849218/58492187803.20260627083701.jpg",
+   "name": "마이프로틴 글루타민 파우더 500g",
+   "image": "https://shopping-phinf.pstatic.net/main_5849218/58492187802.20260627083701.jpg",
    "mall": "네이버",
-   "url": "https://search.shopping.naver.com/catalog/58492187803",
+   "url": "https://search.shopping.naver.com/catalog/58492187802",
    "price": 29900,
    "min": 17500,
    "max": 29900,
