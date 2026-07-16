@@ -3,12 +3,14 @@
  "meta": {
   "lastDate": "2026-07-16",
   "total": 215,
-  "freshCount": 213,
+  "freshCount": 212,
   "staleIds": [
    "c18",
    "c32"
   ],
-  "neverIds": []
+  "neverIds": [
+   "b20"
+  ]
  },
  "products": [
   {
@@ -10202,7 +10204,7 @@
    "max": 128090,
    "avg": 27926,
    "isAllTimeLow": true,
-   "dropPct": 91,
+   "dropPct": 0,
    "days": 29,
    "hist": [
     {
@@ -10337,7 +10339,7 @@
    "max": 128090,
    "avg": 69995,
    "isAllTimeLow": true,
-   "dropPct": 91,
+   "dropPct": 0,
    "days": 2,
    "hist": [
     {
@@ -10637,6 +10639,41 @@
    ]
   },
   {
+   "id": "b21",
+   "category": "booster",
+   "subcat": "",
+   "brand": "(30회분)",
+   "name": "(30회분) Cellucor C4 리프트 프리워크아웃 파우더 아틱 스노우콘 무설탕 미국 (해외직배송) 북극 눈 송이 화약",
+   "image": "https://shopping-phinf.pstatic.net/main_9059510/90595109460.jpg",
+   "mall": "글로벌 건기식 직구마켓",
+   "url": "https://smartstore.naver.com/main/products/13050598368",
+   "price": 56800,
+   "min": 56800,
+   "max": 56800,
+   "avg": 56800,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 4,
+   "hist": [
+    {
+     "d": "2026-07-13",
+     "price": 56800
+    },
+    {
+     "d": "2026-07-14",
+     "price": 56800
+    },
+    {
+     "d": "2026-07-15",
+     "price": 56800
+    },
+    {
+     "d": "2026-07-16",
+     "price": 56800
+    }
+   ]
+  },
+  {
    "id": "b8",
    "category": "booster",
    "subcat": "",
@@ -10823,6 +10860,29 @@
     {
      "d": "2026-07-16",
      "price": 55000
+    }
+   ]
+  },
+  {
+   "id": "b22",
+   "category": "booster",
+   "subcat": "",
+   "brand": "EVL",
+   "name": "EVL PUMP MODE 펌프모드 프리워크아웃 헬스 운동전 카페인 없는 부스터 무맛",
+   "image": "https://shopping-phinf.pstatic.net/main_8355873/83558739024.2.jpg",
+   "mall": "플라잉구매대행",
+   "url": "https://smartstore.naver.com/main/products/6014239536",
+   "price": 15500,
+   "min": 15500,
+   "max": 15500,
+   "avg": 15500,
+   "isAllTimeLow": true,
+   "dropPct": 0,
+   "days": 1,
+   "hist": [
+    {
+     "d": "2026-07-16",
+     "price": 15500
     }
    ]
   },
@@ -11462,184 +11522,6 @@
    ]
   },
   {
-   "id": "b20",
-   "category": "booster",
-   "subcat": "",
-   "brand": "부스터",
-   "name": "부스터 수압상승 샤워기 사이클론 고압 헤드 필터형 절수",
-   "image": "https://shopping-phinf.pstatic.net/main_9068749/90687493301.jpg",
-   "mall": "봄가을사무실가정용선반작업복",
-   "url": "https://smartstore.naver.com/main/products/13142982209",
-   "price": 9580,
-   "min": 9370,
-   "max": 9580,
-   "avg": 9499,
-   "isAllTimeLow": false,
-   "dropPct": 0,
-   "days": 31,
-   "hist": [
-    {
-     "d": "2026-06-16",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-17",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-18",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-19",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-20",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-21",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-22",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-23",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-24",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-25",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-26",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-27",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-28",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-29",
-     "price": 9580
-    },
-    {
-     "d": "2026-06-30",
-     "price": 9580
-    },
-    {
-     "d": "2026-07-01",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-02",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-03",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-04",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-05",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-06",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-07",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-08",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-09",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-10",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-11",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-12",
-     "price": 9370
-    },
-    {
-     "d": "2026-07-13",
-     "price": 9580
-    },
-    {
-     "d": "2026-07-14",
-     "price": 9580
-    },
-    {
-     "d": "2026-07-15",
-     "price": 9580
-    },
-    {
-     "d": "2026-07-16",
-     "price": 9580
-    }
-   ]
-  },
-  {
-   "id": "b22",
-   "category": "booster",
-   "subcat": "",
-   "brand": "서규몬",
-   "name": "서규몬 구론산 탄산비타 150ml 10병 수험생카페인 에너지드링크 에너지부스터",
-   "image": "https://shopping-phinf.pstatic.net/main_9067766/90677665628.jpg",
-   "mall": "추천몬스토",
-   "url": "https://smartstore.naver.com/main/products/13133154536",
-   "price": 6890,
-   "min": 6890,
-   "max": 6890,
-   "avg": 6890,
-   "isAllTimeLow": true,
-   "dropPct": 0,
-   "days": 4,
-   "hist": [
-    {
-     "d": "2026-07-13",
-     "price": 6890
-    },
-    {
-     "d": "2026-07-14",
-     "price": 6890
-    },
-    {
-     "d": "2026-07-15",
-     "price": 6890
-    },
-    {
-     "d": "2026-07-16",
-     "price": 6890
-    }
-   ]
-  },
-  {
    "id": "b1",
    "category": "booster",
    "subcat": "",
@@ -12209,41 +12091,6 @@
     {
      "d": "2026-07-16",
      "price": 48160
-    }
-   ]
-  },
-  {
-   "id": "b21",
-   "category": "booster",
-   "subcat": "",
-   "brand": "자동",
-   "name": "자동 트렁크 리프트 테일박스 일반 스프링 조정 가능한 부스터 풀 개방",
-   "image": "https://shopping-phinf.pstatic.net/main_9008692/90086924952.jpg",
-   "mall": "네이션브릿지",
-   "url": "https://smartstore.naver.com/main/products/12542414099",
-   "price": 5700,
-   "min": 5700,
-   "max": 56800,
-   "avg": 44025,
-   "isAllTimeLow": true,
-   "dropPct": 90,
-   "days": 4,
-   "hist": [
-    {
-     "d": "2026-07-13",
-     "price": 56800
-    },
-    {
-     "d": "2026-07-14",
-     "price": 56800
-    },
-    {
-     "d": "2026-07-15",
-     "price": 56800
-    },
-    {
-     "d": "2026-07-16",
-     "price": 5700
     }
    ]
   },
