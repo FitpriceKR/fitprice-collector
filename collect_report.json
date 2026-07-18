@@ -1,29 +1,6 @@
 {
- "date": "2026-07-17",
+ "date": "2026-07-18",
  "failures": {
-  "p11": {
-   "query": "마이프로틴 임팩트 웨이 프로틴 2.5kg 바나나",
-   "status": "all_rejected",
-   "found": 30,
-   "used_query": "마이프로틴 임팩트 웨이 프로틴 2.5kg",
-   "rejected_sample": [
-    {
-     "name": "Myprotein 임팩트 웨이 프로틴 - 250g - 바나나",
-     "price": 24900,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "Myprotein 임팩트 웨이 프로틴 - 250g - 바나나  1개",
-     "price": 29900,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "마이프로틴 임팩트 웨이 프로틴 바나나 250g 단백질 보충제",
-     "price": 36000,
-     "why": "용량 불일치"
-    }
-   ]
-  },
   "c11": {
    "query": "나우푸드 크레아틴 모노하이드레이트 500g",
    "status": "all_rejected",
@@ -49,14 +26,9 @@
   "c18": {
    "query": "칼로바이 크레아틴 모노하이드레이트",
    "status": "all_rejected",
-   "found": 2,
+   "found": 1,
    "used_query": "칼로바이 크레아틴",
    "rejected_sample": [
-    {
-     "name": "칼로바이 다밀뉴트리션 대용량 식사대용 단백질쉐이크 인절미맛 4937871",
-     "price": 42640,
-     "why": "카테고리 키워드 없음"
-    },
     {
      "name": "칼로바이 다밀 대용량 단백질쉐이크 오곡2통",
      "price": 45500,
@@ -67,14 +39,9 @@
   "c32": {
    "query": "칼로바이 크레아틴 캡슐",
    "status": "all_rejected",
-   "found": 2,
+   "found": 1,
    "used_query": "칼로바이 크레아틴",
    "rejected_sample": [
-    {
-     "name": "칼로바이 다밀뉴트리션 대용량 식사대용 단백질쉐이크 인절미맛 4937871",
-     "price": 42640,
-     "why": "카테고리 키워드 없음"
-    },
     {
      "name": "칼로바이 다밀 대용량 단백질쉐이크 오곡2통",
      "price": 45500,
@@ -83,6 +50,6 @@
    ]
   }
  },
- "collected": 211,
+ "collected": 212,
  "total": 215
 }
