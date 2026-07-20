@@ -1,5 +1,5 @@
 {
- "date": "2026-07-19",
+ "date": "2026-07-20",
  "failures": {
   "c11": {
    "query": "나우푸드 크레아틴 모노하이드레이트 500g",
@@ -22,8 +22,34 @@
      "why": "용량 미달(샘플 추정)"
     }
    ]
+  },
+  "c18": {
+   "query": "칼로바이 크레아틴 모노하이드레이트",
+   "status": "all_rejected",
+   "found": 1,
+   "used_query": "칼로바이 크레아틴",
+   "rejected_sample": [
+    {
+     "name": "칼로바이 다밀 대용량 단백질쉐이크 오곡2통",
+     "price": 45500,
+     "why": "카테고리 키워드 없음"
+    }
+   ]
+  },
+  "c32": {
+   "query": "칼로바이 크레아틴 캡슐",
+   "status": "all_rejected",
+   "found": 1,
+   "used_query": "칼로바이 크레아틴",
+   "rejected_sample": [
+    {
+     "name": "칼로바이 다밀 대용량 단백질쉐이크 오곡2통",
+     "price": 45500,
+     "why": "카테고리 키워드 없음"
+    }
+   ]
   }
  },
- "collected": 214,
+ "collected": 212,
  "total": 215
 }
