@@ -1,6 +1,29 @@
 {
- "date": "2026-07-29",
+ "date": "2026-07-30",
  "failures": {
+  "p11": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 2.5kg 바나나",
+   "status": "all_rejected",
+   "found": 30,
+   "used_query": "마이프로틴 임팩트 웨이 프로틴 2.5kg",
+   "rejected_sample": [
+    {
+     "name": "Myprotein 임팩트 웨이 프로틴 - 250g - 바나나",
+     "price": 24900,
+     "why": "용량 불일치"
+    },
+    {
+     "name": "Myprotein 임팩트 웨이 프로틴 - 250g - 바나나  1개",
+     "price": 29900,
+     "why": "용량 불일치"
+    },
+    {
+     "name": "마이프로틴 임팩트 웨이 프로틴 바나나 250g 단백질 보충제",
+     "price": 36000,
+     "why": "용량 불일치"
+    }
+   ]
+  },
   "c18": {
    "query": "칼로바이 크레아틴 모노하이드레이트",
    "status": "all_rejected",
@@ -26,8 +49,31 @@
      "why": "카테고리 키워드 없음"
     }
    ]
+  },
+  "g21": {
+   "query": "인저 파워리프팅 벨트",
+   "status": "all_rejected",
+   "found": 30,
+   "used_query": "인저 파워리프팅",
+   "rejected_sample": [
+    {
+     "name": "유양 슬링벨트 크레인바 견인바 1개",
+     "price": 1244,
+     "why": "비정상 저가(1244원)"
+    },
+    {
+     "name": "[유양] 슬링벨트 25MM-1M",
+     "price": 1244,
+     "why": "비정상 저가(1244원)"
+    },
+    {
+     "name": "[유양] 슬링벨트 25MM-1M",
+     "price": 1331,
+     "why": "비정상 저가(1331원)"
+    }
+   ]
   }
  },
- "collected": 213,
+ "collected": 211,
  "total": 215
 }
