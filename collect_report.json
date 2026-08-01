@@ -1,122 +1,867 @@
 {
- "date": "2026-07-31",
+ "date": "2026-08-01",
  "failures": {
+  "p1": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 1kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p2": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 1kg 딸기",
+   "status": "api_error_or_no_key"
+  },
+  "p3": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 1kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p4": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 1kg 쿠키앤크림",
+   "status": "api_error_or_no_key"
+  },
+  "p5": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 1kg 바나나",
+   "status": "api_error_or_no_key"
+  },
+  "p6": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 1kg 솔티드카라멜",
+   "status": "api_error_or_no_key"
+  },
+  "p7": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 2.5kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p8": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 2.5kg 딸기",
+   "status": "api_error_or_no_key"
+  },
+  "p9": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 2.5kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p10": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 2.5kg 쿠키앤크림",
+   "status": "api_error_or_no_key"
+  },
   "p11": {
    "query": "마이프로틴 임팩트 웨이 프로틴 2.5kg 바나나",
-   "status": "all_rejected",
-   "found": 30,
-   "used_query": "마이프로틴 임팩트 웨이 프로틴 2.5kg",
-   "rejected_sample": [
-    {
-     "name": "Myprotein 임팩트 웨이 프로틴 - 250g - 바나나",
-     "price": 24900,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "Myprotein 임팩트 웨이 프로틴 - 250g - 바나나  1개",
-     "price": 29900,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "마이프로틴 임팩트 웨이 프로틴 바나나 250g 단백질 보충제",
-     "price": 36000,
-     "why": "용량 불일치"
-    }
-   ]
+   "status": "api_error_or_no_key"
+  },
+  "p12": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 2.5kg 솔티드카라멜",
+   "status": "api_error_or_no_key"
+  },
+  "p13": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 5kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p14": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 5kg 딸기",
+   "status": "api_error_or_no_key"
   },
   "p15": {
    "query": "마이프로틴 임팩트 웨이 프로틴 5kg 바닐라",
-   "status": "all_rejected",
-   "found": 30,
-   "used_query": "마이프로틴 임팩트 웨이 프로틴 5kg",
-   "rejected_sample": [
-    {
-     "name": "마이프로틴 임팩트 웨이 프로틴 250g 홋카이도 밀크",
-     "price": 29900,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "마이프로틴 임팩트웨이 단백질 1kg 바닐라",
-     "price": 45020,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "마이프로틴 임팩트웨이 프로틴 1kg 내추럴 바닐라",
-     "price": 45020,
-     "why": "용량 불일치"
-    }
-   ]
+   "status": "api_error_or_no_key"
   },
   "p16": {
    "query": "마이프로틴 임팩트 웨이 프로틴 5kg 쿠키앤크림",
-   "status": "all_rejected",
-   "found": 30,
-   "used_query": "마이프로틴 임팩트 웨이 프로틴 5kg",
-   "rejected_sample": [
-    {
-     "name": "마이프로틴 마이프로틴 임팩트 웨이 단백질 쿠키앤크림 250g",
-     "price": 36000,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "마이프로틴 임팩트웨이 단백질보충제 쿠키앤크림 맛 250g",
-     "price": 36100,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "마이프로틴 임팩트웨이 단백질 보충제 쿠키앤크림 250g MYPROTEIN IMPACT WEHY PROTEIN",
-     "price": 36300,
-     "why": "용량 불일치"
-    }
-   ]
+   "status": "api_error_or_no_key"
   },
   "p17": {
    "query": "마이프로틴 임팩트 웨이 프로틴 5kg 바나나",
-   "status": "all_rejected",
-   "found": 30,
-   "used_query": "마이프로틴 임팩트 웨이 프로틴 5kg",
-   "rejected_sample": [
-    {
-     "name": "Myprotein 임팩트 웨이 프로틴 - 250g - 바나나",
-     "price": 24900,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "Myprotein 임팩트 웨이 프로틴 - 250g - 바나나  1개",
-     "price": 29900,
-     "why": "용량 불일치"
-    },
-    {
-     "name": "마이프로틴 임팩트 웨이 프로틴 바나나 250g 단백질 보충제",
-     "price": 36000,
-     "why": "용량 불일치"
-    }
-   ]
+   "status": "api_error_or_no_key"
+  },
+  "p18": {
+   "query": "마이프로틴 임팩트 웨이 프로틴 5kg 솔티드카라멜",
+   "status": "api_error_or_no_key"
+  },
+  "p19": {
+   "query": "마이프로틴 임팩트 웨이 아이솔레이트 1kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p20": {
+   "query": "마이프로틴 임팩트 웨이 아이솔레이트 1kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p21": {
+   "query": "마이프로틴 임팩트 웨이 아이솔레이트 1kg 쿠키앤크림",
+   "status": "api_error_or_no_key"
+  },
+  "p22": {
+   "query": "옵티멈뉴트리션 골드스탠다드 웨이 907g 더블리치초콜릿",
+   "status": "api_error_or_no_key"
+  },
+  "p23": {
+   "query": "옵티멈뉴트리션 골드스탠다드 웨이 907g 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p24": {
+   "query": "옵티멈뉴트리션 골드스탠다드 웨이 907g 딸기",
+   "status": "api_error_or_no_key"
+  },
+  "p25": {
+   "query": "옵티멈뉴트리션 골드스탠다드 웨이 907g 코코넛",
+   "status": "api_error_or_no_key"
+  },
+  "p26": {
+   "query": "옵티멈뉴트리션 골드스탠다드 웨이 2.27kg 더블리치초콜릿",
+   "status": "api_error_or_no_key"
+  },
+  "p27": {
+   "query": "옵티멈뉴트리션 골드스탠다드 웨이 2.27kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p28": {
+   "query": "옵티멈뉴트리션 골드스탠다드 웨이 2.27kg 딸기",
+   "status": "api_error_or_no_key"
+  },
+  "p29": {
+   "query": "옵티멈뉴트리션 골드스탠다드 웨이 2.27kg 코코넛",
+   "status": "api_error_or_no_key"
+  },
+  "p30": {
+   "query": "디마티즈 ISO100 아이솔레이트 쿠키앤크림",
+   "status": "api_error_or_no_key"
+  },
+  "p31": {
+   "query": "디마티즈 ISO100 아이솔레이트 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p32": {
+   "query": "디마티즈 ISO100 아이솔레이트 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p33": {
+   "query": "디마티즈 ISO100 가수분해 아이솔레이트 1.6kg 딸기",
+   "status": "api_error_or_no_key"
+  },
+  "p34": {
+   "query": "디마티즈 ISO100 가수분해 아이솔레이트 2.3kg 쿠키앤크림",
+   "status": "api_error_or_no_key"
+  },
+  "p35": {
+   "query": "디마티즈 ISO100 가수분해 아이솔레이트 2.3kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p36": {
+   "query": "디마티즈 ISO100 가수분해 아이솔레이트 2.3kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p37": {
+   "query": "디마티즈 ISO100 가수분해 아이솔레이트 2.3kg 딸기",
+   "status": "api_error_or_no_key"
+  },
+  "p38": {
+   "query": "BSN 신타6 단백질 쉐이크 2.27kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p39": {
+   "query": "BSN 신타6 단백질 쉐이크 2.27kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p40": {
+   "query": "BSN 신타6 단백질 쉐이크 2.27kg 딸기",
+   "status": "api_error_or_no_key"
+  },
+  "p41": {
+   "query": "머슬팜 컴뱃 100% 웨이 1.8kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p42": {
+   "query": "머슬팜 컴뱃 100% 웨이 1.8kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p43": {
+   "query": "머슬팜 컴뱃 100% 웨이 1.8kg 쿠키앤크림",
+   "status": "api_error_or_no_key"
+  },
+  "p44": {
+   "query": "칼로바이 퍼펙트 웨이 프로틴 아이솔레이트 1kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p45": {
+   "query": "칼로바이 퍼펙트 웨이 프로틴 아이솔레이트 1kg 딸기",
+   "status": "api_error_or_no_key"
+  },
+  "p46": {
+   "query": "식스스타 100% 웨이 프로틴 플러스 907g 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p47": {
+   "query": "식스스타 100% 웨이 프로틴 플러스 907g 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p48": {
+   "query": "뉴트리코스트 웨이 프로틴 아이솔레이트 1kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p49": {
+   "query": "뉴트리코스트 웨이 프로틴 아이솔레이트 1kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p50": {
+   "query": "뉴트리코스트 웨이 프로틴 아이솔레이트 2.3kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p51": {
+   "query": "뉴트리코스트 웨이 프로틴 아이솔레이트 2.3kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p52": {
+   "query": "알라니뉴 웨이 프로틴 907g 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p53": {
+   "query": "알라니뉴 웨이 프로틴 907g 쿠키앤크림",
+   "status": "api_error_or_no_key"
+  },
+  "p54": {
+   "query": "프로틴웍스 웨이 프로틴 80 1kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p55": {
+   "query": "프로틴웍스 웨이 프로틴 80 1kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p56": {
+   "query": "프로틴웍스 웨이 프로틴 80 2kg 초코",
+   "status": "api_error_or_no_key"
+  },
+  "p57": {
+   "query": "프로틴웍스 웨이 프로틴 80 2kg 바닐라",
+   "status": "api_error_or_no_key"
+  },
+  "p58": {
+   "query": "옵티멈뉴트리션 골드스탠다드 100% 카제인 1.8kg",
+   "status": "api_error_or_no_key"
+  },
+  "p59": {
+   "query": "마이프로틴 카제인 단백질 1kg",
+   "status": "api_error_or_no_key"
+  },
+  "p60": {
+   "query": "디마티즈 엘리트 카제인 프로틴",
+   "status": "api_error_or_no_key"
+  },
+  "p61": {
+   "query": "옵티멈뉴트리션 골드스탠다드 100% 플랜트 프로틴",
+   "status": "api_error_or_no_key"
+  },
+  "p62": {
+   "query": "마이프로틴 비건 단백질 블렌드",
+   "status": "api_error_or_no_key"
+  },
+  "p63": {
+   "query": "칼로바이 퍼펙트 식물성 단백질",
+   "status": "api_error_or_no_key"
+  },
+  "p64": {
+   "query": "가든오브라이프 식물성 단백질",
+   "status": "api_error_or_no_key"
+  },
+  "p65": {
+   "query": "마이프로틴 위 게이너 블렌드 2.5kg",
+   "status": "api_error_or_no_key"
+  },
+  "p66": {
+   "query": "옵티멈뉴트리션 시리어스 매스 게이너 5.4kg",
+   "status": "api_error_or_no_key"
+  },
+  "p67": {
+   "query": "BSN 트루매스 게이너",
+   "status": "api_error_or_no_key"
+  },
+  "p68": {
+   "query": "칼로바이 퍼펙트 게이너 대용량",
+   "status": "api_error_or_no_key"
+  },
+  "p69": {
+   "query": "보충닷컴 웨이 프로틴 4kg 대용량",
+   "status": "api_error_or_no_key"
+  },
+  "p70": {
+   "query": "하이뮨 산양유 단백질",
+   "status": "api_error_or_no_key"
+  },
+  "p71": {
+   "query": "칼로바이 퍼펙트 산양유 단백질",
+   "status": "api_error_or_no_key"
+  },
+  "p72": {
+   "query": "뉴트라바이오 웨이 프로틴 아이솔레이트",
+   "status": "api_error_or_no_key"
+  },
+  "p73": {
+   "query": "옵티멈뉴트리션 골드스탠다드 웨이 907g 모카",
+   "status": "api_error_or_no_key"
+  },
+  "p74": {
+   "query": "머슬팜 컴뱃 프로틴 파우더 1.8kg",
+   "status": "api_error_or_no_key"
+  },
+  "p75": {
+   "query": "마이프로틴 더 웨이 프로틴",
+   "status": "api_error_or_no_key"
+  },
+  "p76": {
+   "query": "마이프로틴 클리어 웨이 아이솔레이트 자몽",
+   "status": "api_error_or_no_key"
+  },
+  "p77": {
+   "query": "마이프로틴 슬렌더 다이어트 단백질",
+   "status": "api_error_or_no_key"
+  },
+  "p78": {
+   "query": "마이프로틴 레이어드 프로틴바 12개입",
+   "status": "api_error_or_no_key"
+  },
+  "p79": {
+   "query": "퀘스트 프로틴바 초콜릿칩 12개입",
+   "status": "api_error_or_no_key"
+  },
+  "p80": {
+   "query": "옵티멈뉴트리션 프로틴 크리스프바",
+   "status": "api_error_or_no_key"
+  },
+  "p81": {
+   "query": "뉴욕웨이 라이트 단백질 보충제 2kg",
+   "status": "api_error_or_no_key"
+  },
+  "p82": {
+   "query": "뉴욕웨이 올에이지 WPI 미숫가루 단백질 2kg",
+   "status": "api_error_or_no_key"
+  },
+  "p83": {
+   "query": "뉴욕웨이 WPI 초코 단백질 보충제 2kg",
+   "status": "api_error_or_no_key"
+  },
+  "p84": {
+   "query": "프로틴스토리 퓨어프로틴7",
+   "status": "api_error_or_no_key"
+  },
+  "p85": {
+   "query": "JW중외제약 산양유 단백질 3W 프로틴 마스터",
+   "status": "api_error_or_no_key"
+  },
+  "p86": {
+   "query": "NS 프로틴 블렌드 WPI 딥초코 2kg",
+   "status": "api_error_or_no_key"
+  },
+  "c1": {
+   "query": "마이프로틴 크레아틴 모노하이드레이트 250g",
+   "status": "api_error_or_no_key"
+  },
+  "c2": {
+   "query": "마이프로틴 크레아틴 모노하이드레이트 500g",
+   "status": "api_error_or_no_key"
+  },
+  "c3": {
+   "query": "마이프로틴 크레아틴 모노하이드레이트 1kg",
+   "status": "api_error_or_no_key"
+  },
+  "c4": {
+   "query": "옵티멈뉴트리션 마이크로나이즈드 크레아틴 300g",
+   "status": "api_error_or_no_key"
+  },
+  "c5": {
+   "query": "옵티멈뉴트리션 마이크로나이즈드 크레아틴 600g",
+   "status": "api_error_or_no_key"
+  },
+  "c6": {
+   "query": "디마티즈 크레아틴 모노하이드레이트 500g",
+   "status": "api_error_or_no_key"
+  },
+  "c7": {
+   "query": "디마티즈 크레아틴 모노하이드레이트 1kg",
+   "status": "api_error_or_no_key"
+  },
+  "c8": {
+   "query": "뉴트리코스트 크레아틴 모노하이드레이트 500g",
+   "status": "api_error_or_no_key"
+  },
+  "c9": {
+   "query": "뉴트리코스트 크레아틴 모노하이드레이트 1kg",
+   "status": "api_error_or_no_key"
+  },
+  "c10": {
+   "query": "나우푸드 크레아틴 모노하이드레이트 227g",
+   "status": "api_error_or_no_key"
+  },
+  "c11": {
+   "query": "나우푸드 크레아틴 모노하이드레이트 500g",
+   "status": "api_error_or_no_key"
+  },
+  "c12": {
+   "query": "머슬팜 크레아틴 모노하이드레이트",
+   "status": "api_error_or_no_key"
+  },
+  "c13": {
+   "query": "셀루코어 코어 크레아틴",
+   "status": "api_error_or_no_key"
+  },
+  "c14": {
+   "query": "BSN 크레아틴 DNA 파우더",
+   "status": "api_error_or_no_key"
+  },
+  "c15": {
+   "query": "식스스타 크레아틴 X3",
+   "status": "api_error_or_no_key"
+  },
+  "c16": {
+   "query": "GAT 크레아틴 모노하이드레이트",
+   "status": "api_error_or_no_key"
+  },
+  "c17": {
+   "query": "알라니뉴 크레아틴 모노하이드레이트",
+   "status": "api_error_or_no_key"
+  },
+  "c18": {
+   "query": "칼로바이 크레아틴 모노하이드레이트",
+   "status": "api_error_or_no_key"
+  },
+  "c19": {
+   "query": "크레아핏 크레아틴 모노하이드레이트",
+   "status": "api_error_or_no_key"
+  },
+  "c20": {
+   "query": "보충닷컴 크레아틴 모노하이드레이트",
+   "status": "api_error_or_no_key"
+  },
+  "c21": {
+   "query": "머슬테크 셀테크 크레아틴",
+   "status": "api_error_or_no_key"
+  },
+  "c22": {
+   "query": "마이프로틴 크레알칼린 크레아틴",
+   "status": "api_error_or_no_key"
+  },
+  "c23": {
+   "query": "마이프로틴 크레아틴 HCL",
+   "status": "api_error_or_no_key"
+  },
+  "c24": {
+   "query": "옵티멈뉴트리션 크레아틴 캡슐 2500mg",
+   "status": "api_error_or_no_key"
+  },
+  "c25": {
+   "query": "크레아틴 구미 젤리",
+   "status": "api_error_or_no_key"
+  },
+  "c26": {
+   "query": "유니버셜 크레아틴 파우더",
+   "status": "api_error_or_no_key"
+  },
+  "c27": {
+   "query": "프로메라 콘크렛 크레아틴 HCL",
+   "status": "api_error_or_no_key"
+  },
+  "c28": {
+   "query": "비건 크레아틴 모노하이드레이트",
+   "status": "api_error_or_no_key"
+  },
+  "c29": {
+   "query": "식스스타 크레아틴 구미",
+   "status": "api_error_or_no_key"
+  },
+  "c30": {
+   "query": "디마티즈 크레아틴 캡슐",
+   "status": "api_error_or_no_key"
+  },
+  "c31": {
+   "query": "나우푸드 크레아틴 캡슐",
+   "status": "api_error_or_no_key"
+  },
+  "c32": {
+   "query": "칼로바이 크레아틴 캡슐",
+   "status": "api_error_or_no_key"
+  },
+  "c33": {
+   "query": "셀루코어 코어 크레아틴 구미",
+   "status": "api_error_or_no_key"
+  },
+  "c34": {
+   "query": "마이프로틴 크레아퓨어 크레아틴",
+   "status": "api_error_or_no_key"
+  },
+  "b1": {
+   "query": "셀루코어 C4 오리지널 프리워크아웃 과일펀치",
+   "status": "api_error_or_no_key"
+  },
+  "b2": {
+   "query": "셀루코어 C4 오리지널 프리워크아웃 블루라즈베리",
+   "status": "api_error_or_no_key"
+  },
+  "b3": {
+   "query": "셀루코어 C4 오리지널 프리워크아웃 워터멜론",
+   "status": "api_error_or_no_key"
+  },
+  "b4": {
+   "query": "셀루코어 C4 얼티밋 프리워크아웃",
+   "status": "api_error_or_no_key"
+  },
+  "b5": {
+   "query": "셀루코어 C4 스포츠 프리워크아웃",
+   "status": "api_error_or_no_key"
+  },
+  "b6": {
+   "query": "레드콘 토탈워 프리워크아웃",
+   "status": "api_error_or_no_key"
+  },
+  "b7": {
+   "query": "셀루코어 C4 립드 프리워크아웃",
+   "status": "api_error_or_no_key"
+  },
+  "b8": {
+   "query": "BSN 노익스플로드 프리워크아웃 과일펀치",
+   "status": "api_error_or_no_key"
+  },
+  "b9": {
+   "query": "BSN 노익스플로드 프리워크아웃 그린애플",
+   "status": "api_error_or_no_key"
+  },
+  "b10": {
+   "query": "옵티멈뉴트리션 골드스탠다드 프리워크아웃 블루베리",
+   "status": "api_error_or_no_key"
+  },
+  "b11": {
+   "query": "옵티멈뉴트리션 골드스탠다드 프리워크아웃 과일펀치",
+   "status": "api_error_or_no_key"
+  },
+  "b12": {
+   "query": "알라니뉴 프리워크아웃 블루라즈",
+   "status": "api_error_or_no_key"
+  },
+  "b13": {
+   "query": "알라니뉴 프리워크아웃 워터멜론",
+   "status": "api_error_or_no_key"
+  },
+  "b14": {
+   "query": "머슬팜 어썰트 프리워크아웃 과일펀치",
+   "status": "api_error_or_no_key"
+  },
+  "b15": {
+   "query": "GAT 니트라플렉스 프리워크아웃 과일펀치",
+   "status": "api_error_or_no_key"
+  },
+  "b16": {
+   "query": "USP랩스 잭3드 프리워크아웃",
+   "status": "api_error_or_no_key"
+  },
+  "b17": {
+   "query": "프로수플렉스 프리워크아웃 부스터",
+   "status": "api_error_or_no_key"
+  },
+  "b18": {
+   "query": "마이프로틴 더 프리워크아웃",
+   "status": "api_error_or_no_key"
+  },
+  "b19": {
+   "query": "식스스타 프리워크아웃 익스플로전",
+   "status": "api_error_or_no_key"
+  },
+  "b20": {
+   "query": "삼대오백 헬스부스터 프리워크아웃",
+   "status": "api_error_or_no_key"
+  },
+  "b21": {
+   "query": "리프트 프리워크아웃 부스터",
+   "status": "api_error_or_no_key"
+  },
+  "b22": {
+   "query": "프리워크아웃 카페인 부스터",
+   "status": "api_error_or_no_key"
+  },
+  "k1": {
+   "query": "잇메이트 스팀 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k2": {
+   "query": "잇메이트 훈제 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k3": {
+   "query": "잇메이트 소스 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k4": {
+   "query": "맛있닭 스팀 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k5": {
+   "query": "맛있닭 소프트 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k6": {
+   "query": "맛있닭 닭가슴살 스테이크",
+   "status": "api_error_or_no_key"
+  },
+  "k7": {
+   "query": "아임닭 스팀 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k8": {
+   "query": "아임닭 훈제 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k9": {
+   "query": "아임닭 닭가슴살 스테이크",
+   "status": "api_error_or_no_key"
+  },
+  "k10": {
+   "query": "허닭 스팀 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k11": {
+   "query": "허닭 오븐구이 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k12": {
+   "query": "허닭 닭가슴살 소시지",
+   "status": "api_error_or_no_key"
+  },
+  "k13": {
+   "query": "미트리 닭가슴살 스테이크",
+   "status": "api_error_or_no_key"
+  },
+  "k14": {
+   "query": "미트리 소스 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k15": {
+   "query": "한끼통살 닭가슴살 스테이크",
+   "status": "api_error_or_no_key"
+  },
+  "k16": {
+   "query": "닭신 스팀 닭가슴살",
+   "status": "api_error_or_no_key"
+  },
+  "k17": {
+   "query": "잇메이트 닭가슴살 소시지",
+   "status": "api_error_or_no_key"
+  },
+  "k18": {
+   "query": "맛있닭 닭가슴살 볶음밥",
+   "status": "api_error_or_no_key"
+  },
+  "k19": {
+   "query": "잇메이트 닭가슴살 볶음밥",
+   "status": "api_error_or_no_key"
+  },
+  "k20": {
+   "query": "하림 냉동 닭가슴살 1kg",
+   "status": "api_error_or_no_key"
+  },
+  "g1": {
+   "query": "베어그립 손목보호대 리스트랩",
+   "status": "api_error_or_no_key"
+  },
+  "g2": {
+   "query": "SBD 리스트랩",
+   "status": "api_error_or_no_key"
+  },
+  "g3": {
+   "query": "언더아머 손목 보호대",
+   "status": "api_error_or_no_key"
+  },
+  "g4": {
+   "query": "하빈저 손목보호대 리스트랩",
+   "status": "api_error_or_no_key"
+  },
+  "g5": {
+   "query": "하빈저 리프팅 스트랩",
+   "status": "api_error_or_no_key"
+  },
+  "g6": {
+   "query": "베어그립 데드리프트 스트랩",
+   "status": "api_error_or_no_key"
+  },
+  "g7": {
+   "query": "8자 데드리프트 스트랩",
+   "status": "api_error_or_no_key"
+  },
+  "g8": {
+   "query": "맥데이비드 손목 보호대",
+   "status": "api_error_or_no_key"
+  },
+  "g9": {
+   "query": "베어그립 무릎보호대",
+   "status": "api_error_or_no_key"
+  },
+  "g10": {
+   "query": "SBD 니슬리브 무릎 보호대 7mm",
+   "status": "api_error_or_no_key"
+  },
+  "g11": {
+   "query": "렙스 니슬리브 무릎 보호대",
+   "status": "api_error_or_no_key"
+  },
+  "g12": {
+   "query": "잠스트 무릎 보호대",
+   "status": "api_error_or_no_key"
+  },
+  "g13": {
+   "query": "하빈저 무릎 슬리브",
+   "status": "api_error_or_no_key"
+  },
+  "g14": {
+   "query": "맥데이비드 무릎 보호대",
+   "status": "api_error_or_no_key"
+  },
+  "g15": {
+   "query": "베어그립 팔꿈치 보호대 엘보슬리브",
+   "status": "api_error_or_no_key"
+  },
+  "g16": {
+   "query": "SBD 엘보슬리브 팔꿈치 보호대",
+   "status": "api_error_or_no_key"
+  },
+  "g17": {
+   "query": "렙스 엘보슬리브",
+   "status": "api_error_or_no_key"
+  },
+  "g18": {
+   "query": "하빈저 리프팅벨트 가죽 허리벨트",
+   "status": "api_error_or_no_key"
+  },
+  "g19": {
+   "query": "SBD 파워벨트 13mm 허리벨트",
+   "status": "api_error_or_no_key"
+  },
+  "g20": {
+   "query": "SBD 파워벨트 10mm 허리벨트",
+   "status": "api_error_or_no_key"
   },
   "g21": {
    "query": "인저 파워리프팅 벨트",
-   "status": "all_rejected",
-   "found": 30,
-   "used_query": "인저 파워리프팅",
-   "rejected_sample": [
-    {
-     "name": "유양 슬링벨트 크레인바 견인바 1개",
-     "price": 1244,
-     "why": "비정상 저가(1244원)"
-    },
-    {
-     "name": "[유양] 슬링벨트 25MM-1M",
-     "price": 1244,
-     "why": "비정상 저가(1244원)"
-    },
-    {
-     "name": "[유양] 슬링벨트 25MM-1M",
-     "price": 1331,
-     "why": "비정상 저가(1331원)"
-    }
-   ]
+   "status": "api_error_or_no_key"
+  },
+  "g22": {
+   "query": "베어그립 레버벨트 허리벨트",
+   "status": "api_error_or_no_key"
+  },
+  "g23": {
+   "query": "잠스트 발목 보호대",
+   "status": "api_error_or_no_key"
+  },
+  "g24": {
+   "query": "블랙다이아몬드 클라이밍 테이프",
+   "status": "api_error_or_no_key"
+  },
+  "g25": {
+   "query": "하빈저 헬스 장갑",
+   "status": "api_error_or_no_key"
+  },
+  "g26": {
+   "query": "베어그립 그립패드",
+   "status": "api_error_or_no_key"
+  },
+  "g27": {
+   "query": "아디다스 헬스 장갑",
+   "status": "api_error_or_no_key"
+  },
+  "g28": {
+   "query": "헬스 후크 스트랩",
+   "status": "api_error_or_no_key"
+  },
+  "e1": {
+   "query": "마이프로틴 BCAA 아미노산 250정",
+   "status": "api_error_or_no_key"
+  },
+  "e2": {
+   "query": "옵티멈뉴트리션 BCAA 1000 캡슐",
+   "status": "api_error_or_no_key"
+  },
+  "e3": {
+   "query": "셀루코어 알파아미노 EAA BCAA",
+   "status": "api_error_or_no_key"
+  },
+  "e4": {
+   "query": "디마티즈 BCAA 아미노산 파우더",
+   "status": "api_error_or_no_key"
+  },
+  "e5": {
+   "query": "마이프로틴 EAA 필수아미노산 파우더",
+   "status": "api_error_or_no_key"
+  },
+  "e6": {
+   "query": "마이프로틴 L-글루타민 파우더 500g",
+   "status": "api_error_or_no_key"
+  },
+  "e7": {
+   "query": "옵티멈뉴트리션 글루타민 파우더",
+   "status": "api_error_or_no_key"
+  },
+  "e8": {
+   "query": "마이프로틴 L-아르기닌 파우더",
+   "status": "api_error_or_no_key"
+  },
+  "e9": {
+   "query": "마이프로틴 L-카르니틴 보충제",
+   "status": "api_error_or_no_key"
+  },
+  "e12": {
+   "query": "옵티멈뉴트리션 오팁 멀티비타민",
+   "status": "api_error_or_no_key"
+  },
+  "e13": {
+   "query": "나우푸드 오메가3 피쉬오일 1000mg",
+   "status": "api_error_or_no_key"
+  },
+  "e14": {
+   "query": "마이프로틴 종합비타민 알파맨",
+   "status": "api_error_or_no_key"
+  },
+  "e15": {
+   "query": "마이프로틴 ZMA 보충제",
+   "status": "api_error_or_no_key"
+  },
+  "s1": {
+   "query": "뉴트리코스트 오메가3 피쉬오일",
+   "status": "api_error_or_no_key"
+  },
+  "s2": {
+   "query": "노르딕내추럴스 오메가3",
+   "status": "api_error_or_no_key"
+  },
+  "s3": {
+   "query": "종근당 락토핏 골드 유산균",
+   "status": "api_error_or_no_key"
+  },
+  "s4": {
+   "query": "컬처렐 유산균",
+   "status": "api_error_or_no_key"
+  },
+  "s5": {
+   "query": "자로우 유산균 프로바이오틱",
+   "status": "api_error_or_no_key"
+  },
+  "s6": {
+   "query": "센트룸 포맨 멀티비타민",
+   "status": "api_error_or_no_key"
+  },
+  "s7": {
+   "query": "나우푸드 비타민D3 5000IU",
+   "status": "api_error_or_no_key"
+  },
+  "s8": {
+   "query": "솔가 비타민C 1000",
+   "status": "api_error_or_no_key"
+  },
+  "s9": {
+   "query": "나우푸드 카페인 200mg",
+   "status": "api_error_or_no_key"
+  },
+  "s10": {
+   "query": "마이프로틴 카페인 프로 200mg",
+   "status": "api_error_or_no_key"
+  },
+  "s11": {
+   "query": "나우푸드 아연 픽콜리네이트",
+   "status": "api_error_or_no_key"
+  },
+  "s12": {
+   "query": "닥터스베스트 고흡수 마그네슘",
+   "status": "api_error_or_no_key"
   }
  },
- "collected": 210,
+ "collected": 0,
  "total": 215
 }
